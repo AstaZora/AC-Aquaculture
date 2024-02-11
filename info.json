@@ -1,0 +1,15 @@
+{
+    "name": "AC-Aquaculture",
+    "version": "0.0.01",
+    "factorio_version": "1.1",
+    "date": "2024-02-08",
+    "title": "Aquaculture",
+    "author": "AstaZora",
+    "homepage": "",
+    "description": "The beginning of a mod suite, for a broad new experience",
+    "dependencies": [
+        "base >= 1.0.0",
+        "AB-Breathe-Easy-Arboretum >= 0.0.1"
+      ]
+      
+}
