@@ -31,7 +31,7 @@ script.on_event(defines.events.on_research_finished, function(event)
 
     -- Assuming `global.fish_spawned` is a table where keys are fish names and values are counts
 
--- Initialize the global table
+--[[ Initialize the global table
 script.on_init(function()
     global.fish_spawned = {}
 end)
@@ -68,3 +68,32 @@ script.on_event(defines.events.on_chunk_generated, function(event)
     end
 end)
   
+
+
+script.on_event(defines.events.on_tick, function(event)
+    -- Check every few seconds instead of every tick for performance
+    if event.tick % (60 * 15) == 0 then
+        for _, breeder in pairs(global.fish_breeders) do
+            -- Assuming you have a way to track all fish breeders
+            local inventory = breeder.get_inventory(defines.inventory.assembling_machine_input)
+            local recipe = breeder.get_recipe()
+            if recipe and inventory.get_item_count(recipe.name) >= 5 then
+                local position = breeder.position
+                local surface = breeder.surface
+                -- Create the fish entities in water around the breeder
+                for _ = 1, 5 do
+                    local fish_to_spawn = determine_fish_to_spawn()
+                    if fish_to_spawn then
+                        local x = position.x + math.random(-1, 1)
+                        local y = position.y + math.random(-1, 1)
+                        surface.create_entity({name = fish_to_spawn, position = {x = x, y = y}})
+                    end
+                end
+                -- Remove 5 fish from the breeder's inventory
+                inventory.remove({name = recipe.name, count = 5})
+            end
+        end
+    end
+end)
+
+]]

@@ -17,6 +17,25 @@ data:extend({
         time = 30,
       },
       order = "c-a"
-    }
+    },
+    {
+        type = "technology",
+        name = "ac-fish-breeding",
+        icon = "__base__/graphics/technology/automation-1.png",
+        icon_size = 256, icon_mipmaps = 4,
+        prerequisites = {"ac-fish-harvesting", "ab-biocomposite-materials", "ab-basic-ore-clarification"},  --Reference the technology from the Arboretum mod
+        effects = {
+          {
+              type = "unlock-recipe",
+              recipe = "fish-hatchery",
+          },
+        },
+        unit = {
+          count = 200,
+          ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+          time = 30,
+        },
+        order = "c-a"
+    },
   })
   

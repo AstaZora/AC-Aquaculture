@@ -24,7 +24,7 @@ local function createEntity(name, category)
     base.max_health = 150
     base.crafting_categories = {category}
     base.crafting_speed = 1
-    base.energy_usage = "120kW"
+    base.energy_usage = "60kW"
     base.energy_source = {
         type = "electric",
         usage_priority = "secondary-input",

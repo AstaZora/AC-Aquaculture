@@ -306,6 +306,25 @@ data:extend({
         }
 
     },
-      
+    
     
 })
+local fishTypes = {"glowfin-trenchers", "mukmoux", "neon-nocturne", "silverscale-glider", "spiral-shellfish", "silent-drifter", "twilight-tetra", "starfin-darters", "stream-sifter"}
+local fishBreedingRecipes = {}
+for _, fishType in ipairs(fishTypes) do
+    table.insert(fishBreedingRecipes, {
+        type = "recipe",
+        name = "ac-breed-"..fishType,
+        enabled = true,
+        category = "fish-hatchery",
+        energy_required = 300,
+        ingredients = {
+            {type="item", name= fishType, amount=10},
+        },
+        results = {
+            {type="item", name=fishType, amount_min = 10, amount_max = 30}
+        }
+    })
+end
+
+data:extend(fishBreedingRecipes)

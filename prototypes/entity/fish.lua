@@ -23,19 +23,7 @@ function createFish(name, autoplace)
     fishPrototype.order = "c-a-"..name
     fishPrototype.icon = "__base__/graphics/icons/fish.png"
     fishPrototype.icon_size = 64
-    fishPrototype.autoplace = {
-        order = "a",
-        max_probability = 0.2,
-        peaks = {
-          {
-            influence = 0.02,
-            min_influence = 0.01,
-            water_optimal = 0.5,
-            water_range = 0.25,
-            water_max_range = 0.5,
-          },
-        },
-      }
+    fishPrototype.autoplace = autoplace
     fishPrototype.minable = { mining_time = 1, result = name, count = 5 }
     fishPrototype.collision_box = {{-0.75, -0.75}, {0.75, 0.75}}
     fishPrototype.selection_box = {{-0.5, -0.3}, {0.5, 0.3}}
@@ -43,15 +31,15 @@ function createFish(name, autoplace)
 end
     
 data:extend({
-    createFish("glowfin-trenchers"), --{min_influence = 0.01, influence = 0.02, water_optimal = 0.3, water_range = 0.05, water_max_range = 0.1}),
-    createFish("mukmoux"), --{min_influence = 0.01, influence = 0.6, water_optimal = 0.2, water_range = 0.05, water_max_range = 0.1}),
-    createFish("neon-nocturne"), --{min_influence = 0.01, influence = 0.015, water_optimal = 0.8, water_range = 0.1, water_max_range = 0.15}),
-    createFish("silverscale-glider"), --{min_influence = 0.01, influence = 0.018, water_optimal = 0.5, water_range = 0.1, water_max_range = 0.15}),
-    createFish("spiral-shellfish"), --{min_influence = 0.01, influence = 0.025, water_optimal = 0.1, water_range = 0.05, water_max_range = 0.05}),
-    createFish("silent-drifter"), --{min_influence = 0.01, influence = 0.015, water_optimal = 0.7, water_range = 0.1, water_max_range = 0.15}),
-    createFish("twilight-tetra"), --{min_influence = 0.01, influence = 0.02, water_optimal = 0.4, water_range = 0.05, water_max_range = 0.1}),
-    createFish("starfin-darters"), --{min_influence = 0.01, influence = 0.03, water_optimal = 0.015, water_range = 0.02, water_max_range = 0.05}),
-    createFish("stream-sifter"), --{min_influence = 0.01, influence = 0.025, water_optimal = 0.25, water_range = 0.05, water_max_range = 0.1}),
+    createFish("glowfin-trenchers", {min_influence = 0.01, influence = 0.02, water_optimal = 0.3, water_range = 0.05, water_max_range = 0.1}),
+    createFish("mukmoux", {min_influence = 0.01, influence = 0.06, water_optimal = 0.2, water_range = 0.05, water_max_range = 0.1}),
+    createFish("neon-nocturne", {min_influence = 0.01, influence = 0.015, water_optimal = 0.8, water_range = 0.1, water_max_range = 0.15}),
+    createFish("silverscale-glider", {min_influence = 0.01, influence = 0.018, water_optimal = 0.5, water_range = 0.1, water_max_range = 0.15}),
+    createFish("spiral-shellfish", {min_influence = 0.01, influence = 0.025, water_optimal = 0.1, water_range = 0.05, water_max_range = 0.05}),
+    createFish("silent-drifter", {min_influence = 0.01, influence = 0.015, water_optimal = 0.7, water_range = 0.1, water_max_range = 0.15}),
+    createFish("twilight-tetra", {min_influence = 0.01, influence = 0.02, water_optimal = 0.4, water_range = 0.05, water_max_range = 0.1}),
+    createFish("starfin-darters", {min_influence = 0.01, influence = 0.03, water_optimal = 0.015, water_range = 0.02, water_max_range = 0.05}),
+    createFish("stream-sifter", {min_influence = 0.01, influence = 0.024, water_optimal = 0.25, water_range = 0.05, water_max_range = 0.1}),
 })
     --[[
     createFish("biofilm-biter", {influence = 0.1, wateropt = 0.3, waterange = 0.1, maxrange = 0.15}),
