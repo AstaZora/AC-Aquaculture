@@ -335,51 +335,55 @@ script.on_event(defines.events.on_entity_died, function(event)
     updateFishBreeder(event, false)
 end)
 
--- Periodic check for fish breeding in fish hatcheries
-script.on_event(defines.events.on_tick, function(event)
-    -- Reduce performance impact by checking every 300 ticks (5 seconds)
-    if event.tick % 1800 == 0 then
-        for _, breeder in pairs(global.fish_breeders) do
-            if breeder.valid then
-                local input_inventory_index = defines.inventory.chemical_plant_output or defines.inventory.assembling_machine_output
+-- Define the function to extract the fish name from the recipe
+function extract_fish_name(recipe_name)
+    -- Try to match both patterns: with and without "-egg" suffix
+    local match = string.match(recipe_name, "^ac%-breed%-(.-)%-egg$") or string.match(recipe_name, "^ac%-breed%-(.-)$")
+    return match
+  end
+  
+  -- Periodic check for fish breeding in fish hatcheries
+  script.on_event(defines.events.on_tick, function(event)
+      -- Reduce performance impact by checking every 1800 ticks (30 seconds)
+      if event.tick % 1800 == 0 then
+          for _, breeder in pairs(global.fish_breeders) do
+              if breeder.valid then
+                local input_inventory_index = defines.inventory.chemical_plant_output or defines.inventory.furnace_result
                 local inventory = breeder.get_inventory(input_inventory_index)
-                if inventory then
-                    local currentRecipe = breeder.get_recipe()
-                    if currentRecipe then
-                        local fishType = string.gsub(currentRecipe.name, "ac%-breed%-", "") -- Extract fish type from recipe name
-                        local fishCount = inventory.get_item_count(fishType)
-
-                        if fishCount >= 5 then
-                            local groupsOfFive = math.floor(fishCount / 5)
-                            local spawnCount = groupsOfFive
-                            local directionVector = {{0, -3}, {3, 0}, {0, 3}, {-3, 0}} -- N, E, S, W
-                            local direction = breeder.direction / 2
-                            local spawnPosition = {x = breeder.position.x + directionVector[direction + 1][1], y = breeder.position.y + directionVector[direction + 1][2]}
-
-                            local tile = breeder.surface.get_tile(spawnPosition.x, spawnPosition.y)
-                            if tile.name == "water" or tile.name == "deepwater" or tile.name == "water-shallow" or tile.name == "pond-water" then
-                                for i = 1, spawnCount do
-                                    local spawned = breeder.surface.create_entity({name = fishType, position = spawnPosition})
-                                    -- if spawned then
-                                    --     game.print("Fish spawned successfully at: " .. serpent.block(spawnPosition))
-                                    -- else
-                                    --     game.print("Failed to spawn fish at: " .. serpent.block(spawnPosition))
-                                    -- end
-                                end
-                                inventory.remove({name = fishType, count = spawnCount * 5}) -- Correctly remove used fish items
-                            else
-                                -- game.print("Spawn position not in water: " .. serpent.block(spawnPosition))
-                            end
-                        else
-                            -- game.print("Not enough fish to breed: " .. fishCount .. " of type " .. fishType)
-                        end
-                    else
-                        -- game.print("No recipe set in fish-hatchery")
-                    end
-                else
-                    -- game.print("Failed to access input inventory for fish-hatchery")
-                end
-            end
-        end
-    end
-end)
+                  if inventory then
+                      local currentRecipe = breeder.get_recipe()
+                      if currentRecipe then
+                          -- Extract fish type from recipe name, considering recipes with "-egg" suffix
+                          local fishType = extract_fish_name(currentRecipe.name)
+                          local fishCount = inventory.get_item_count(fishType)
+  
+                          if fishCount >= 5 then
+                              local groupsOfFive = math.floor(fishCount / 5)
+                              local spawnCount = groupsOfFive
+                              local directionVector = {{0, -3}, {3, 0}, {0, 3}, {-3, 0}} -- N, E, S, W
+                              local direction = breeder.direction / 2
+                              local spawnPosition = {
+                                  x = breeder.position.x + directionVector[direction + 1][1],
+                                  y = breeder.position.y + directionVector[direction + 1][2]
+                              }
+  
+                              local tile = breeder.surface.get_tile(spawnPosition.x, spawnPosition.y)
+                              if tile.valid and tile.name == "water" or tile.name == "deepwater" or tile.name == "water-shallow" then
+                                  for i = 1, spawnCount do
+                                      breeder.surface.create_entity({
+                                          name = fishType,
+                                          position = spawnPosition,
+                                          amount = 1
+                                      })
+                                  end
+                                  -- Remove the used fish items from the inventory
+                                  inventory.remove({name = fishType, count = spawnCount * 5})
+                              end
+                          end
+                      end
+                  end
+              end
+          end
+      end
+  end)
+  
