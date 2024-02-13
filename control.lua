@@ -67,33 +67,319 @@ script.on_event(defines.events.on_chunk_generated, function(event)
         surface.create_entity({name = fish_to_spawn, position = {x = x, y = y}})
     end
 end)
-  
+]]  
 
 
-script.on_event(defines.events.on_tick, function(event)
-    -- Check every few seconds instead of every tick for performance
-    if event.tick % (60 * 15) == 0 then
-        for _, breeder in pairs(global.fish_breeders) do
-            -- Assuming you have a way to track all fish breeders
-            local inventory = breeder.get_inventory(defines.inventory.assembling_machine_input)
-            local recipe = breeder.get_recipe()
-            if recipe and inventory.get_item_count(recipe.name) >= 5 then
-                local position = breeder.position
-                local surface = breeder.surface
-                -- Create the fish entities in water around the breeder
-                for _ = 1, 5 do
-                    local fish_to_spawn = determine_fish_to_spawn()
-                    if fish_to_spawn then
-                        local x = position.x + math.random(-1, 1)
-                        local y = position.y + math.random(-1, 1)
-                        surface.create_entity({name = fish_to_spawn, position = {x = x, y = y}})
-                    end
-                end
-                -- Remove 5 fish from the breeder's inventory
-                inventory.remove({name = recipe.name, count = 5})
+
+--[[ Initialize the global table
+script.on_init(function()
+    global.fish_breeders = {}
+end)
+
+-- Add the built fish breeders to the global table
+script.on_event(defines.events.on_built_entity, function(event)
+    local entity = event.created_entity
+    if entity.name == "fish-hatchery" then
+        table.insert(global.fish_breeders, entity)
+    end
+end)
+
+-- Remove the destroyed fish breeders from the global table
+script.on_event(defines.events.on_entity_died, function(event)
+    local entity = event.entity
+    if entity.name == "fish-hatchery" then
+        for i, breeder in ipairs(global.fish_breeders) do
+            if breeder == entity then
+                table.remove(global.fish_breeders, i)
+                break
             end
         end
     end
 end)
 
+-- Check every few seconds instead of every tick for performance
+for _, breeder in pairs(global.fish_breeders) do
+    local inventory = breeder.get_inventory(defines.inventory.assembling_machine_input)
+    local recipe = breeder.get_recipe()
+
+    -- Check if the recipe exists and the ingredient and result counts are sufficient
+    if recipe and inventory.get_item_count(recipe.result) % 5 == 0 then
+        -- Place 1 fish of the specified type directly in front of the machine
+        local position = breeder.position
+        local direction = breeder.direction
+        local offset = {x = 0, y = 0}
+        if direction == defines.direction.north then
+            offset.y = -1
+        elseif direction == defines.direction.east then
+            offset.x = 1
+        elseif direction == defines.direction.south then
+            offset.y = 1
+        elseif direction == defines.direction.west then
+            offset.x = -1
+        end
+        local spawn_position = {x = position.x + offset.x, y = position.y + offset.y}
+        breeder.surface.create_entity({name = recipe.result, position = spawn_position})
+
+        -- Remove the required ingredients from the inventory
+        inventory.remove({name = recipe.result, count = 5})
+    elseif recipe and inventory.get_item_count(recipe.name) >= 5 and inventory.get_item_count(recipe.result) >= 5 then
+        -- Place 1 fish of the specified type directly in front of the machine
+        local position = breeder.position
+        local direction = breeder.direction
+        local offset = {x = 0, y = 0}
+        if direction == defines.direction.north then
+            offset.y = -1
+        elseif direction == defines.direction.east then
+            offset.x = 1
+        elseif direction == defines.direction.south then
+            offset.y = 1
+        elseif direction == defines.direction.west then
+            offset.x = -1
+        end
+        local spawn_position = {x = position.x + offset.x, y = position.y + offset.y}
+        breeder.surface.create_entity({name = recipe.result, position = spawn_position})
+
+        -- Remove the required ingredients from the inventory
+        for _, ingredient in pairs(recipe.ingredients) do
+            inventory.remove({name = ingredient.name, count = ingredient.amount})
+        end
+    end
+end
+
+Potentially outdated]]
+
+--[[-- Initialize the global table
+script.on_init(function()
+    global.fish_breeders = {}
+end)
+
+-- Function to update global reference when fish hatcheries are built or removed
+local function updateFishBreeder(event, isAdding)
+    local entity = event.created_entity or event.entity
+    if entity and entity.valid and entity.name == "fish-hatchery" then
+        if isAdding then
+            table.insert(global.fish_breeders, entity)
+        else
+            for i, breeder in ipairs(global.fish_breeders) do
+                if breeder == entity then
+                    table.remove(global.fish_breeders, i)
+                    break
+                end
+            end
+        end
+    end
+end
+
+-- Add the built fish breeders to the global table
+script.on_event(defines.events.on_built_entity, function(event)
+    updateFishBreeder(event, true)
+end)
+
+-- Remove the destroyed fish breeders from the global table
+script.on_event(defines.events.on_entity_died, function(event)
+    updateFishBreeder(event, false)
+end)
+
+-- Periodic check for fish breeding
+-- Periodic check for fish breeding in fish hatcheries
+script.on_event(defines.events.on_tick, function(event)
+    -- Reduce performance impact by checking every 300 ticks (5 seconds)
+    if event.tick % 300 == 0 then
+        for _, breeder in pairs(global.fish_breeders) do
+            if breeder.valid then
+                -- Access the correct inventory for a chemical refinery-based entity
+                -- Assuming 'breeder' is your entity
+                local input_inventory_index = defines.inventory.chemical_plant_output or defines.inventory.assembling_machine_output
+                local inventory = breeder.get_inventory(input_inventory_index)
+                if inventory then
+                    local currentRecipe = breeder.get_recipe()
+                    if currentRecipe then
+                        -- Extract fish type from recipe name, assuming it starts with "ac-breed-"
+                        local fishType = string.gsub(currentRecipe.name, "ac%-breed%-", "")
+                        local fishCount = inventory.get_item_count(fishType)
+                        game.print(fishCount)
+                        game.print(fishType)
+
+                        if fishCount >= 5 then
+                            local groupsOfFive = math.floor(fishCount / 5)
+                            local spawnCount = groupsOfFive
+                            local frontPosition = breeder.position
+                            local directionVector = {{0, -4}, {4, 0}, {0, 4}, {-4, 0}} -- N, E, S, W
+                            local direction = breeder.direction / 2
+                            local spawnPosition = {x = frontPosition.x + directionVector[direction + 1][1], y = frontPosition.y + directionVector[direction + 1][2]}
+                            log("about to place fish")
+                            -- Check if the tile in front of the breeder is water or shallow water
+                            local tile = breeder.surface.get_tile(spawnPosition.x, spawnPosition.y)
+                            if tile.name == "water" or tile.name == "deepwater" or tile.name == "water-shallow" then
+                                -- Spawn the fish entity
+                                for i = 1, spawnCount do
+                                    breeder.surface.create_entity({name = fishType, position = spawnPosition, amount = 1})
+                                end
+                                -- Remove the used fish items from the inventory
+                                inventory.remove({name = fishType, count = spawnCount * 5})
+                            end
+                        end
+                    end
+                else
+                    -- Log or handle the case where the inventory couldn't be accessed
+                    log("Failed to access input inventory for fish-hatchery")
+                end
+            end
+        end
+    end
+end)
 ]]
+
+--[[REDACTED CODE INCOMPLETE
+-- Initialize the global table
+script.on_init(function()
+    global.fish_drills = {} -- New table for tracking the new type of entity
+end)
+
+-- Function to update global reference when drills are built or removed
+local function updateDrill(event, isAdding)
+    local entity = event.created_entity or event.entity
+    if entity and entity.valid and entity.name == "fish-drill" then -- Assuming "fish-drill" is your entity's name
+        if isAdding then
+            table.insert(global.fish_drills, entity)
+        else
+            for i, breeder in ipairs(global.fish_drills) do
+                if breeder == entity then
+                    table.remove(global.fish_drills, i)
+                    break
+                end
+            end
+        end
+    end
+end
+
+-- Adjust event handlers to track drills only
+script.on_event(defines.events.on_built_entity, function(event)
+    updateDrill(event, true)
+end)
+
+script.on_event(defines.events.on_entity_died, function(event)
+    updateDrill(event, false)
+end)
+
+-- Periodic check for fish drilling
+script.on_event(defines.events.on_tick, function(event)
+    -- Reduce performance impact by checking every 300 ticks (5 seconds)
+    if event.tick % 300 == 0 then
+        if global.fish_drills then
+            for _, drill in ipairs(global.fish_drills) do -- Use ipairs instead of pairs to iterate over the table
+                if drill and drill.valid then
+                    local currentRecipe = drill.get_recipe()
+                if currentRecipe and currentRecipe.name:find("ac%-breed%-") then -- Check if the recipe is for fish drilling
+                    local fishType = string.gsub(currentRecipe.name, "ac%-breed%-", "") -- Extract fish type from recipe name
+                    local outputPosition = drill.position
+                    local outputDirection = drill.direction
+                    local outputOffset = {x = 0, y = 0}
+                    
+                    -- Adjust output position based on output direction
+                    if outputDirection == defines.direction.north then
+                        outputOffset.y = -1
+                    elseif outputDirection == defines.direction.east then
+                        outputOffset.x = 1
+                    elseif outputDirection == defines.direction.south then
+                        outputOffset.y = 1
+                    elseif outputDirection == defines.direction.west then
+                        outputOffset.x = -1
+                    end
+
+                    local spawnPosition = {x = outputPosition.x + outputOffset.x, y = outputPosition.y + outputOffset.y}
+                        local tile = drill.surface.get_tile(spawnPosition.x, spawnPosition.y)
+                        if tile and (tile.name == "water" or tile.name == "deepwater" or tile.name == "water-shallow" or tile.name == "pond-water") then
+                            drill.surface.create_entity({name = fishType, position = spawnPosition})
+                        else
+                            game.print("Fish drilling failed: Invalid tile type")
+                        end
+                    else
+                        game.print("Fish drilling failed: Invalid recipe")
+                    end
+                end
+            end
+        end
+    end
+end)]]
+
+-- Initialize the global table BEST FUNCTIONAL CODE
+script.on_init(function()
+    global.fish_breeders = {}
+end)
+
+-- Function to update global reference when fish hatcheries are built or removed
+local function updateFishBreeder(event, isAdding)
+    local entity = event.created_entity or event.entity
+    if entity and entity.valid and (entity.name == "fish-hatchery" or entity.name == "fish-drill") then
+        if isAdding then
+            table.insert(global.fish_breeders, entity)
+        else
+            for i, breeder in ipairs(global.fish_breeders) do
+                if breeder == entity then
+                    table.remove(global.fish_breeders, i)
+                    break
+                end
+            end
+        end
+    end
+end
+
+-- Add the built fish breeders to the global table
+script.on_event(defines.events.on_built_entity, function(event)
+    updateFishBreeder(event, true)
+end)
+
+-- Remove the destroyed fish breeders from the global table
+script.on_event(defines.events.on_entity_died, function(event)
+    updateFishBreeder(event, false)
+end)
+
+-- Periodic check for fish breeding in fish hatcheries
+script.on_event(defines.events.on_tick, function(event)
+    -- Reduce performance impact by checking every 300 ticks (5 seconds)
+    if event.tick % 1800 == 0 then
+        for _, breeder in pairs(global.fish_breeders) do
+            if breeder.valid then
+                local input_inventory_index = defines.inventory.chemical_plant_output or defines.inventory.assembling_machine_output
+                local inventory = breeder.get_inventory(input_inventory_index)
+                if inventory then
+                    local currentRecipe = breeder.get_recipe()
+                    if currentRecipe then
+                        local fishType = string.gsub(currentRecipe.name, "ac%-breed%-", "") -- Extract fish type from recipe name
+                        local fishCount = inventory.get_item_count(fishType)
+
+                        if fishCount >= 5 then
+                            local groupsOfFive = math.floor(fishCount / 5)
+                            local spawnCount = groupsOfFive
+                            local directionVector = {{0, -3}, {3, 0}, {0, 3}, {-3, 0}} -- N, E, S, W
+                            local direction = breeder.direction / 2
+                            local spawnPosition = {x = breeder.position.x + directionVector[direction + 1][1], y = breeder.position.y + directionVector[direction + 1][2]}
+
+                            local tile = breeder.surface.get_tile(spawnPosition.x, spawnPosition.y)
+                            if tile.name == "water" or tile.name == "deepwater" or tile.name == "water-shallow" or tile.name == "pond-water" then
+                                for i = 1, spawnCount do
+                                    local spawned = breeder.surface.create_entity({name = fishType, position = spawnPosition})
+                                    -- if spawned then
+                                    --     game.print("Fish spawned successfully at: " .. serpent.block(spawnPosition))
+                                    -- else
+                                    --     game.print("Failed to spawn fish at: " .. serpent.block(spawnPosition))
+                                    -- end
+                                end
+                                inventory.remove({name = fishType, count = spawnCount * 5}) -- Correctly remove used fish items
+                            else
+                                -- game.print("Spawn position not in water: " .. serpent.block(spawnPosition))
+                            end
+                        else
+                            -- game.print("Not enough fish to breed: " .. fishCount .. " of type " .. fishType)
+                        end
+                    else
+                        -- game.print("No recipe set in fish-hatchery")
+                    end
+                else
+                    -- game.print("Failed to access input inventory for fish-hatchery")
+                end
+            end
+        end
+    end
+end)

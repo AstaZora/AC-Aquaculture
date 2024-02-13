@@ -309,22 +309,89 @@ data:extend({
     
     
 })
+
 local fishTypes = {"glowfin-trenchers", "mukmoux", "neon-nocturne", "silverscale-glider", "spiral-shellfish", "silent-drifter", "twilight-tetra", "starfin-darters", "stream-sifter"}
 local fishBreedingRecipes = {}
+local fishEggSizes = {
+    ["glowfin-trenchers"] = "small",
+    ["twilight-tetra"] = "small",
+    ["starfin-darters"] = "small",
+    ["silverscale-glider"] = "medium",
+    ["neon-nocturne"] = "medium",
+    ["spiral-shellfish"] = "medium",
+    ["mukmoux"] = "large",
+    ["stream-sifter"] = "large",
+    ["silent-drifter"] = "large"
+}
+
 for _, fishType in ipairs(fishTypes) do
+    local eggSize = fishEggSizes[fishType]
+    local eggAmount = 10
+    local eggVariance = 5 -- Adjust this value to control the variance in egg returns
+
+    if eggSize == "medium" then
+        eggAmount = 20
+        eggVariance = 10
+    elseif eggSize == "large" then
+        eggAmount = 30
+        eggVariance = 15
+    end
+
+    local minEggAmount = eggAmount - eggVariance
+    local maxEggAmount = eggAmount + eggVariance
+
     table.insert(fishBreedingRecipes, {
         type = "recipe",
-        name = "ac-breed-"..fishType,
+        name = "ac-breed-"..fishType.."-egg",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
         enabled = true,
         category = "fish-hatchery",
+        subgroup = "fish-breeding",
         energy_required = 300,
         ingredients = {
             {type="item", name= fishType, amount=10},
         },
         results = {
-            {type="item", name=fishType, amount_min = 10, amount_max = 30}
+            {type="item", name=fishType.."-egg", amount_min = minEggAmount, amount_max = maxEggAmount}
+        }
+    })
+
+    table.insert(fishBreedingRecipes, {
+        type = "recipe",
+        name = "ac-breed-"..fishType,
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        enabled = true,
+        category = "fish-hatchery",
+        subgroup = "fish-breeding",
+        energy_required = 300,
+        ingredients = {
+            {type="item", name= fishType, amount=10},
+        },
+        results = {
+            {type="item", name=fishType, amount_min = 5, amount_max = 15},
+            {type="item", name=fishType.."-egg", amount_min = minEggAmount, amount_max = maxEggAmount}
+        }
+    })
+
+    table.insert(fishBreedingRecipes, {
+        type = "recipe",
+        name = "ac-breed-"..fishType.."-egg",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        enabled = true,
+        category = "fish-breeding",
+        subgroup = "fish-breeding",
+        energy_required = 300,
+        ingredients = {
+            {type="item", name= fishType.."-egg", amount=1},
+        },
+        results = {
+            {type="item", name=fishType, amount_min = minEggAmount, amount_max = maxEggAmount}
         }
     })
 end
 
 data:extend(fishBreedingRecipes)
+

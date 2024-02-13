@@ -5,6 +5,8 @@ require("prototypes.categories.fluid-recipes")
 require("prototypes.categories.recipe-category")
 require("prototypes.entity.fish")
 require("prototypes.technologies.technologies")
+require("prototypes.categories.fuel-category")
+
 
 
 data.raw["fish"]["fish"].autoplace = nil

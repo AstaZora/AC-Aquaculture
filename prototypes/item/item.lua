@@ -270,6 +270,19 @@ data:extend({
         place_result = "marine-research-lab",
         stack_size = 50
     },
+    --Fish Drill
+    {
+        type = "item",
+        name = "fish-drill",
+        icon = "__base__/graphics/icons/assembling-machine-1.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        category = "crafting",
+        subgroup = "production-machine",
+        order = "t[fish-drill]",
+        place_result = "fish-drill",
+        stack_size = 50
+    },
     --Pond Water
     {
         type = "item",
@@ -832,4 +845,107 @@ data:extend({
         order = "ax[shalen]",
         stack_size = 100
     },
+    {
+        type = "item",
+        name = "glowfin-trenchers-egg",
+        icon = "__base__/graphics/icons/sulfur.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "ao[tidepool-tetra]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "mukmoux-egg",
+        icon = "__base__/graphics/icons/sulfur.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "ap[echo-ray]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "neon-nocturne-egg",
+        icon = "__base__/graphics/icons/sulfur.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "aq[fogfin-fish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "silverscale-glider-egg",
+        icon = "__base__/graphics/icons/sulfur.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "ar[spiral-shellfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "spiral-shellfish-egg",
+        icon = "__base__/graphics/icons/sulfur.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "as[silent-drifter]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "silent-drifter-egg",
+        icon = "__base__/graphics/icons/sulfur.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "at[shadow-skulker]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "twilight-tetra-egg",
+        icon = "__base__/graphics/icons/sulfur.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "au[mud-nautilus]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "starfin-darters-egg",
+        icon = "__base__/graphics/icons/sulfur.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "av[tide-tumbler]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "stream-sifter-egg",
+        icon = "__base__/graphics/icons/sulfur.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "aw[stream-sifter]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "fish-egg-fuel",
+        icon = "__base__/graphics/icons/solid-fuel.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        category = "fish-breeding",
+        fuel_category = "fish-eggs",
+        fuel_value = "12MJ",
+        order = "ax[shalen]",
+        stack_size = 100
+    },
+    
 })

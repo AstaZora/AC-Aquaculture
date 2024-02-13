@@ -61,6 +61,10 @@ data:extend({
     },
     {
         type = "recipe-category",
+        name = "fish-breeding"
+    },
+    {
+        type = "recipe-category",
         name = "fish-drying-rack"
     },
     {
@@ -82,5 +86,19 @@ data:extend({
     {
         type = "recipe-category",
         name = "fish-advanced-extraction"
+    },
+    {
+        type = "item-group",
+        name = "fish-hatchery",
+        order = "z",
+        inventory_order = "z",
+        icon = "__base__/graphics/item-group/production.png",
+        icon_size = 128
+    },
+    {
+        type = "item-subgroup",
+        name = "fish-breeding",
+        group = "fish-hatchery",
+        order = "b"
     },
 })
