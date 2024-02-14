@@ -39,21 +39,6 @@ local function createEntity(name, category)
     return base
 end
 
-data:extend({
-    createEntity("fish-fillet-machine", "fish-processing"),
-    createEntity("fish-sorter", "fish-sorting"),
-    createEntity("fish-packer", "fish-packing"),
-    createEntity("fish-feeder", "fish-feeding"),
-    createEntity("seaweed-harvester", "bio-harvesting"),
-    createEntity("fish-aquarium", "fish-chemicals"),
-    createEntity("coral-aquarium", "coral-chemicals"),
-    createEntity("hydroponics", "hydroponics"),
-    createEntity("coral-farm", "bio-growth"),
-    createEntity("hydroponics-bay", "advanced-hydroponics"),
-    createEntity("coral-harvester", "coral-harvesting"),
-    createEntity("coral-planter", "coral-planting"),
-    createEntity("marine-research-lab", "biology-research"),
-})
 
 local function createChemical(name, category)
     local base = deepcopy(data.raw["assembling-machine"]["chemical-plant"])
@@ -80,6 +65,52 @@ local function createChemical(name, category)
     return base
 end
 
+local function createFurnace(name, category)
+    local base = deepcopy(data.raw["furnace"]["stone-furnace"])
+    base.name = name
+    base.icon = "__base__/graphics/icons/stone-furnace.png"
+    base.icon_size = 64
+    base.minable = {mining_time = 0.2, result = name}
+    base.crafting_categories = {category}
+    base.crafting_speed = 1
+    base.energy_usage = "90kW"
+    base.source_inventory_size = 1
+    base.result_inventory_size = 1
+    -- Other properties to adjust...
+    return base
+end
+
+local function createCentrifuge(name, category)
+    local base = deepcopy(data.raw["assembling-machine"]["centrifuge"])
+    base.name = name
+    base.icon = "__base__/graphics/icons/centrifuge.png"
+    base.icon_size = 64
+    base.minable = {mining_time = 0.2, result = name}
+    base.crafting_categories = {category}
+    base.crafting_speed = 1
+    base.energy_usage = "350kW"
+    -- Other properties to adjust...
+    return base
+end
+
+local function createOilRefinery(name, category)
+    local base = deepcopy(data.raw["assembling-machine"]["oil-refinery"])
+    base.name = name
+    base.icon = "__base__/graphics/icons/oil-refinery.png"
+    base.icon_size = 64
+    base.minable = {mining_time = 0.2, result = name}
+    base.crafting_categories = {category}
+    base.crafting_speed = 1
+    base.energy_usage = "420kW"
+    base.module_specification =
+    {
+        module_slots = 3,
+        module_info_icon_shift = {0, 0.8}
+    }
+    -- Adjust animation or any other necessary properties...
+    return base
+end
+
 data:extend({
     createChemical("water-separator", "water-production"),
     createChemical("fish-hatchery", "fish-hatchery"),
@@ -90,7 +121,22 @@ data:extend({
     createChemical("fish-oil-extractor", "fish-extraction"),
     createChemical("fish-oil-refinery", "fish-advanced-extraction"),
 
+    
+    createEntity("fish-fillet-machine", "fish-processing"),
+    createEntity("fish-sorter", "fish-sorting"),
+    createEntity("fish-packer", "fish-packing"),
+    createEntity("fish-feeder", "fish-feeding"),
+    createEntity("seaweed-harvester", "bio-harvesting"),
+    createEntity("fish-aquarium", "fish-chemicals"),
+    createEntity("coral-aquarium", "coral-chemicals"),
+    createEntity("hydroponics", "hydroponics"),
+    createEntity("coral-farm", "bio-growth"),
+    createEntity("hydroponics-bay", "advanced-hydroponics"),
+    createEntity("coral-harvester", "coral-harvesting"),
+    createEntity("coral-planter", "coral-planting"),
+    createEntity("marine-research-lab", "biology-research"),
 })
+
 
 local fish_drill = table.deepcopy(data.raw["mining-drill"]["burner-mining-drill"])
 fish_drill.name = "fish-drill"

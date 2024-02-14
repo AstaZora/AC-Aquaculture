@@ -55,7 +55,55 @@ data:extend({
             },
         },
         unit = {
-            count = 450,
+            count = 250,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 30,
+        },
+        order = "c-a"
+    },
+    --Advanced Circuitry Unlock
+    {
+        type = "technology",
+        name = "ac-advanced-circuitry-conditions",
+        icon = "__base__/graphics/technology/automation-1.png",
+        icon_size = 256, icon_mipmaps = 4,
+        prerequisites = {"ac-circuitry-conditions"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "ac-arithmetic-combinator",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "ac-decider-combinator",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "ac-constant-combinator",
+            },
+        },
+        unit = {
+            count = 400,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 30,
+        },
+        order = "c-a"
+    },
+    --Advanced Circuitry
+    {
+        type = "technology",
+        name = "ac-advanced-circuitry",
+        icon = "__base__/graphics/technology/automation-1.png",
+        icon_size = 256, icon_mipmaps = 4,
+        prerequisites = {"ac-advanced-circuitry-conditions"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "ac-advanced-circuitry",
+            },
+        },
+        unit = {
+            count = 500,
             ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
             time = 30,
         },

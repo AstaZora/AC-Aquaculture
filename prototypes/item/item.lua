@@ -302,6 +302,16 @@ data:extend({
         
     },
     --Actual Items
+    
+    {
+        type = "item",
+        name = "advanced-circuitry",
+        icon = "__base__/graphics/icons/wood.png",
+        icon_size = 64,
+        subgroup = "raw-resource",
+        order = "c[wood]-ab[wood-pulp]",
+        stack_size = 100
+    },
     {
         type = "item",
         name = "fish-fillet",
@@ -336,8 +346,8 @@ data:extend({
     {
         type = "item",
         name = "mukmoux-meat",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/fillet.png",
+        icon_size = 128,
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "g[mukmoux-meat]",

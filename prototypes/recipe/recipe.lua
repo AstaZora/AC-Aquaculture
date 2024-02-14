@@ -288,8 +288,18 @@ data:extend({
         }
 
     },
-
-
+    {
+        type = "recipe",
+        name = "ac-advanced-circuitry",
+        enabled = false,
+        energy_required = 20,
+        ingredients = {
+            {"fiberboard-circuitry", 10},
+            {"copper-cable", 5},
+            {"resin", 2}
+        },
+        result = "advanced-circuit"
+    },
     -- recipes
     {
         type = "recipe",
@@ -328,6 +338,48 @@ data:extend({
         },
         result = "red-wire"
     },
+-- Arithmetic Combinator
+{
+    type = "recipe",
+    name = "ac-arithmetic-combinator",
+    enabled = false,
+    energy_required = 1,
+    ingredients = {
+        {"copper-cable", 5},
+        {"electronic-circuit", 5},
+        {"iron-plate", 2}
+    },
+    result = "arithmetic-combinator"
+},
+
+-- Decider Combinator
+{
+    type = "recipe",
+    name = "ac-decider-combinator",
+    enabled = false,
+    energy_required = 1,
+    ingredients = {
+        {"copper-cable", 5},
+        {"electronic-circuit", 5},
+        {"iron-plate", 2}
+    },
+    result = "decider-combinator"
+},
+
+-- Constant Combinator
+{
+    type = "recipe",
+    name = "ac-constant-combinator",
+    enabled = false,
+    energy_required = 1,
+    ingredients = {
+        {"copper-cable", 5},
+        {"electronic-circuit", 5},
+        {"iron-plate", 2}
+    },
+    result = "constant-combinator"
+},
+    
     --Fish Parts
     --Glowfin Trenchers
     --Glowfin Filleting
