@@ -37,5 +37,164 @@ data:extend({
         },
         order = "c-a"
     },
-  })
+    --Circuitry Unlock
+    {
+        type = "technology",
+        name = "ac-circuitry-conditions",
+        icon = "__base__/graphics/technology/automation-1.png",
+        icon_size = 256, icon_mipmaps = 4,
+        prerequisites = {"ab-biocomposite-materials", "ab-basic-ore-clarification"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "ac-green-wire",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "ac-red-wire",
+            },
+        },
+        unit = {
+            count = 450,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 30,
+        },
+        order = "c-a"
+    },
+    --Glowfin Tech Tree
+    {
+        type = "technology",
+        name = "ac-glowfin-trenchers-processing",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/glowfin-trenchers.png",
+        icon_size = 128, icon_mipmaps = 1,
+        prerequisites = {"ac-fish-harvesting", "ac-fish-breeding"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "glowfin-trenchers-filleting",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "glowfin-trenchers-packing",
+            }
+        },
+        unit = {
+            count = 300,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 30,
+        },
+        order = "c-a"
+    },
+    {
+        type = "technology",
+        name = "ac-glowfin-package-sorting",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/glowfin-trenchers-package.png",
+        icon_size = 64, icon_mipmaps = 1,
+        prerequisites = {"ac-glowfin-trenchers-processing"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "glowfin-trenchers-package-processing",
+            }
+        },
+        unit = {
+            count = 300,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 30,
+        },
+        order = "c-a"
+    },
+    {
+        type = "technology",
+        name = "ac-glowfin-oil-processing",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/fluids/glowfin-oil.png",
+        icon_size = 128, icon_mipmaps = 1,
+        prerequisites = {"ac-glowfin-trenchers-processing"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "glowfin-trenchers-oil-extraction",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "glowfin-trenchers-scale-filleting",
+            }
+        },
+        unit = {
+            count = 500,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 30,
+        },
+        order = "c-a"
+    },
+    {
+        type = "technology",
+        name = "ac-glowfin-encapsulation",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/glowfin-luminescence-capsule.png",
+        icon_size = 128, icon_mipmaps = 1,
+        prerequisites = {"ac-glowfin-oil-processing"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "glowfin-trenchers-oil-encapsulation",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "glowfin-trenchers-luminescence-capsule"
+            }
+        },
+        unit = {
+            count = 500,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 45,
+        },
+        order = "c-a"
+    },
+    {
+        type = "technology",
+        name = "ac-glowfin-advanced-oil",
+        icon = "__base__/graphics/icons/fluid/lubricant.png",
+        icon_size = 64, icon_mipmaps = 4,
+        prerequisites = {"ac-glowfin-encapsulation", "ac-glowfin-oil-processing"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "glowfin-trenchers-oil-refinement",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "glowfin-trenchers-luminescence-gel"
+            }
+        },
+        unit = {
+            count = 500,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 45,
+        },
+        order = "c-a"
+    },
+    {
+        type = "technology",
+        name = "ac-glowfin-vision-extraction",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/glowfin-enhancer.png",
+        icon_size = 128, icon_mipmaps = 4,
+        prerequisites = {"ac-glowfin-advanced-oil", "ac-glowfin-oil-processing"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "glowfin-trenchers-vision-extraction",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "glowfin-enhancer"
+            }
+        },
+        unit = {
+            count = 600,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 60,
+        },
+        order = "c-a"
+    },
+})
   

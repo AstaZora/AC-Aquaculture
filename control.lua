@@ -368,7 +368,7 @@ function extract_fish_name(recipe_name)
                               }
   
                               local tile = breeder.surface.get_tile(spawnPosition.x, spawnPosition.y)
-                              if tile.valid and tile.name == "water" or tile.name == "deepwater" or tile.name == "water-shallow" then
+                              if tile.valid and tile.name == "water" or tile.name == "deepwater" or tile.name == "water-shallow" or tile.name == "pond-water" then
                                   for i = 1, spawnCount do
                                       breeder.surface.create_entity({
                                           name = fishType,

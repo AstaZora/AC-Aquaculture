@@ -348,8 +348,8 @@ data:extend({
     {
         type = "item",
         name = "glowfin-trenchers",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/glowfin-trenchers.png",
+        icon_size = 128,
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "b[glowfin-trenchers]",
@@ -848,8 +848,8 @@ data:extend({
     {
         type = "item",
         name = "glowfin-trenchers-egg",
-        icon = "__base__/graphics/icons/sulfur.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/glowfin-trenchers-egg.png",
+        icon_size = 128,
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "ao[tidepool-tetra]",
@@ -947,5 +947,95 @@ data:extend({
         order = "ax[shalen]",
         stack_size = 100
     },
-    
+    --Glowfin Components
+    {
+        type = "item",
+        name = "glowfin-trenchers-fillet",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/fillet.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "a[glowfin-trenchers-fillet]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "glowfin-trenchers-package",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/glowfin-trenchers-package.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "b[glowfin-trenchers-package]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "pressure-scales",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/pressure-scales.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "intermediate-product",
+        order = "a[pressure-scales]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "egg-casings",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/egg-casings.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "intermediate-product",
+        order = "b[egg-casings]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "glowfin-oil-capsule",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/glowfin-oil-capsule.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "intermediate-product",
+        order = "c[glowfin-oil-capsule]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "glowfin-luminescence-capsule",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/glowfin-luminescence-capsule.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "intermediate-product",
+        order = "d[glowfin-luminescence-capsule]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "glowfin-luminescence-gel",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/glowfin-luminescence-gel.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "intermediate-product",
+        order = "e[glowfin-luminescence-gel]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "glowfin-trencher-eyes",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/glowfin-trencher-eyes.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "intermediate-product",
+        order = "f[glowfin-trencher-eyes]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "glowfin-enhancer",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/glowfin-enhancer.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "intermediate-product",
+        order = "g[glowfin-enhancer]",
+        stack_size = 100
+    },
 })

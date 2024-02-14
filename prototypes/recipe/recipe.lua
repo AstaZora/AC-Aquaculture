@@ -306,7 +306,224 @@ data:extend({
         }
 
     },
-    
+    {
+        type = "recipe",
+        name = "ac-green-wire",
+        enabled = false,
+        energy_required = 1,
+        ingredients = {
+            {"copper-cable", 1},
+            {"resin", 1}
+        },
+        result = "green-wire"
+    },
+    {
+        type = "recipe",
+        name = "ac-red-wire",
+        enabled = false,
+        energy_required = 1,
+        ingredients = {
+            {"copper-cable", 1},
+            {"resin", 1}
+        },
+        result = "red-wire"
+    },
+    --Fish Parts
+    --Glowfin Trenchers
+    --Glowfin Filleting
+    {
+        type = "recipe",
+        name = "glowfin-trenchers-filleting",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/fillet.png",
+        icon_size = 128,
+        category = "fish-processing",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="glowfin-trenchers", amount=1}
+        },
+        results = {
+            {type="item", name="glowfin-trenchers-fillet", amount=5},
+            {type = "item", name = "glowfin-trenchers-egg", amount=1, probability=0.1}
+        }
+    },
+    --Glowfin Trenchers Packing
+    {
+        type = "recipe",
+        name = "glowfin-trenchers-packing",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/glowfin-trenchers-package.png",
+        icon_size = 64,
+        category = "fish-packing",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="glowfin-trenchers-fillet", amount=5}
+        },
+        results = {
+            {type="item", name="glowfin-trenchers-package", amount=1}
+        }
+    },
+    --Glowfin Package Processing
+    {
+        type = "recipe",
+        name = "glowfin-trenchers-package-processing",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/pressure-scales.png",
+        icon_size = 128,
+        category = "fish-sorting",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="glowfin-trenchers-package", amount=1}
+        },
+        results = {
+            {type="item", name = "pressure-scales", amount=2},
+            {type = "item", name = "egg-casings", amount=5},
+        }
+    },
+    --Glowfin Scale Sorting
+    {
+        type = "recipe",
+        name = "glowfin-trenchers-scale-filleting",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/egg-casings.png",
+        icon_size = 128,
+        category = "fish-processing",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="pressure-scales", amount=2},
+            {type = "item", name = "glowfin-trenchers-fillet", amount=1}
+        },
+        results = {
+            {type="item", name="egg-casings", amount=10}
+        }
+    },
+    --Glowfin Oil Extraction
+    {
+        type = "recipe",
+        name = "glowfin-trenchers-oil-extraction",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/fluids/glowfin-oil.png",
+        icon_size = 128,
+        category = "fish-extraction",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="glowfin-trenchers-egg", amount=20}
+        },
+        results = {
+            {type="fluid", name="glowfin-oil", amount=10}
+        }
+    },
+    --Glowfin Oil Encapsulation
+    {
+        type = "recipe",
+        name = "glowfin-trenchers-oil-encapsulation",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/glowfin-oil-capsule.png",
+        icon_size = 128,
+        category = "fish-packing",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="fluid", name="glowfin-oil", amount=10},
+            {type="item", name="egg-casings", amount=4}
+        },
+        results = {
+            {type="item", name="glowfin-oil-capsule", amount=1}
+        }
+    },
+    --Glowfin Luminescence Gel
+    {
+        type = "recipe",
+        name = "glowfin-trenchers-luminescence-capsule",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/glowfin-luminescence-capsule.png",
+        icon_size = 128,
+        category = "fish-advanced-extraction",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="glowfin-oil-capsule", amount=10}
+        },
+        results = {
+            {type="item", name="glowfin-luminescence-capsule", amount=5}
+        }
+    },
+    --luminence Gel
+    {
+        type = "recipe",
+        name = "glowfin-trenchers-luminescence-gel",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/glowfin-luminescence-gel.png",
+        icon_size = 128,
+        category = "fish-advanced-extraction",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="glowfin-luminescence-capsule", amount=10}
+        },
+        results = {
+            {type="item", name="glowfin-luminescence-gel", amount=4}
+        }
+    },
+    --Glowfin Oil Refinement
+    {
+        type = "recipe",
+        name = "glowfin-trenchers-oil-refinement",
+        icon = "__base__/graphics/icons/fluid/lubricant.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-advanced-extraction",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="glowfin-oil-capsule", amount=10}
+        },
+        results = {
+            {type="fluid", name="lubricant", amount=20}
+        }
+    },
+    --Extraction and Procurement
+    --Vision Extraction
+    {
+        type = "recipe",
+        name = "glowfin-trenchers-vision-extraction",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/glowfin-trencher-eyes.png",
+        icon_size = 128,
+        category = "fish-chemicals",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="glowfin-trenchers", amount=5},
+            {type="item", name = "pressure-scales", amount = 2},
+            {type="item", name = "glowfin-luminescence-gel", amount = 1}
+        },
+        results = {
+            {type="item", name="glowfin-trencher-eyes", amount=10}
+        }
+    },
+    {
+        type = "recipe",
+        name = "glowfin-enhancer",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/glowfin-enhancer.png",
+        icon_size = 128,
+        category = "fish-chemicals",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="glowfin-trencher-eyes", amount=5},
+            {type="item", name = "pressure-scales", amount = 2}
+        },
+        results = {
+            {type="item", name="glowfin-enhancer", amount=5}
+        }
+    },
     
 })
 
@@ -328,11 +545,13 @@ for _, fishType in ipairs(fishTypes) do
     local eggSize = fishEggSizes[fishType]
     local eggAmount = 10
     local eggVariance = 5 -- Adjust this value to control the variance in egg returns
-
-    if eggSize == "medium" then
+    if eggSize == "large" then
+        eggAmount = 10
+        eggVariance = 5
+    elseif eggSize == "medium" then
         eggAmount = 20
         eggVariance = 10
-    elseif eggSize == "large" then
+    elseif eggSize == "small" then
         eggAmount = 30
         eggVariance = 15
     end
@@ -342,32 +561,15 @@ for _, fishType in ipairs(fishTypes) do
 
     table.insert(fishBreedingRecipes, {
         type = "recipe",
-        name = "ac-breed-"..fishType.."-egg",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64,
-        enabled = true,
-        category = "fish-hatchery",
-        subgroup = "fish-breeding",
-        energy_required = 300,
-        ingredients = {
-            {type="item", name= fishType, amount=10},
-        },
-        results = {
-            {type="item", name=fishType.."-egg", amount_min = minEggAmount, amount_max = maxEggAmount}
-        }
-    })
-
-    table.insert(fishBreedingRecipes, {
-        type = "recipe",
         name = "ac-breed-"..fishType,
         icon = "__base__/graphics/icons/fish.png",
         icon_size = 64,
         enabled = true,
         category = "fish-hatchery",
         subgroup = "fish-breeding",
-        energy_required = 300,
+        energy_required = 180,
         ingredients = {
-            {type="item", name= fishType, amount=10},
+            {type="item", name= fishType, amount=20},
         },
         results = {
             {type="item", name=fishType, amount_min = 5, amount_max = 15},
@@ -383,7 +585,7 @@ for _, fishType in ipairs(fishTypes) do
         enabled = true,
         category = "fish-breeding",
         subgroup = "fish-breeding",
-        energy_required = 300,
+        energy_required = 60,
         ingredients = {
             {type="item", name= fishType.."-egg", amount=1},
         },

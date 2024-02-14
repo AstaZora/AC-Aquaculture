@@ -138,4 +138,17 @@ data:extend({
         pressure_to_speed_ratio = 0.4,
         flow_to_energy_ratio = 0.59,
     },
+    -- Glowfin Oil
+    {
+        type = "fluid",
+        name = "glowfin-oil",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/fluids/glowfin-oil.png",
+        icon_size = 128,
+        default_temperature = 25,
+        base_color = {r = 1, g = 0.5, b = 0},
+        flow_color = {r = 1, g = 0.7, b = 0},
+        max_temperature = 100,
+        pressure_to_speed_ratio = 0.4,
+        flow_to_energy_ratio = 0.59,
+    },
 })
