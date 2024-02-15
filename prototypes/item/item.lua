@@ -321,7 +321,7 @@ data:extend({
         order = "t[pond-water]",
         stack_size = 100,
         place_as_tile = {
-            result = "pond-water",
+            result = "water-shallow",
             condition_size = 1,
             condition = { "water-tile" }
         }
@@ -383,8 +383,8 @@ data:extend({
     {
         type = "item",
         name = "mukmoux",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux.png",
+        icon_size = 128,
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "e[mukmoux]",
@@ -863,8 +863,8 @@ data:extend({
     {
         type = "item",
         name = "mukmoux-egg",
-        icon = "__base__/graphics/icons/sulfur.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-egg.png",
+        icon_size = 128,
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "ap[echo-ray]",
@@ -966,9 +966,9 @@ data:extend({
     {
         type = "item",
         name = "glowfin-trenchers-package",
-        icon = "__AC-Aquaculture__/graphics/icons/fish/glowfin-trenchers-package.png",
+        icon = "__base__/graphics/icons/wooden-chest.png",
         icon_size = 64,
-        icon_mipmaps = 1,
+        icon_mipmaps = 4,
         subgroup = "raw-resource",
         order = "b[glowfin-trenchers-package]",
         stack_size = 100
@@ -1047,8 +1047,8 @@ data:extend({
     {
         type = "item",
         name = "mukmoux-hide",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-hide.png",
+        icon_size = 128,
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "e[mukmoux-hide]",
@@ -1057,8 +1057,8 @@ data:extend({
     {
         type = "item",
         name = "mukmoux-fat",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-fat.png",
+        icon_size = 128,
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "f[mukmoux-fat]",
@@ -1077,9 +1077,9 @@ data:extend({
     {
         type = "item",
         name = "mukmoux-package",
-        icon = "__base__/graphics/icons/fish.png",
+        icon = "__base__/graphics/icons/wooden-chest.png",
         icon_size = 64,
-        icon_mipmaps = 1,
+        icon_mipmaps = 4,
         subgroup = "raw-resource",
         order = "h[mukmoux-package]",
         stack_size = 100
@@ -1087,8 +1087,8 @@ data:extend({
     {
         type = "item",
         name = "mukmoux-stones",
-        icon = "__base__/graphics/icons/stone.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-stones.png",
+        icon_size = 128,
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "i[mukmoux-stones]",
@@ -1097,8 +1097,8 @@ data:extend({
     {
         type = "item",
         name = "mukmoux-polishing-stone",
-        icon = "__base__/graphics/icons/stone.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-polishing-stone.png",
+        icon_size = 128,
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "j[mukmoux-polishing-stone]",
@@ -1107,8 +1107,8 @@ data:extend({
     {
         type = "item",
         name = "mukmoux-ground-polishing-stone",
-        icon = "__base__/graphics/icons/stone.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-ground-polishing-stone.png",
+        icon_size = 128,
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "k[mukmoux-ground-polishing-stone]",
@@ -1117,8 +1117,8 @@ data:extend({
     {
         type = "item",
         name = "mukmoux-ceramic-powder",
-        icon = "__base__/graphics/icons/stone.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-ceramic-powder.png",
+        icon_size = 128,
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "l[mukmoux-ceramic-powder]",
@@ -1126,19 +1126,9 @@ data:extend({
     },
     {
         type = "item",
-        name = "mukmoux-mucous",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64,
-        icon_mipmaps = 1,
-        subgroup = "raw-resource",
-        order = "m[mukmoux-mucous]",
-        stack_size = 100
-    },
-    {
-        type = "item",
         name = "mukmoux-leather",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-leather.png",
+        icon_size = 128,
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "n[mukmoux-leather]",
@@ -1147,8 +1137,8 @@ data:extend({
     {
         type = "item",
         name = "mukmoux-hard-leather",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-hard-leather.png",
+        icon_size = 128,
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "o[mukmoux-hard-leather]",
@@ -1156,19 +1146,9 @@ data:extend({
     },
     {
         type = "item",
-        name = "mukmoux-sealant",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64,
-        icon_mipmaps = 1,
-        subgroup = "raw-resource",
-        order = "p[mukmoux-sealant]",
-        stack_size = 100
-    },
-    {
-        type = "item",
         name = "mukmoux-bones",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-bones.png",
+        icon_size = 128,
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "q[mukmoux-bones]",
@@ -1177,8 +1157,8 @@ data:extend({
     {
         type = "item",
         name = "mukmoux-calcium",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-calcium.png",
+        icon_size = 128,
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "r[mukmoux-calcium]",

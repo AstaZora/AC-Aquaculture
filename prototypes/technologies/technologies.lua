@@ -249,8 +249,8 @@ data:extend({
     {
         type = "technology",
         name = "ac-mukmoux-filleting",
-        icon = "__base__/graphics/technology/automation-1.png",
-        icon_size = 256, icon_mipmaps = 4,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux.png",
+        icon_size = 128, icon_mipmaps = 1,
         prerequisites = {"ac-fish-harvesting", "ac-fish-breeding"},
         effects = {
             {
@@ -272,8 +272,8 @@ data:extend({
     {
         type = "technology",
         name = "ac-mukmoux-package-sorting",
-        icon = "__base__/graphics/technology/automation-1.png",
-        icon_size = 256, icon_mipmaps = 4,
+        icon = "__base__/graphics/icons/wooden-chest.png",
+        icon_size = 64, icon_mipmaps = 4,
         prerequisites = {"ac-mukmoux-filleting"},
         effects = {
             {
@@ -295,8 +295,8 @@ data:extend({
     {
         type = "technology",
         name = "ac-mukmoux-processing-1",
-        icon = "__base__/graphics/technology/automation-1.png",
-        icon_size = 256, icon_mipmaps = 4,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-stones.png",
+        icon_size = 128, icon_mipmaps = 1,
         prerequisites = {"ac-mukmoux-package-sorting"},
         effects = {
             {
@@ -318,8 +318,8 @@ data:extend({
     {
         type = "technology",
         name = "ac-mukmoux-processing-2",
-        icon = "__base__/graphics/technology/automation-1.png",
-        icon_size = 256, icon_mipmaps = 4,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-leather.png",
+        icon_size = 128, icon_mipmaps = 1,
         prerequisites = {"ac-mukmoux-processing-1"},
         effects = {
             {
@@ -341,8 +341,8 @@ data:extend({
     {
         type = "technology",
         name = "ac-organic-materials-1",
-        icon = "__base__/graphics/technology/automation-1.png",
-        icon_size = 256, icon_mipmaps = 4,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/fluids/mukmoux-mucous.png",
+        icon_size = 128, icon_mipmaps = 1,
         prerequisites = {"ac-mukmoux-filleting"},
         effects = {
             {
@@ -364,8 +364,8 @@ data:extend({
     {
         type = "technology",
         name = "ac-organic-materials-2",
-        icon = "__base__/graphics/technology/automation-1.png",
-        icon_size = 256, icon_mipmaps = 4,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-bones.png",
+        icon_size = 128, icon_mipmaps = 1,
         prerequisites = {"ac-organic-materials-1"},
         effects = {
             {
@@ -388,7 +388,7 @@ data:extend({
     {
         type = "technology",
         name = "ac-fast-transport-belts",
-        icon = "__base__/graphics/technology/automation-1.png",
+        icon = "__base__/graphics/technology/logistics-2.png",
         icon_size = 256, icon_mipmaps = 4,
         prerequisites = {"ac-mukmoux-processing-2", "ac-advanced-circuitry"},
         effects = {

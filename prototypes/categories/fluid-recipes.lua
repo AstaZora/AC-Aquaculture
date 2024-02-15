@@ -151,4 +151,30 @@ data:extend({
         pressure_to_speed_ratio = 0.4,
         flow_to_energy_ratio = 0.59,
     },
+    --Mukmoux Mucous
+    {
+        type = "fluid",
+        name = "mukmoux-mucous",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/fluids/mukmoux-mucous.png",
+        icon_size = 128,
+        default_temperature = 25,
+        base_color = {r = 0.5, g = 0.5, b = 0.5},
+        flow_color = {r = 0.7, g = 0.7, b = 0.7},
+        max_temperature = 100,
+        pressure_to_speed_ratio = 0.4,
+        flow_to_energy_ratio = 0.59,
+    },
+    --Mukmoux Sealant
+    {
+        type = "fluid",
+        name = "mukmoux-sealant",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/fluids/mukmoux-sealant.png",
+        icon_size = 128,
+        default_temperature = 25,
+        base_color = {r = 0.5, g = 0.5, b = 0.5},
+        flow_color = {r = 0.7, g = 0.7, b = 0.7},
+        max_temperature = 100,
+        pressure_to_speed_ratio = 0.4,
+        flow_to_energy_ratio = 0.59,
+    },
 })

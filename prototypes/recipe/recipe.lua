@@ -662,8 +662,8 @@ data:extend({
     {
         type = "recipe",
         name = "mukmoux-packing",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64,
+        icon = "__base__/graphics/icons/wooden-chest.png",
+        icon_size = 64, icon_mipmaps = 4,
         category = "fish-packing",
         subgroup = "fish-breeding",
         energy_required = 5,
@@ -679,8 +679,8 @@ data:extend({
     {
         type = "recipe",
         name = "mukmoux-package-sorting",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-hide.png",
+        icon_size = 128,
         category = "fish-sorting",
         subgroup = "fish-breeding",
         energy_required = 5,
@@ -689,7 +689,7 @@ data:extend({
             {type="item", name="mukmoux-package", amount=1}
         },
         results = {
-            {type="item", name = "mukmoux-hide", amount = 10},
+            {type="item", name = "mukmoux-hide", amount = 2},
             {type = "item", name = "mukmoux-fat", amount = 5},
         }
     },
@@ -697,25 +697,26 @@ data:extend({
     {
         type = "recipe",
         name = "mukmoux-fat-processing",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64, icon_mipmaps = 4,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/fluids/mukmoux-mucous.png",
+        icon_size = 128,
         category = "fish-smoking",
         subgroup = "fish-breeding",
         energy_required = 5,
         enabled = false,
         ingredients = {
-            {type="item", name="mukmoux-fat", amount=5}
+            {type="item", name="mukmoux-fat", amount=5},
+            {type="item", name="mukmoux-egg", amount=5}
         },
         results = {
-            {type="item", name="mukmoux-mucous", amount=10}
+            {type="fluid", name="mukmoux-mucous", amount=20}
         }
     },
     --Mukmoux Stone Gathering
     {
         type = "recipe",
         name = "mukmoux-stone-gathering",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64, icon_mipmaps = 4,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-stones.png",
+        icon_size = 128,
         category = "fish-drying-rack",
         subgroup = "fish-breeding",
         energy_required = 5,
@@ -732,15 +733,15 @@ data:extend({
     {
         type = "recipe",
         name = "mukmoux-stone-polishing",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64, icon_mipmaps = 4,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-polishing-stone.png",
+        icon_size = 128,
         category = "ore-preparation",
         subgroup = "fish-breeding",
         energy_required = 5,
         enabled = false,
         ingredients = {
             {type="item", name="mukmoux-stones", amount=4},
-            {type="item", name="mukmoux-mucous", amount=2}
+            {type="fluid", name="mukmoux-mucous", amount=2}
         },
         results = {
             {type="item", name="mukmoux-polishing-stone", amount=4}
@@ -750,8 +751,8 @@ data:extend({
     {
         type = "recipe",
         name = "mukmoux-stone-grinding",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64, icon_mipmaps = 4,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-ground-polishing-stone.png",
+        icon_size = 128,
         category = "ab-crushing",
         subgroup = "fish-breeding",
         energy_required = 5,
@@ -767,8 +768,8 @@ data:extend({
     {
         type = "recipe",
         name = "mukmoux-ceramic-powder",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64, icon_mipmaps = 4,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-ceramic-powder.png",
+        icon_size = 128,
         category = "ab-crushing",
         subgroup = "fish-breeding",
         energy_required = 5,
@@ -784,8 +785,8 @@ data:extend({
     {
         type = "recipe",
         name = "mukmoux-leather",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64, icon_mipmaps = 4,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-leather.png",
+        icon_size = 128,
         category = "fish-drying-rack",
         subgroup = "fish-breeding",
         energy_required = 5,
@@ -802,8 +803,8 @@ data:extend({
     {
         type = "recipe",
         name = "mukmoux-leather-processing",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64, icon_mipmaps = 4,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-hard-leather.png",
+        icon_size = 128,
         category = "fish-smoking",
         subgroup = "fish-breeding",
         energy_required = 5,
@@ -819,26 +820,26 @@ data:extend({
     {
         type = "recipe",
         name = "mukmoux-sealant",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64, icon_mipmaps = 4,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/fluids/mukmoux-sealant.png",
+        icon_size = 128,
         category = "fish-advanced-extraction",
         subgroup = "fish-breeding",
         energy_required = 5,
         enabled = false,
         ingredients = {
             {type="item", name="mukmoux-fat", amount=2},
-            {type="item", name="mukmoux-mucous", amount=2}
+            {type="fluid", name="mukmoux-mucous", amount=10}
         },
         results = {
-            {type="item", name="mukmoux-sealant", amount=1}
+            {type="fluid", name="mukmoux-sealant", amount=1}
         }
     },
     --Mukmoux Bones
     {
         type = "recipe",
         name = "mukmoux-bones",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64, icon_mipmaps = 4,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-bones.png",
+        icon_size = 128,
         category = "fish-processing",
         subgroup = "fish-breeding",
         energy_required = 5,
@@ -854,8 +855,8 @@ data:extend({
     {
         type = "recipe",
         name = "mukmoux-calcium",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64, icon_mipmaps = 4,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-calcium.png",
+        icon_size = 128,
         category = "ab-crushing",
         subgroup = "fish-breeding",
         energy_required = 5,
