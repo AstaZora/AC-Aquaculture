@@ -120,6 +120,7 @@ data:extend({
     createChemical("coral-refinery", "coral-refining"),
     createChemical("fish-oil-extractor", "fish-extraction"),
     createChemical("fish-oil-refinery", "fish-advanced-extraction"),
+  --createChemical("composite-preparer", "binding-material-production"),
 
     
     createEntity("fish-fillet-machine", "fish-processing"),

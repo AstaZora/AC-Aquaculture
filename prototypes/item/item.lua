@@ -295,7 +295,7 @@ data:extend({
         order = "t[pond-water]",
         stack_size = 100,
         place_as_tile = {
-            result = "water-shallow",
+            result = "pond-water",
             condition_size = 1,
             condition = { "water-tile" }
         }

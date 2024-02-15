@@ -18,7 +18,7 @@ data:extend({
     needs_correction = false,
     build_sound = { filename = "__base__/sound/particles/small-splash-4.ogg" },
     collision_mask = { "ground-tile" },
-    walking_speed_modifier = 1.2,
+    walking_speed_modifier = 0.8,
     layer = 61,
     variants = {
       main = {
@@ -74,7 +74,7 @@ data:extend({
       }
     },
     map_color = { r = 0, g = 0.34, b = 0.6 },
-    pollution_absorption_per_second = 0,
-    vehicle_friction_modifier = 1.2
+    pollution_absorption_per_second = 0.0001,
+    vehicle_friction_modifier = 0.8
   }
 })
