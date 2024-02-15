@@ -442,6 +442,100 @@ data:extend({
             {type="item", name="tin-ore", amount=5, probability=0.5}
         }
     },
+    --AB Compatibility Recipes
+    
+    --Bronze Inserter
+    {
+        type = "recipe",
+        name = "ac-bronze-inserter",
+        category = "advanced-crafting",
+        energy_required = 0.5,
+        ingredients = {
+            {type = "item", name = "wooden-inserter", amount = 1},
+            {type = "item", name = "fiberboard-circuitry", amount = 2},
+            {type = "item", name = "bronze-gear", amount = 3},
+            {type = "fluid", name = "mukmoux-sealant", amount = 20}
+        },
+        result = "bronze-inserter",
+        result_count = 1,
+        enabled = false
+    },
+    --Bronze Long Handed Inserter
+    {
+        type = "recipe",
+        name = "ac-bronze-long-handed-inserter",
+        category = "advanced-crafting",
+        energy_required = 0.5,
+        ingredients = {
+            {type = "item", name = "wooden-inserter", amount = 1},
+            {type = "item", name = "fiberboard-circuitry", amount = 2},
+            {type = "item", name = "bronze-gear", amount = 4},
+            {type = "fluid", name = "mukmoux-sealant", amount = 20}
+        },
+        result = "bronze-long-handed-inserter",
+        result_count = 1,
+        enabled = false
+    },
+    --Bronze Filter Inserter
+    {
+        type = "recipe",
+        name = "ac-bronze-filter-inserter",
+        category = "advanced-crafting",
+        energy_required = 0.5,
+        ingredients = {
+            {type = "item", name = "slow-filter-inserter", amount = 1},
+            {type = "item", name = "advanced-circuit", amount = 2},
+            {type = "item", name = "bronze-gear", amount = 4},
+            {type = "fluid", name = "mukmoux-sealant", amount = 20}
+        },
+        result = "bronze-filter-inserter",
+        result_count = 1,
+        enabled = false
+    },
+    --Bronze Pump
+    {
+        type = "recipe",
+        name = "ac-bronze-pump",
+        category = "crafting",
+        energy_required = 1,
+        ingredients = {{"bronze-gear", 2},{"bronze-pipe", 2}},
+        result = "bronze-pump",
+        result_count = 1,
+        enabled = false
+    },
+    --Bronze Pipe
+    {
+        type = "recipe",
+        name = "ac-bronze-pipe",
+        category = "crafting",
+        energy_required = 1,
+        ingredients = {{"bronze-plate", 1}},
+        result = "bronze-pipe",
+        result_count = 1,
+        enabled = false
+    },
+    --Bronze Pipe to Ground
+    {
+        type = "recipe",
+        name = "ac-bronze-pipe-to-ground",
+        category = "crafting",
+        energy_required = 1,
+        ingredients = {{"bronze-pipe", 5}},
+        result = "pipe-to-ground",
+        result_count = 2,
+        enabled = false
+    },
+    --Bronze Storage Tank
+    {
+        type = "recipe",
+        name = "ac-bronze-storage-tank",
+        category = "crafting",
+        energy_required = 1,
+        ingredients = {{"bronze-plate", 20},{"bronze-pipe", 5}},
+        result = "bronze-storage-tank",
+        result_count = 1,
+        enabled = false
+    },
     
     --Fish Parts
     --Glowfin Trenchers
@@ -705,7 +799,7 @@ data:extend({
         enabled = false,
         ingredients = {
             {type="item", name="mukmoux-fat", amount=5},
-            {type="item", name="mukmoux-egg", amount=5}
+            {type="item", name="mukmoux-egg", amount=2}
         },
         results = {
             {type="fluid", name="mukmoux-mucous", amount=20}
@@ -892,6 +986,7 @@ data:extend({
         ingredients = {{"tin-ore", 2}, {"mukmoux-ceramic-powder", 1}},
         result = "tin-plate",
         result_count = 2,
+        enabled = false
     },
     --Copper Ore
     {
@@ -902,6 +997,7 @@ data:extend({
         ingredients = {{"copper-ore", 2}, {"mukmoux-ceramic-powder", 1}},
         result = "copper-plate",
         result_count = 2,
+        enabled = false
     },
     --Iron Ore
     {
@@ -912,6 +1008,7 @@ data:extend({
         ingredients = {{"iron-ore", 2}, {"mukmoux-ceramic-powder", 1}},
         result = "iron-plate",
         result_count = 2,
+        enabled = false
     },
 })
 

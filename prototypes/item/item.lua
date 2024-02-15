@@ -328,7 +328,91 @@ data:extend({
         
     },
     --Actual Items
-    
+    --Bronze Gear combining mods
+    --Bronze inserters
+    {
+        type = "item",
+        name = "bronze-inserter",
+        icon = "__base__/graphics/icons/inserter.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "inserter",
+        order = "a[bronze-inserter]",
+        place_result = "bronze-inserter",
+        stack_size = 50
+    },
+    --Bronze Long-handed Inserter
+    {
+        type = "item",
+        name = "bronze-long-handed-inserter",
+        icon = "__base__/graphics/icons/long-handed-inserter.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "inserter",
+        order = "b[bronze-long-handed-inserter]",
+        place_result = "bronze-long-handed-inserter",
+        stack_size = 50
+    },
+    --Bronze Filter Inserter
+    {
+        type = "item",
+        name = "bronze-filter-inserter",
+        icon = "__base__/graphics/icons/filter-inserter.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "inserter",
+        order = "c[bronze-filter-inserter]",
+        place_result = "bronze-filter-inserter",
+        stack_size = 50
+    },
+    --Bronze Pump
+    {
+        type = "item",
+        name = "bronze-pump",
+        icon = "__base__/graphics/icons/pump.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "inserter",
+        order = "d[bronze-pump]",
+        place_result = "bronze-pump",
+        stack_size = 50
+    },
+    --Bronze Pipe
+    {
+        type = "item",
+        name = "bronze-pipe",
+        icon = "__AB-Breathe-Easy-Arboretum__/graphics/icons/bronze-pipe.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "inserter",
+        order = "e[bronze-pipe]",
+        place_result = "bronze-pipe",
+        stack_size = 50
+    },
+    --Bronze Pipe to Ground
+    {
+        type = "item",
+        name = "bronze-pipe-to-ground",
+        icon = "__base__/graphics/icons/pipe-to-ground.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "inserter",
+        order = "e[bronze-pipe-to-ground]",
+        place_result = "bronze-pipe-to-ground",
+        stack_size = 50
+    },
+    --Bronze Storage Tank
+    {
+        type = "item",
+        name = "bronze-storage-tank",
+        icon = "__base__/graphics/icons/storage-tank.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "inserter",
+        order = "e[bronze-storage-tank]",
+        place_result = "bronze-storage-tank",
+        stack_size = 50
+    },
     {
         type = "item",
         name = "advanced-circuit",

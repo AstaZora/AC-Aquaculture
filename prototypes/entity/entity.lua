@@ -196,3 +196,55 @@ fish_drill.working_visualisations = nil
 
 -- Finally, add your custom entity to the game
 data:extend({fish_drill})
+
+
+local fast_inserter_copy = table.deepcopy(data.raw["inserter"]["fast-inserter"])
+fast_inserter_copy.name = "bronze-inserter"
+fast_inserter_copy.rotation_speed = 0.033
+fast_inserter_copy.extension_speed = 0.045
+fast_inserter_copy.minable = {mining_time = 0.1, result = "bronze-inserter"}
+
+data:extend({fast_inserter_copy})
+
+local longhanded_inserter_copy = table.deepcopy(data.raw["inserter"]["long-handed-inserter"])
+longhanded_inserter_copy.name = "bronze-long-handed-inserter"
+longhanded_inserter_copy.rotation_speed = 0.025
+longhanded_inserter_copy.extension_speed = 0.075
+longhanded_inserter_copy.minable = {mining_time = 0.1, result = "bronze-long-handed-inserter"}
+
+data:extend({longhanded_inserter_copy})
+
+local bronze_filter_inserter = table.deepcopy(data.raw["inserter"]["filter-inserter"])
+bronze_filter_inserter.name = "bronze-filter-inserter"
+bronze_filter_inserter.rotation_speed = 0.03
+bronze_filter_inserter.extension_speed = 0.07
+bronze_filter_inserter.filter_count = 3
+bronze_filter_inserter.minable = {mining_time = 0.1, result = "bronze-filter-inserter"}
+
+data:extend({bronze_filter_inserter})
+
+local bronze_pipe_to_ground = table.deepcopy(data.raw["pipe-to-ground"]["pipe-to-ground"])
+bronze_pipe_to_ground.name = "bronze-pipe-to-ground"
+bronze_pipe_to_ground.minable = {mining_time = 0.1, result = "bronze-pipe-to-ground"}
+
+data:extend({bronze_pipe_to_ground})
+
+local bronze_pump = table.deepcopy(data.raw["pump"]["pump"])
+bronze_pump.name = "bronze-pump"
+bronze_pump.pumping_speed = 200
+bronze_pump.minable = {mining_time = 0.1, result = "bronze-pump"}
+
+data:extend({bronze_pump})
+
+local bronze_storage_tank = table.deepcopy(data.raw["storage-tank"]["storage-tank"])
+bronze_storage_tank.name = "bronze-storage-tank"
+bronze_storage_tank.fluid_box.base_area = 80
+bronze_storage_tank.minable = {mining_time = 0.1, result = "bronze-storage-tank"}
+
+data:extend({bronze_storage_tank})
+
+local bronze_pipe = table.deepcopy(data.raw["pipe"]["pipe"])
+bronze_pipe.name = "bronze-pipe"
+bronze_pipe.minable = {mining_time = 0.1, result = "bronze-pipe"}
+
+data:extend({bronze_pipe})

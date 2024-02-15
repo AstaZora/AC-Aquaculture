@@ -412,5 +412,89 @@ data:extend({
         },
         order = "c-a"
     },
+    --Bronze Inserter
+    {
+        type = "technology",
+        name = "ac-bronze-inserters",
+        icon = "__base__/graphics/technology/fast-inserter.png",
+        icon_size = 256, icon_mipmaps = 4,
+        prerequisites = {"ac-fast-transport-belts", "ac-advanced-circuitry"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "ac-bronze-inserter",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "ac-bronze-long-handed-inserter",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "ac-bronze-filter-inserter",
+            }
+        },
+        unit = {
+            count = 600,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 60,
+        },
+        order = "c-a"
+    },
+    --Advanced Ore Refining
+    {
+        type = "technology",
+        name = "ac-advanced-ore-refining",
+        icon = "__base__/graphics/technology/advanced-material-processing.png",
+        icon_size = 256, icon_mipmaps = 4,
+        prerequisites = {"ac-fast-transport-belts","ac-organic-materials-1", "ac-bronze-fluid-handling"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "ac-iron-ore-refining",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "ac-copper-ore-refining",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "ac-tin-ore-refining"
+            },
+        },
+        unit = {
+            count = 1250,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 60,
+        },
+        order = "c-a"
+    },
+    --Bronze Fluid Handling
+    {
+        type = "technology",
+        name = "ac-bronze-fluid-handling",
+        icon = "__base__/graphics/technology/fluid-handling.png",
+        icon_size = 256, icon_mipmaps = 4,
+        prerequisites = {"ab-ore-filtration-2"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "ac-bronze-pipe",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "ac-bronze-pipe-to-ground",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "ac-bronze-storage-tank"
+            },
+        },
+        unit = {
+            count = 500,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 60,
+        },
+        order = "c-a"
+    },
 })
   
