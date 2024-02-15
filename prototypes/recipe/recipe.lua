@@ -300,6 +300,47 @@ data:extend({
         },
         result = "advanced-circuit"
     },
+    --leather Transport Belts
+    {
+        type = "recipe",
+        name = "leather-transport-belt",
+        category = "advanced-crafting",
+        enabled = false,
+        energy_required = 2,
+        ingredients = {
+            {type="item", name="mukmoux-hard-leather", amount=2},
+            {type="item", name="bronze-gear", amount=4},
+            {type="fluid", name="lubricant", amount=5}
+        },
+        result = "fast-transport-belt"
+    },
+    {
+        type = "recipe",
+        name = "leather-transport-belt-to-ground",
+        category = "advanced-crafting",
+        enabled = false,
+        energy_required = 2,
+        ingredients = {
+            {type="item", name="fast-transport-belt", amount=4},
+            {type="item", name="bronze-gear", amount=5},
+            {type="item", name="iron-plate", amount=5}
+        },
+        result = "fast-underground-belt"
+    },
+    {
+        type = "recipe",
+        name = "leather-splitter",
+        category = "advanced-crafting",
+        enabled = false,
+        energy_required = 2,
+        ingredients = {
+            {type="item", name="advanced-circuit", amount=2},
+            {type="item", name="bronze-gear", amount=5},
+            {type="item", name="fast-transport-belt", amount=10}
+        },
+        result = "fast-splitter"
+    },
+
     -- recipes
     {
         type = "recipe",
@@ -379,6 +420,28 @@ data:extend({
     },
     result = "constant-combinator"
 },
+
+--Ore Powder Refining
+    {
+        type = "recipe",
+        name = "ac-mixed-ore-refining",
+        icon = "__base__/graphics/icons/stone.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "ore-preparation",
+        subgroup = "ab-ore-refinery",
+        energy_required = 10,
+        enabled = false,
+        ingredients = {
+            {type="item", name="mixed-ore-powder", amount=5},
+            {type="item", name="mukmoux-polishing-stone", amount=1}
+        },
+        results = {
+            {type="item", name="stone", amount=2},
+            {type="item", name="iron-ore", amount=5, probability=0.5},
+            {type="item", name="copper-ore", amount=5, probability=0.5},
+            {type="item", name="tin-ore", amount=5, probability=0.5}
+        }
+    },
     
     --Fish Parts
     --Glowfin Trenchers
@@ -576,7 +639,279 @@ data:extend({
             {type="item", name="glowfin-enhancer", amount=5}
         }
     },
-    
+    --Mukmoux Processing Chain
+    --Mukmoux Filleting
+    {
+        type = "recipe",
+        name = "mukmoux-filleting",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/fillet.png",
+        icon_size = 128,
+        category = "fish-processing",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="mukmoux", amount=1}
+        },
+        results = {
+            {type="item", name="mukmoux-fillet", amount=20},
+            {type = "item", name = "mukmoux-egg", amount=1, probability=0.1}
+        }
+    },
+    --Mukmoux Packing
+    {
+        type = "recipe",
+        name = "mukmoux-packing",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        category = "fish-packing",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="mukmoux-fillet", amount=20}
+        },
+        results = {
+            {type="item", name="mukmoux-package", amount=1}
+        }
+    },
+    --Mukmoux Package Processing
+    {
+        type = "recipe",
+        name = "mukmoux-package-sorting",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        category = "fish-sorting",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="mukmoux-package", amount=1}
+        },
+        results = {
+            {type="item", name = "mukmoux-hide", amount = 10},
+            {type = "item", name = "mukmoux-fat", amount = 5},
+        }
+    },
+    --Mukmoux Fat Processing
+    {
+        type = "recipe",
+        name = "mukmoux-fat-processing",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-smoking",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="mukmoux-fat", amount=5}
+        },
+        results = {
+            {type="item", name="mukmoux-mucous", amount=10}
+        }
+    },
+    --Mukmoux Stone Gathering
+    {
+        type = "recipe",
+        name = "mukmoux-stone-gathering",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-drying-rack",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="mukmoux", amount=5},
+            {type="item", name="mukmoux-fat", amount=5}
+    },
+        results = {
+            {type="item", name="mukmoux-stones", amount=10}
+        }
+    },
+    --Mukmoux Stone Polishing
+    {
+        type = "recipe",
+        name = "mukmoux-stone-polishing",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "ore-preparation",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="mukmoux-stones", amount=4},
+            {type="item", name="mukmoux-mucous", amount=2}
+        },
+        results = {
+            {type="item", name="mukmoux-polishing-stone", amount=4}
+        }
+    },
+    --Mukmoux Stone Grinding
+    {
+        type = "recipe",
+        name = "mukmoux-stone-grinding",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "ab-crushing",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="mukmoux-polishing-stone", amount=4}
+        },
+        results = {
+            {type="item", name="mukmoux-ground-polishing-stone", amount=8}
+        }
+    },
+    --Mukmoux Ceramic Powder
+    {
+        type = "recipe",
+        name = "mukmoux-ceramic-powder",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "ab-crushing",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="mukmoux-ground-polishing-stone", amount=4}
+        },
+        results = {
+            {type="item", name="mukmoux-ceramic-powder", amount=8}
+        }
+    },
+    --Mukmoux Leather
+    {
+        type = "recipe",
+        name = "mukmoux-leather",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-drying-rack",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="mukmoux-hide", amount=4},
+            {type="item", name="mukmoux-polishing-stone", amount=1}
+        },
+        results = {
+            {type="item", name="mukmoux-leather", amount=1}
+        }
+    },
+    --Mukmoux Leather Processing
+    {
+        type = "recipe",
+        name = "mukmoux-leather-processing",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-smoking",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="mukmoux-leather", amount=1}
+        },
+        results = {
+            {type="item", name="mukmoux-hard-leather", amount=2}
+        }
+    },
+    --Mukmoux Sealant
+    {
+        type = "recipe",
+        name = "mukmoux-sealant",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-advanced-extraction",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="mukmoux-fat", amount=2},
+            {type="item", name="mukmoux-mucous", amount=2}
+        },
+        results = {
+            {type="item", name="mukmoux-sealant", amount=1}
+        }
+    },
+    --Mukmoux Bones
+    {
+        type = "recipe",
+        name = "mukmoux-bones",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-processing",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="mukmoux-fillet", amount=5}
+        },
+        results = {
+            {type="item", name="mukmoux-bones", amount=10}
+        }
+    },
+    --Mukmoux Calcium
+    {
+        type = "recipe",
+        name = "mukmoux-calcium",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "ab-crushing",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="mukmoux-bones", amount=10}
+        },
+        results = {
+            {type="item", name="mukmoux-calcium", amount=5}
+        }
+    },
+    --[[Incomeplete Fish Egg Fuel Recipe
+    --Fish Egg Fuel
+    {
+        type = "recipe",
+        name = "fish-egg-fuel",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-advanced-extraction",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="mukmoux-calcium", amount=5},
+]]
+    --Combined Fish Recipes
+    --Tin Ore
+    {
+        type = "recipe",
+        name = "ac-tin-ore-refining",
+        category = "ab-ore-refining",
+        energy_required = 8,
+        ingredients = {{"tin-ore", 2}, {"mukmoux-ceramic-powder", 1}},
+        result = "tin-plate",
+        result_count = 2,
+    },
+    --Copper Ore
+    {
+        type = "recipe",
+        name = "ac-copper-ore-refining",
+        category = "ab-ore-refining",
+        energy_required = 8,
+        ingredients = {{"copper-ore", 2}, {"mukmoux-ceramic-powder", 1}},
+        result = "copper-plate",
+        result_count = 2,
+    },
+    --Iron Ore
+    {
+        type = "recipe",
+        name = "ac-iron-ore-refining",
+        category = "ab-ore-refining",
+        energy_required = 8,
+        ingredients = {{"iron-ore", 2}, {"mukmoux-ceramic-powder", 1}},
+        result = "iron-plate",
+        result_count = 2,
+    },
 })
 
 local fishTypes = {"glowfin-trenchers", "mukmoux", "neon-nocturne", "silverscale-glider", "spiral-shellfish", "silent-drifter", "twilight-tetra", "starfin-darters", "stream-sifter"}

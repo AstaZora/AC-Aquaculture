@@ -4,7 +4,7 @@ data:extend({
       name = "ac-fish-harvesting",
       icon = "__base__/graphics/technology/automation-1.png",
       icon_size = 256, icon_mipmaps = 4,
-      prerequisites = {"ab-biocomposite-materials", "ab-basic-ore-clarification"},  --Reference the technology from the Arboretum mod
+      prerequisites = {"ab-biocomposite-materials"},  --Reference the technology from the Arboretum mod
       effects = {
         {
             type = "unlock-recipe",
@@ -12,9 +12,9 @@ data:extend({
         },
       },
       unit = {
-        count = 150,
+        count = 1000,
         ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
-        time = 30,
+        time = 60,
       },
       order = "c-a"
     },
@@ -23,7 +23,7 @@ data:extend({
         name = "ac-fish-breeding",
         icon = "__base__/graphics/technology/automation-1.png",
         icon_size = 256, icon_mipmaps = 4,
-        prerequisites = {"ac-fish-harvesting", "ab-biocomposite-materials", "ab-basic-ore-clarification"},  --Reference the technology from the Arboretum mod
+        prerequisites = {"ac-fish-harvesting", "ab-biocomposite-materials"},  --Reference the technology from the Arboretum mod
         effects = {
           {
               type = "unlock-recipe",
@@ -235,6 +235,174 @@ data:extend({
             {
                 type = "unlock-recipe",
                 recipe = "glowfin-enhancer"
+            }
+        },
+        unit = {
+            count = 600,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 60,
+        },
+        order = "c-a"
+    },
+    --Mukmoux Tech Tree
+    --Mukmoux Breeding
+    {
+        type = "technology",
+        name = "ac-mukmoux-filleting",
+        icon = "__base__/graphics/technology/automation-1.png",
+        icon_size = 256, icon_mipmaps = 4,
+        prerequisites = {"ac-fish-harvesting", "ac-fish-breeding"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "mukmoux-filleting",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "mukmoux-packing",
+            }
+        },
+        unit = {
+            count = 300,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 30,
+        },
+        order = "c-a"
+    },
+    {
+        type = "technology",
+        name = "ac-mukmoux-package-sorting",
+        icon = "__base__/graphics/technology/automation-1.png",
+        icon_size = 256, icon_mipmaps = 4,
+        prerequisites = {"ac-mukmoux-filleting"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "mukmoux-package-sorting",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "mukmoux-fat-processing",
+            }
+        },
+        unit = {
+            count = 300,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 30,
+        },
+        order = "c-a"
+    },
+    {
+        type = "technology",
+        name = "ac-mukmoux-processing-1",
+        icon = "__base__/graphics/technology/automation-1.png",
+        icon_size = 256, icon_mipmaps = 4,
+        prerequisites = {"ac-mukmoux-package-sorting"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "mukmoux-stone-gathering",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "mukmoux-stone-polishing",
+            }
+        },
+        unit = {
+            count = 300,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 30,
+        },
+        order = "c-a"
+    },
+    {
+        type = "technology",
+        name = "ac-mukmoux-processing-2",
+        icon = "__base__/graphics/technology/automation-1.png",
+        icon_size = 256, icon_mipmaps = 4,
+        prerequisites = {"ac-mukmoux-processing-1"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "mukmoux-leather",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "mukmoux-leather-processing",
+            }
+        },
+        unit = {
+            count = 300,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 30,
+        },
+        order = "c-a"
+    },
+    {
+        type = "technology",
+        name = "ac-organic-materials-1",
+        icon = "__base__/graphics/technology/automation-1.png",
+        icon_size = 256, icon_mipmaps = 4,
+        prerequisites = {"ac-mukmoux-filleting"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "mukmoux-ceramic-powder",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "mukmoux-sealant"
+            }
+        },
+        unit = {
+            count = 300,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 30,
+        },
+        order = "c-a"
+    },
+    {
+        type = "technology",
+        name = "ac-organic-materials-2",
+        icon = "__base__/graphics/technology/automation-1.png",
+        icon_size = 256, icon_mipmaps = 4,
+        prerequisites = {"ac-organic-materials-1"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "mukmoux-bones",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "mukmoux-calcium",
+            }
+        },
+        unit = {
+            count = 300,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 30,
+        },
+        order = "c-a"
+    },
+    --Fast Transport Belts
+    {
+        type = "technology",
+        name = "ac-fast-transport-belts",
+        icon = "__base__/graphics/technology/automation-1.png",
+        icon_size = 256, icon_mipmaps = 4,
+        prerequisites = {"ac-mukmoux-processing-2", "ac-advanced-circuitry"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "leather-transport-belt",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "leather-transport-belt-to-ground",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "leather-splitter",
             }
         },
         unit = {

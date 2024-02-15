@@ -112,17 +112,6 @@ local function createOilRefinery(name, category)
 end
 
 data:extend({
-    createChemical("water-separator", "water-production"),
-    createChemical("fish-hatchery", "fish-hatchery"),
-    createChemical("algae-farm", "algae-growth"),
-    createChemical("fish-drying-rack", "fish-drying-rack"),
-    createChemical("fish-smoker", "fish-smoking"),
-    createChemical("coral-refinery", "coral-refining"),
-    createChemical("fish-oil-extractor", "fish-extraction"),
-    createChemical("fish-oil-refinery", "fish-advanced-extraction"),
-  --createChemical("composite-preparer", "binding-material-production"),
-
-    
     createEntity("fish-fillet-machine", "fish-processing"),
     createEntity("fish-sorter", "fish-sorting"),
     createEntity("fish-packer", "fish-packing"),
@@ -136,6 +125,20 @@ data:extend({
     createEntity("coral-harvester", "coral-harvesting"),
     createEntity("coral-planter", "coral-planting"),
     createEntity("marine-research-lab", "biology-research"),
+
+    createChemical("water-separator", "water-production"),
+    createChemical("fish-hatchery", "fish-hatchery"),
+    createChemical("algae-farm", "algae-growth"),
+    createChemical("fish-drying-rack", "fish-drying-rack"),
+    createChemical("coral-refinery", "coral-refining"),
+    createChemical("fish-oil-extractor", "fish-extraction"),
+    createChemical("fish-oil-refinery", "fish-advanced-extraction"),
+  --createChemical("composite-preparer", "binding-material-production"),
+
+    createFurnace("ore-conditioner", "pre-smelting"),
+    createFurnace("fish-smoker", "fish-smoking"),
+
+    createCentrifuge("enhanced-ore-polisher", "ore-preparation"),
 })
 
 

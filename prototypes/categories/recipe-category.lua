@@ -88,6 +88,14 @@ data:extend({
         name = "fish-advanced-extraction"
     },
     {
+        type = "recipe-category",
+        name = "pre-smelting"
+    },
+    {
+        type = "recipe-category",
+        name = "ore-preparation"
+    },
+    {
         type = "item-group",
         name = "fish-hatchery",
         order = "z",

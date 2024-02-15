@@ -8,7 +8,9 @@ require("prototypes.technologies.technologies")
 require("prototypes.categories.fuel-category")
 
 
-
+data.raw["recipe"]["iron-plate"].enabled = false
+data.raw["recipe"]["copper-plate"].enabled = false
+data.raw["recipe"]["steel-plate"].enabled = false
 data.raw["fish"]["fish"].autoplace = nil
 
 data:extend({
