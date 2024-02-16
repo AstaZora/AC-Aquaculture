@@ -303,7 +303,7 @@ script.on_event(defines.events.on_tick, function(event)
     end
 end)]]
 
--- Initialize the global table BEST FUNCTIONAL CODE
+--[[ Initialize the global table BEST FUNCTIONAL CODE
 script.on_init(function()
     global.fish_breeders = {}
 end)
@@ -386,4 +386,164 @@ function extract_fish_name(recipe_name)
           end
       end
   end)
-  
+  ]]
+
+-- Define the list of entities to track
+local entitiesToTrack = {
+    ["fish-hatchery"] = true,
+    ["fish-drill"] = true,
+    -- Add other entities you want to track as needed
+}
+
+-- Initialize global variables
+script.on_init(function()
+    global.fish_breeders = {}
+    global.process_queue = {}  -- Queue for newly placed entities
+    global.lastProcessedIndex = nil
+    global.resetProcessing = false
+    global.last_breeder_index = 1  -- For optimized periodic check
+    -- game.print("Script initialized.")
+end)
+
+-- Ensure global variables are updated for existing saves
+script.on_configuration_changed(function()
+    if not global.process_queue then
+        global.process_queue = {}
+        -- game.print("Updated global: process_queue initialized.")
+    end
+    if not global.last_breeder_index then
+        global.last_breeder_index = 1
+        -- game.print("Updated global: last_breeder_index initialized.")
+    end
+    -- Initialize or update any other necessary global variables here
+end)
+
+-- Function to add entities to the processing queue if they match the criteria
+local function addToProcessQueueIfRelevant(entity)
+    if entitiesToTrack[entity.name] then
+        table.insert(global.process_queue, entity)
+        -- game.print("Relevant entity added to process queue: " .. entity.name)
+    else
+        -- game.print("Ignored entity: " .. entity.name)  -- Optional, for debugging
+    end
+end
+
+-- Event handlers for adding entities to the queue
+script.on_event(defines.events.on_built_entity, function(event)
+    local entity = event.created_entity
+    if entity and entity.valid then
+        addToProcessQueueIfRelevant(entity)
+    end
+end)
+
+script.on_event(defines.events.on_robot_built_entity, function(event)
+    local entity = event.created_entity
+    if entity and entity.valid then
+        addToProcessQueueIfRelevant(entity)
+    end
+end)
+
+-- Process a portion of the queue each tick
+local function processQueue()
+    local process_per_tick = 5  -- Number of entities to process each tick; adjustable for performance
+    for i = 1, math.min(process_per_tick, #global.process_queue) do
+        local entity = table.remove(global.process_queue, 1)
+        if entity and entity.valid then
+            -- Here, futureproof. Might be able to add more entities for various purposes
+            table.insert(global.fish_breeders, entity)  -- Add to fish breeders for periodic processing
+            -- game.print("Entity processed and added to fish breeders: " .. entity.name)
+        end
+    end
+end
+
+-- Function to remove an entity from a list
+local function removeFromList(entity, list)
+    for i, listedEntity in ipairs(list) do
+        if listedEntity == entity then
+            table.remove(list, i)
+            -- game.print("Entity removed from list: " .. entity.name)
+            return true
+        end
+    end
+    return false
+end
+
+-- Event handler for entity removal
+local function onEntityRemoved(event)
+    local entity = event.entity
+    if entity and entity.valid then
+        local removedFromQueue = removeFromList(entity, global.process_queue)
+        if not removedFromQueue then
+            removeFromList(entity, global.fish_breeders)
+        end
+        -- game.print("Entity removal handled: " .. entity.name)
+    end
+end
+
+-- Register the removal handler with relevant events
+script.on_event(defines.events.on_entity_died, onEntityRemoved)
+script.on_event(defines.events.on_robot_mined_entity, onEntityRemoved)
+script.on_event(defines.events.on_player_mined_entity, onEntityRemoved)
+
+-- Function to extract fish name from the recipe
+function extract_fish_name(recipe_name)
+    local match = string.match(recipe_name, "^ac%-breed%-(.-)%-egg$") or string.match(recipe_name, "^ac%-breed%-(.-)$")
+    if match then
+        -- game.print("Fish name extracted: " .. match)
+    else
+        -- game.print("Failed to extract fish name from recipe: " .. recipe_name)
+    end
+    return match
+end
+
+-- Optimized periodic check for fish breeding in fish hatcheries
+script.on_event(defines.events.on_tick, function(event)
+    processQueue()  -- Make sure the queue of new entities is processed
+    
+    if event.tick % 60 == 0 then
+        -- game.print("Starting periodic check for fish breeding...")
+        
+        for _, breeder in pairs(global.fish_breeders) do
+            if breeder.valid then
+                local input_inventory_index = defines.inventory.chemical_plant_output or defines.inventory.furnace_result
+                local inventory = breeder.get_inventory(input_inventory_index)
+                if inventory then
+                    local currentRecipe = breeder.get_recipe()
+                    if currentRecipe then
+                        local fishType = extract_fish_name(currentRecipe.name)
+                        if fishType then
+                            local fishCount = inventory.get_item_count(fishType)
+                            
+                            if fishCount >= 5 then
+                                local groupsOfFive = math.floor(fishCount / 5)
+                                local spawnCount = groupsOfFive
+                                local directionVector = {{0, -3}, {3, 0}, {0, 3}, {-3, 0}} -- N, E, S, W
+                                local direction = breeder.direction / 2
+                                local spawnPosition = {
+                                    x = breeder.position.x + directionVector[direction + 1][1],
+                                    y = breeder.position.y + directionVector[direction + 1][2]
+                                }
+                                
+                                local tile = breeder.surface.get_tile(spawnPosition.x, spawnPosition.y)
+                                if tile.valid and (tile.name == "water" or tile.name == "deepwater" or tile.name == "water-shallow" or tile.name == "pond-water") then
+                                    for i = 1, spawnCount do
+                                        breeder.surface.create_entity({
+                                            name = fishType,
+                                            position = spawnPosition,
+                                            amount = 1
+                                        })
+                                    end
+                                    -- Remove the used fish items from the inventory
+                                    inventory.remove({name = fishType, count = spawnCount * 5})
+                                    -- game.print("Spawned " .. spawnCount .. " fish at breeder: " .. breeder.name)
+                                end
+                            end
+                        else
+                            -- game.print("Failed to find fish type for recipe: " .. currentRecipe.name)
+                        end
+                    end
+                end
+            end
+        end
+    end
+end)
