@@ -89,6 +89,24 @@ local function createCentrifuge(name, category)
     base.crafting_categories = {category}
     base.crafting_speed = 1
     base.energy_usage = "350kW"
+    base.fluid_boxes = {
+        {
+            production_type = "input",
+            pipe_picture = assembler2pipepictures(),
+            pipe_covers = pipecoverspictures(),
+            base_area = 10,
+            base_level = -1,
+            pipe_connections = {{ type="input", position = {0, -2} }}
+        },
+        {
+            production_type = "output",
+            pipe_picture = assembler2pipepictures(),
+            pipe_covers = pipecoverspictures(),
+            base_area = 10,
+            base_level = 1,
+            pipe_connections = {{ type="output", position = {0, 2} }}
+        }
+    }
     -- Other properties to adjust...
     return base
 end

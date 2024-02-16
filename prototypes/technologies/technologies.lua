@@ -352,6 +352,10 @@ data:extend({
             {
                 type = "unlock-recipe",
                 recipe = "mukmoux-sealant"
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "mukmoux-stone-grinding"
             }
         },
         unit = {
@@ -488,6 +492,10 @@ data:extend({
                 type = "unlock-recipe",
                 recipe = "ac-bronze-storage-tank"
             },
+            {
+                type = "unlock-recipe",
+                recipe = "ac-bronze-pump"
+            }
         },
         unit = {
             count = 500,

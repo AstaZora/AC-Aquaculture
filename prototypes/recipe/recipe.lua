@@ -274,6 +274,19 @@ data:extend({
         },
         result = "marine-research-lab"
     },
+    --Enhanced Ore Polisher
+    {
+        type = "recipe",
+        name = "enhanced-ore-polisher",
+        enabled = true,
+        energy_required = 20,
+        ingredients = {
+            {"processing-unit", 5},
+            {"lab", 1},
+            {"steel-plate", 20}
+        },
+        result = "enhanced-ore-polisher"
+    },    
     --Pond Water
     {
         type = "recipe",
@@ -793,13 +806,13 @@ data:extend({
         name = "mukmoux-fat-processing",
         icon = "__AC-Aquaculture__/graphics/icons/fish/fluids/mukmoux-mucous.png",
         icon_size = 128,
-        category = "fish-smoking",
+        category = "fish-drying-rack",
         subgroup = "fish-breeding",
         energy_required = 5,
         enabled = false,
         ingredients = {
             {type="item", name="mukmoux-fat", amount=5},
-            {type="item", name="mukmoux-egg", amount=2}
+            {type="item", name="mukmoux-egg", amount=20}
         },
         results = {
             {type="fluid", name="mukmoux-mucous", amount=20}
