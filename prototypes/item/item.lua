@@ -327,6 +327,19 @@ data:extend({
         }
         
     },
+    --Fish Net
+    {
+        type = "item",
+        name = "fish-net",
+        icon = "__AC-Aquaculture__/graphics/entity/fish-net.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        category = "water-production",
+        subgroup = "terrain",
+        order = "t[fish-net]",
+        place_result = "fish-net",
+        stack_size = 10,
+    },
     --Actual Items
     --Bronze Gear combining mods
     --Bronze inserters

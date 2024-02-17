@@ -464,6 +464,10 @@ data:extend({
                 type = "unlock-recipe",
                 recipe = "ac-tin-ore-refining"
             },
+            {
+                type = "unlock-recipe",
+                recipe = "ab-ore-refinery"
+            },
         },
         unit = {
             count = 1250,

@@ -299,7 +299,19 @@ data:extend({
         results = {
             {type = "item", name="pond-water", amount=1}
         }
-
+    },
+    --Fish Net
+    {
+        type = "recipe",
+        name = "ac-fish-net",
+        enabled = true,
+        energy_required = 5,
+        ingredients = {
+            {"wood", 5},
+            {"iron-stick", 5},
+            {"copper-cable", 5} -- Update this later to be something made from fish, like fish rope or fibers?
+        },
+        result = "fish-net"
     },
     {
         type = "recipe",
@@ -938,7 +950,7 @@ data:extend({
             {type="fluid", name="mukmoux-mucous", amount=10}
         },
         results = {
-            {type="fluid", name="mukmoux-sealant", amount=1}
+            {type="fluid", name="mukmoux-sealant", amount=20}
         }
     },
     --Mukmoux Bones
