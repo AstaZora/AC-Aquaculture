@@ -144,17 +144,6 @@ local fishTypes = {
     -- Add all your fish types here
 }
 
-local function isFish(itemName)
-    game.print("Checking if " .. itemName .. " is a fish")
-    for _, fishName in pairs(fishTypes) do
-        if itemName == fishName then
-            return true
-        end
-    end
-    return false
-end
-
-
 -- Optimized periodic check for fish breeding in fish hatcheries
 script.on_event(defines.events.on_tick, function(event)
     -- Continue processing the queue of new entities as before
@@ -180,13 +169,21 @@ script.on_event(defines.events.on_tick, function(event)
                             if fishCount >= 5 then
                                 local groupsOfFive = math.floor(fishCount / 5)
                                 local spawnCount = groupsOfFive
-                                local directionVector = {{0, -3}, {3, 0}, {0, 3}, {-3, 0}}
-                                local direction = breeder.direction / 2
+                                -- Corrected direction vector to ensure spawning in front of the machine
+                                local centeredDirectionVector = {
+                                    {0, 2.5},  -- North: Move up from the center top tile
+                                    {-2.5, 0},   -- East: Move right from the center right tile
+                                    {0, -2.5},   -- South: Move down from the center bottom tile
+                                    {2.5, 0}   -- West: Move left from the center left tile
+                                }  -- Adjusted based on Factorio's direction system
+
+                                -- Calculate spawn position using the corrected direction vector
+                                local directionIndex = breeder.direction / 2 + 1  -- Ensuring correct index and wrapping
+                                local spawnDirection = centeredDirectionVector[directionIndex]
                                 local spawnPosition = {
-                                    x = breeder.position.x + directionVector[direction + 1][1],
-                                    y = breeder.position.y + directionVector[direction + 1][2]
+                                    x = breeder.position.x + spawnDirection[1],
+                                    y = breeder.position.y + spawnDirection[2]
                                 }
-                                
                                 local tile = breeder.surface.get_tile(spawnPosition.x, spawnPosition.y)
                                 if tile.valid and (tile.name == "water" or tile.name == "deepwater" or tile.name == "water-shallow" or tile.name == "pond-water") then
                                     for i = 1, spawnCount do
@@ -246,24 +243,6 @@ function checkFishNets()
     end
     --game.print("Fish net checking completed.")
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 --[[ This function sets all evolution factors to zero.
