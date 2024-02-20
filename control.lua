@@ -244,7 +244,6 @@ function checkFishNets()
     --game.print("Fish net checking completed.")
 end
 
-
 --[[ This function sets all evolution factors to zero.
 local function disable_evolution()
     game.map_settings.enemy_evolution.time_factor = 0
