@@ -141,6 +141,7 @@ end
 local fishTypes = {
     "mukmoux",
     "glowfin-trenchers",
+    "silverscale-glider"
     -- Add all your fish types here
 }
 

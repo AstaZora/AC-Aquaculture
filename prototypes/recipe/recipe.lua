@@ -265,12 +265,12 @@ data:extend({
     {
         type = "recipe",
         name = "marine-research-lab",
-        enabled = true,
+        enabled = false,
         energy_required = 40,
         ingredients = {
-            {"processing-unit", 5},
+            {"glowfin-enhancer", 5},
             {"lab", 1},
-            {"steel-plate", 20}
+            {"bronze-plate", 20}
         },
         result = "marine-research-lab"
     },
@@ -462,9 +462,9 @@ data:extend({
         },
         results = {
             {type="item", name="stone", amount=2},
-            {type="item", name="iron-ore", amount=5, probability=0.5},
-            {type="item", name="copper-ore", amount=5, probability=0.5},
-            {type="item", name="tin-ore", amount=5, probability=0.5}
+            {type="item", name="iron-ore", amount=5},
+            {type="item", name="copper-ore", amount=5},
+            {type="item", name="tin-ore", amount=5}
         }
     },
     --AB Compatibility Recipes
@@ -987,7 +987,142 @@ data:extend({
             {type="item", name="mukmoux-calcium", amount=5}
         }
     },
-    --[[Incomeplete Fish Egg Fuel Recipe
+    --Silverscale Glider
+    --Processing
+    {
+        type = "recipe",
+        name = "silverscale-glider-filleting",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/fillet.png",
+        icon_size = 128,
+        category = "fish-processing",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="silverscale-glider", amount=1}
+        },
+        results = {
+            {type="item", name="silverscale-glider-fillet", amount=4},
+            {type="fluid", name="silverscale-oil", amount=5}
+        }
+    },
+    {
+        type = "recipe",
+        name = "silverscale-glider-packing",
+        icon = "__base__/graphics/icons/wooden-chest.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-packing",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="silverscale-glider-fillet", amount=20}
+        },
+        results = {
+            {type="item", name="silverscale-glider-package", amount=1}
+        }
+    },
+    {
+        type = "recipe",
+        name = "silverscale-glider-package-sorting",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/silverscale-glider-scales.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-sorting",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="silverscale-glider-package", amount=1}
+        },
+        results = {
+            {type="item", name="silverscale-glider-scales", amount=5},
+        }
+    },
+    --silverscale Glider Oil extraction
+    {
+        type = "recipe",
+        name = "silverscale-glider-oil-extraction",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/fluids/silverscale-oil.png",
+        icon_size = 128,
+        category = "fish-advanced-extraction",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="silverscale-glider-fillet", amount=5}
+        },
+        results = {
+            {type="fluid", name="silverscale-oil", amount=10}
+        }
+    },
+    {
+        type = "recipe",
+        name = "silverscale-glider-gel-extraction",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/silverscale-glider-gel.png",
+        icon_size = 128,
+        category = "fish-advanced-extraction",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="fluid", name="silverscale-oil", amount=10},
+            {type = "fluid", name = "water", amount = 40}
+        },
+        results = {
+            {type="item", name="silverscale-glider-gel", amount=5},
+            {type = "fluid", name = "steam", amount = 80}
+        }
+    },
+    {
+        type = "recipe",
+        name = "silverscale-glider-scale-refinement",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/silverscale-glider-scales.png",
+        icon_size = 128,
+        category = "fish-sorting",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="silverscale-glider-scales", amount=5},
+            {type="item", name="silverscale-glider-gel", amount=1}
+        },
+        results = {
+            {type="item", name="refined-silverscale", amount=1}
+        }
+    },
+    {
+        type = "recipe",
+        name = "silverscale-muscle-processing",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/silverscale-muscle.png",
+        icon_size = 128,
+        category = "fish-processing",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="silverscale-glider-fillet", amount=4}
+        },
+        results = {
+            {type="item", name="silverscale-glider-muscle", amount=2}
+        }
+    },
+    {
+        type = "recipe",
+        name = "muscle-fiber-twining",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/entwined-muscles.png",
+        icon_size = 128,
+        category = "fish-extraction",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="silverscale-glider-muscle", amount=5}
+        },
+        results = {
+            {type="item", name="twined-muscle-fiber", amount=1}
+        }
+    },
+    --Incomeplete Fish Egg Fuel Recipe
     --Fish Egg Fuel
     {
         type = "recipe",
@@ -997,10 +1132,74 @@ data:extend({
         category = "fish-advanced-extraction",
         subgroup = "fish-breeding",
         energy_required = 5,
+        enabled = true,
+        ingredients = {
+            {type="item", name="mukmoux-calcium", amount=20},
+            {type="fluid", name="glowfin-oil", amount=20},
+            {type="item", name="silverscale-glider-gel", amount=5}
+        },
+        results = {
+            {type="item", name="fish-egg-fuel", amount=5}
+        }
+    },
+    --Sciences
+    --Fish Science Pack
+    {
+        type = "recipe",
+        name = "fish-biomass-pack",
+        icon = "__base__/graphics/icons/chemical-science-pack.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "biology-research",
+        subgroup = "fish-breeding",
+        energy_required = 5,
         enabled = false,
         ingredients = {
-            {type="item", name="mukmoux-calcium", amount=5},
-]]
+            {type="item", name="glowfin-trenchers-fillet", amount=50},
+            {type="item", name="mukmoux-fillet", amount=50},
+            {type="item", name="silverscale-glider-fillet", amount=50}
+        },
+        results = {
+            {type="item", name="fish-biomass-pack", amount=1}
+        }
+    },
+    --Fish Science Pack 2
+    {
+        type = "recipe",
+        name = "advanced-biology-pack",
+        icon = "__base__/graphics/icons/military-science-pack.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "biology-research",
+        subgroup = "fish-breeding",
+        energy_required = 20,
+        enabled = false,
+        ingredients = {
+            {type="item", name="glowfin-enhancer", amount=5},
+            {type="item", name="mukmoux-polishing-stone", amount=10},
+            {type="item", name="twined-muscle-fiber", amount=10}
+        },
+        results = {
+            {type="item", name="advanced-biology-pack", amount=2}
+        }
+    },
+    --Fish Fluid Pack
+    {
+        type = "recipe",
+        name = "fish-fluid-science-pack",
+        icon = "__base__/graphics/icons/chemical-science-pack.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "biology-research",
+        subgroup = "fish-breeding",
+        energy_required = 10,
+        enabled = false,
+        ingredients = {
+            {type="fluid", name="glowfin-oil", amount=50},
+            {type="fluid", name="mukmoux-sealant", amount=50},
+            {type="fluid", name="silverscale-oil", amount=50}
+        },
+        results = {
+            {type="item", name="fish-fluid-science-pack", amount=1}
+        }
+    },
     --Combined Fish Recipes
     --Tin Ore
     {

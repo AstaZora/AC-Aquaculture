@@ -435,6 +435,46 @@ data:extend({
         order = "c[wood]-ab[wood-pulp]",
         stack_size = 100
     },
+    --Sciences
+    {
+        type = "tool",
+        name = "fish-biomass-pack",
+        icon = "__base__/graphics/icons/chemical-science-pack.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "science-pack",
+        order = "a[science-pack-1]",
+        stack_size = 200,
+        durability = 1,
+        durability_description_key = "description.science-pack-remaining-amount-key",
+        durability_description_value = "description.science-pack-remaining-amount-value"
+    },
+    {
+        type = "tool",
+        name = "advanced-biology-pack",
+        icon = "__base__/graphics/icons/chemical-science-pack.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "science-pack",
+        order = "b[science-pack-2]",
+        stack_size = 200,
+        durability = 1,
+        durability_description_key = "description.science-pack-remaining-amount-key",
+        durability_description_value = "description.science-pack-remaining-amount-value"
+    },
+    {
+        type = "tool",
+        name = "fish-fluid-science-pack",
+        icon = "__base__/graphics/icons/chemical-science-pack.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "science-pack",
+        order = "c[science-pack-3]",
+        stack_size = 200,
+        durability = 1,
+        durability_description_key = "description.science-pack-remaining-amount-key",
+        durability_description_value = "description.science-pack-remaining-amount-value"
+    },
     {
         type = "item",
         name = "fish-fillet",
@@ -620,8 +660,8 @@ data:extend({
     {
         type = "item",
         name = "silverscale-glider",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/silverscale-glider.png",
+        icon_size = 128,
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "r[silverscale-glider]",
@@ -980,8 +1020,8 @@ data:extend({
     {
         type = "item",
         name = "silverscale-glider-egg",
-        icon = "__base__/graphics/icons/sulfur.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/silverscale-glider-egg.png",
+        icon_size = 128,
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "ar[spiral-shellfish]",
@@ -1259,6 +1299,77 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "r[mukmoux-calcium]",
+        stack_size = 100
+    },
+    --Silverscale Glider
+    {
+        type = "item",
+        name = "silverscale-glider-fillet",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/fillet.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "a[silverscale-glider-fillet]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "silverscale-glider-package",
+        icon = "__base__/graphics/icons/wooden-chest.png",
+        icon_size = 64,
+        icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "b[silverscale-glider-package]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "silverscale-glider-scales",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/silverscale-glider-scales.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "c[silverscale-glider-scales]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "refined-silverscale",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/refined-silverscale.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "d[refined-silverscale]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "silverscale-glider-gel",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/silverscale-glider-gel.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "e[silverscale-glider-gel]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "silverscale-glider-muscle",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/silverscale-muscle.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "f[silverscale-glider-muscle]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "twined-muscle-fiber",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/entwined-muscles.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "g[twined-muscle-fiber]",
         stack_size = 100
     },
 })

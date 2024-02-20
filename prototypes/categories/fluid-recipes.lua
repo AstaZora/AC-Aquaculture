@@ -177,4 +177,17 @@ data:extend({
         pressure_to_speed_ratio = 0.4,
         flow_to_energy_ratio = 0.59,
     },
+    --Silverscale Oil
+    {
+        type = "fluid",
+        name = "silverscale-oil",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/fluids/silverscale-oil.png",
+        icon_size = 128,
+        default_temperature = 25,
+        base_color = {r = 0.7, g = 0.7, b = 0.7},
+        flow_color = {r = 0.8, g = 0.8, b = 0.8},
+        max_temperature = 100,
+        pressure_to_speed_ratio = 0.4,
+        flow_to_energy_ratio = 0.59,
+    },
 })

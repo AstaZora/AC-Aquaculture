@@ -388,6 +388,160 @@ data:extend({
         },
         order = "c-a"
     },
+    --silverscale Tech Tree
+    {
+        type = "technology",
+        name = "ac-silverscale-glider-processing",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/silverscale-glider.png",
+        icon_size = 128, icon_mipmaps = 1,
+        prerequisites = {"ac-fish-harvesting", "ac-fish-breeding"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "silverscale-glider-filleting",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "silverscale-glider-packing",
+            }
+        },
+        unit = {
+            count = 450,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 30,
+        },
+        order = "c-a"
+    },
+    {
+        type = "technology",
+        name = "ac-silverscale-package-sorting",
+        icon = "__base__/graphics/icons/wooden-chest.png",
+        icon_size = 64, icon_mipmaps = 4,
+        prerequisites = {"ac-silverscale-glider-processing"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "silverscale-glider-package-sorting",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "silverscale-glider-gel-extraction",
+            }
+        },
+        unit = {
+            count = 450,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 30,
+        },
+        order = "c-a"
+    },
+    {
+        type = "technology",
+        name = "ac-silverscale-scale-processing",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/fluids/silverscale-oil.png",
+        icon_size = 128, icon_mipmaps = 1,
+        prerequisites = {"ac-silverscale-package-sorting"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "silverscale-glider-scale-refinement",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "silverscale-glider-oil-extraction",
+            }
+        },
+        unit = {
+            count = 500,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 30,
+        },
+        order = "c-a"
+    },
+    {
+        type = "technology",
+        name = "ac-silverscale-muscle-processing",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/silverscale-muscle.png",
+        icon_size = 128, icon_mipmaps = 1,
+        prerequisites = {"ac-silverscale-scale-processing"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "silverscale-muscle-processing",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "muscle-fiber-twining",
+            }
+        },
+        unit = {
+            count = 500,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 30,
+        },
+    },
+    --Marine Research Lab and Sciences
+    {
+        type = "technology",
+        name = "ac-marine-research-lab",
+        icon = "__base__/graphics/icons/chemical-science-pack.png",
+        icon_size = 64, icon_mipmaps = 4,
+        prerequisites = {"ac-fish-harvesting", "ac-fish-breeding"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "marine-research-lab",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "fish-biomass-pack",
+            }
+        },
+        unit = {
+            count = 1000,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 60,
+        },
+        order = "c-a"
+    },
+    {
+        type = "technology",
+        name = "ac-marine-science-pack-2",
+        icon = "__base__/graphics/icons/chemical-science-pack.png",
+        icon_size = 64, icon_mipmaps = 4,
+        prerequisites = {"ac-marine-research-lab"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "advanced-biology-pack",
+            }
+        },
+        unit = {
+            count = 1500,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 60,
+        },
+        order = "c-a"
+    },
+    {
+        type = "technology",
+        name = "ac-marine-science-pack-3",
+        icon = "__base__/graphics/icons/chemical-science-pack.png",
+        icon_size = 64, icon_mipmaps = 4,
+        prerequisites = {"ac-marine-science-pack-2"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "fish-fluid-science-pack",
+            }
+        },
+        unit = {
+            count = 2000,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 60,
+        },
+        order = "c-a"
+    },
     --Fast Transport Belts
     {
         type = "technology",
@@ -473,6 +627,26 @@ data:extend({
             count = 1250,
             ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
             time = 60,
+        },
+        order = "c-a"
+    },
+    --Advanced Ore Crushing
+    {
+        type = "technology",
+        name = "ac-advanced-ore-crushing",
+        icon = "__base__/graphics/technology/advanced-material-processing.png",
+        icon_size = 256, icon_mipmaps = 4,
+        prerequisites = {"ac-advanced-ore-refining"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "ac-mixed-ore-refining",
+            }
+        },
+        unit = {
+            count = 2500,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 90,
         },
         order = "c-a"
     },
