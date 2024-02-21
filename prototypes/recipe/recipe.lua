@@ -268,7 +268,7 @@ data:extend({
         enabled = false,
         energy_required = 40,
         ingredients = {
-            {"glowfin-enhancer", 5},
+            {"advanced-circuit", 5},
             {"lab", 1},
             {"bronze-plate", 20}
         },
@@ -1162,6 +1162,25 @@ data:extend({
             {type="item", name="fish-biomass-pack", amount=1}
         }
     },
+    --Fish Fluid Pack
+    {
+        type = "recipe",
+        name = "fish-fluid-science-pack",
+        icon = "__base__/graphics/icons/chemical-science-pack.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "biology-research",
+        subgroup = "fish-breeding",
+        energy_required = 20,
+        enabled = false,
+        ingredients = {
+            {type="fluid", name="glowfin-oil", amount=50},
+            {type="fluid", name="mukmoux-sealant", amount=50},
+            {type="fluid", name="silverscale-oil", amount=50}
+        },
+        results = {
+            {type="item", name="fish-fluid-science-pack", amount=1}
+        }
+    },
     --Fish Science Pack 2
     {
         type = "recipe",
@@ -1179,25 +1198,6 @@ data:extend({
         },
         results = {
             {type="item", name="advanced-biology-pack", amount=2}
-        }
-    },
-    --Fish Fluid Pack
-    {
-        type = "recipe",
-        name = "fish-fluid-science-pack",
-        icon = "__base__/graphics/icons/chemical-science-pack.png",
-        icon_size = 64, icon_mipmaps = 4,
-        category = "biology-research",
-        subgroup = "fish-breeding",
-        energy_required = 10,
-        enabled = false,
-        ingredients = {
-            {type="fluid", name="glowfin-oil", amount=50},
-            {type="fluid", name="mukmoux-sealant", amount=50},
-            {type="fluid", name="silverscale-oil", amount=50}
-        },
-        results = {
-            {type="item", name="fish-fluid-science-pack", amount=1}
         }
     },
     --Combined Fish Recipes

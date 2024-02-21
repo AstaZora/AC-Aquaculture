@@ -147,7 +147,7 @@ data:extend({
         },
         unit = {
             count = 300,
-            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}, {"fish-biomass-pack", 1}},
             time = 30,
         },
         order = "c-a"
@@ -169,8 +169,8 @@ data:extend({
             }
         },
         unit = {
-            count = 500,
-            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            count = 550,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}, {"fish-biomass-pack", 1}},
             time = 30,
         },
         order = "c-a"
@@ -192,8 +192,8 @@ data:extend({
             }
         },
         unit = {
-            count = 500,
-            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            count = 700,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}, {"fish-biomass-pack", 1}},
             time = 45,
         },
         order = "c-a"
@@ -215,8 +215,8 @@ data:extend({
             }
         },
         unit = {
-            count = 500,
-            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            count = 900,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}, {"fish-biomass-pack", 1}},
             time = 45,
         },
         order = "c-a"
@@ -238,8 +238,8 @@ data:extend({
             }
         },
         unit = {
-            count = 600,
-            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            count = 1200,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}, {"fish-biomass-pack", 1}, {"fish-fluid-science-pack", 1}},
             time = 60,
         },
         order = "c-a"
@@ -286,8 +286,8 @@ data:extend({
             }
         },
         unit = {
-            count = 300,
-            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            count = 675,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}, {"fish-biomass-pack", 1}},
             time = 30,
         },
         order = "c-a"
@@ -309,8 +309,8 @@ data:extend({
             }
         },
         unit = {
-            count = 300,
-            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            count = 1250,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}, {"fish-biomass-pack", 1}, {"fish-fluid-science-pack", 1}},
             time = 30,
         },
         order = "c-a"
@@ -332,8 +332,8 @@ data:extend({
             }
         },
         unit = {
-            count = 300,
-            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            count = 900,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}, {"fish-biomass-pack", 1}, {"fish-fluid-science-pack", 1}},
             time = 30,
         },
         order = "c-a"
@@ -359,8 +359,8 @@ data:extend({
             }
         },
         unit = {
-            count = 300,
-            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            count = 600,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}, {"fish-biomass-pack", 1}},
             time = 30,
         },
         order = "c-a"
@@ -382,8 +382,8 @@ data:extend({
             }
         },
         unit = {
-            count = 300,
-            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            count = 600,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}, {"fish-biomass-pack", 1}},
             time = 30,
         },
         order = "c-a"
@@ -430,7 +430,7 @@ data:extend({
         },
         unit = {
             count = 450,
-            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}, {"fish-biomass-pack", 1}},
             time = 30,
         },
         order = "c-a"
@@ -453,7 +453,7 @@ data:extend({
         },
         unit = {
             count = 500,
-            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}, {"fish-biomass-pack", 1}},
             time = 30,
         },
         order = "c-a"
@@ -476,7 +476,7 @@ data:extend({
         },
         unit = {
             count = 500,
-            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}, {"fish-biomass-pack", 1}, {"fish-fluid-science-pack", 1}},
             time = 30,
         },
     },
@@ -486,7 +486,7 @@ data:extend({
         name = "ac-marine-research-lab",
         icon = "__base__/graphics/icons/chemical-science-pack.png",
         icon_size = 64, icon_mipmaps = 4,
-        prerequisites = {"ac-fish-harvesting", "ac-fish-breeding"},
+        prerequisites = {"ac-glowfin-trenchers-processing", "ac-mukmoux-filleting", "ac-silverscale-glider-processing"},
         effects = {
             {
                 type = "unlock-recipe",
@@ -509,16 +509,16 @@ data:extend({
         name = "ac-marine-science-pack-2",
         icon = "__base__/graphics/icons/chemical-science-pack.png",
         icon_size = 64, icon_mipmaps = 4,
-        prerequisites = {"ac-marine-research-lab"},
+        prerequisites = {"ac-marine-research-lab", "ac-organic-materials-1", "ac-glowfin-oil-processing", "ac-silverscale-scale-processing"},
         effects = {
             {
                 type = "unlock-recipe",
-                recipe = "advanced-biology-pack",
+                recipe = "fish-fluid-science-pack",
             }
         },
         unit = {
             count = 1500,
-            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}, {"fish-biomass-pack", 1}},
             time = 60,
         },
         order = "c-a"
@@ -528,17 +528,17 @@ data:extend({
         name = "ac-marine-science-pack-3",
         icon = "__base__/graphics/icons/chemical-science-pack.png",
         icon_size = 64, icon_mipmaps = 4,
-        prerequisites = {"ac-marine-science-pack-2"},
+        prerequisites = {"ac-marine-science-pack-2", "ac-glowfin-vision-extraction", "ac-mukmoux-processing-1", "ac-silverscale-muscle-processing"},
         effects = {
             {
                 type = "unlock-recipe",
-                recipe = "fish-fluid-science-pack",
+                recipe = "advanced-biology-pack",
             }
         },
         unit = {
             count = 2000,
-            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
-            time = 60,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}, {"fish-biomass-pack", 1}, {"fish-fluid-science-pack", 1}},
+            time = 120,
         },
         order = "c-a"
     },
@@ -548,7 +548,7 @@ data:extend({
         name = "ac-fast-transport-belts",
         icon = "__base__/graphics/technology/logistics-2.png",
         icon_size = 256, icon_mipmaps = 4,
-        prerequisites = {"ac-mukmoux-processing-2", "ac-advanced-circuitry"},
+        prerequisites = {"ac-mukmoux-processing-2", "ac-advanced-circuitry", "ac-marine-science-pack-2"},
         effects = {
             {
                 type = "unlock-recipe",

@@ -33,6 +33,10 @@ if data.raw.recipe["ac-breed-silverscale-glider-egg"] then
     data.raw.recipe["ac-breed-silverscale-glider-egg"].icon_size = 128
 end
 
+table.insert(data.raw["lab"]["lab"].inputs, "fish-biomass-pack")
+table.insert(data.raw["lab"]["lab"].inputs, "fish-fluid-science-pack")
+table.insert(data.raw["lab"]["lab"].inputs, "advanced-biology-pack")
+
 local woodTypes = {"pine", "birch", "oak", "maple", "willow", "poplar", "cedar", "spruce", "ash", "hickory", "walnut", "mahogany", "teak", "ebony", "rose", "bamboo", "balsa", "cherry", "acacia", "olive"}
 
 local saplingReturns = {}

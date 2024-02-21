@@ -119,6 +119,7 @@ local function createOilRefinery(name, category)
     base.minable = {mining_time = 0.2, result = name}
     base.crafting_categories = {category}
     base.crafting_speed = 1
+    base.emissions_per_minute = 1
     base.energy_usage = "420kW"
     base.module_specification =
     {
@@ -157,6 +158,7 @@ data:extend({
     createFurnace("fish-smoker", "fish-smoking"),
 
     createCentrifuge("enhanced-ore-polisher", "ore-preparation"),
+
 })
 
 
@@ -286,7 +288,66 @@ data:extend({
             shift = {0.0, -0.0},
             scale = 0.75,  -- Adjust based on your sprite size to fit the tile size
         },
-        collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
-        selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     },
+    {
+        type = "assembling-machine",
+        name = "marine-research-lab",
+        icon = "__base__/graphics/icons/assembling-machine-2.png",
+        icon_size = 64,
+        flags = {"placeable-neutral", "placeable-player", "player-creation"},
+        minable = {mining_time = 0.2, result = "marine-research-lab"},
+        max_health = 300,
+        crafting_categories = {"biology-research"},
+        crafting_speed = 1,
+        energy_usage = "420kW",
+        energy_source = {
+        type = "electric",
+        usage_priority = "secondary-input",
+        emissions_per_minute = 1,
+        },
+        collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
+        selection_box = {{-1.4, -1.4}, {1.4, 1.4}},
+        fluid_boxes = {
+            -- Adjusting input positions to be exactly one tile away from the entity's edge
+            {
+                production_type = "input",
+                pipe_covers = pipecoverspictures(),
+                base_level = -1,
+                pipe_connections = {{ type="input", position = {-1, -2} }},
+            },
+            {
+                production_type = "input",
+                pipe_covers = pipecoverspictures(),
+                base_level = -1,
+                pipe_connections = {{ type="input", position = {1, -2} }},
+            },
+            {
+                production_type = "input",
+                pipe_covers = pipecoverspictures(),
+                base_level = -1,
+                pipe_connections = {{ type="input", position = {0, 2} }},
+            },
+            off_when_no_fluid_recipe = false
+        },
+        animation = {
+            filename = "__base__/graphics/entity/lab/lab.png",
+            width = 98,
+            height = 87,
+            frame_count = 33,
+            line_length = 11,
+            animation_speed = 1/3,
+            shift = util.by_pixel(0, 1.5),
+            hr_version = {
+                filename = "__base__/graphics/entity/lab/hr-lab.png",
+                width = 194,
+                height = 174,
+                frame_count = 33,
+                line_length = 11,
+                animation_speed = 1/3,
+                shift = util.by_pixel(0, 1.5),
+                scale = 0.5
+            }
+        },
+        
+    },      
 })
