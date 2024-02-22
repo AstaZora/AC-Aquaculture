@@ -429,7 +429,7 @@ data:extend({
     {
         type = "item",
         name = "advanced-circuit",
-        icon = "__base__/graphics/icons/wood.png",
+        icon = "__base__/graphics/icons/advanced-circuit.png",
         icon_size = 64,
         subgroup = "raw-resource",
         order = "c[wood]-ab[wood-pulp]",

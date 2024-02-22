@@ -604,7 +604,7 @@ data:extend({
         name = "ac-advanced-ore-refining",
         icon = "__base__/graphics/technology/advanced-material-processing.png",
         icon_size = 256, icon_mipmaps = 4,
-        prerequisites = {"ac-fast-transport-belts","ac-organic-materials-1", "ac-bronze-fluid-handling"},
+        prerequisites = {"ac-bronze-fluid-handling"},
         effects = {
             {
                 type = "unlock-recipe",

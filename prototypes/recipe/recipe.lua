@@ -100,8 +100,8 @@ data:extend({
         enabled = true,
         energy_required = 12,
         ingredients = {
-            {"steel-plate", 12},
-            {"iron-gear-wheel", 6},
+            {"bronze-plate", 12},
+            {"bronze-gear", 6},
             {"advanced-circuit", 4}
         },
         result = "fish-oil-extractor"
@@ -113,9 +113,9 @@ data:extend({
         enabled = true,
         energy_required = 15,
         ingredients = {
-            {"steel-plate", 15},
-            {"iron-gear-wheel", 8},
-            {"processing-unit", 2}
+            {"bronze-plate", 15},
+            {"bronze-gear", 8},
+            {"advanced-circuit", 2}
         },
         result = "fish-oil-refinery"
     },
