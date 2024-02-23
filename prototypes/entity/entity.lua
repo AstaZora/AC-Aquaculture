@@ -168,6 +168,11 @@ fish_drill.icon = "__base__/graphics/icons/stone-furnace.png"
 fish_drill.minable = {mining_time = 0.2, result = "fish-drill"}
 fish_drill.max_health = 300
 fish_drill.type = "furnace"
+fish_drill.module_specification = {
+    module_slots = 2,
+    module_info_icon_shift = {0, 0.8}
+}
+fish_drill.allowed_effects = {"speed", "productivity"}
 fish_drill.source_inventory_size = 1
 fish_drill.result_inventory_size = 1
 fish_drill.crafting_categories = {"fish-breeding"}

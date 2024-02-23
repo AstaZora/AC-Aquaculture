@@ -74,9 +74,9 @@ data:extend({
         enabled = true,
         energy_required = 12,
         ingredients = {
-            {"steel-plate", 12},
-            {"iron-gear-wheel", 6},
-            {"electronic-circuit", 3}
+            {"bronze-plate", 5},
+            {"bronze-gear", 6},
+            {"advanced-circuit", 3}
         },
         result = "fish-sorter"
     },
@@ -152,9 +152,9 @@ data:extend({
         enabled = true,
         energy_required = 12,
         ingredients = {
-            {"steel-plate", 12},
-            {"iron-gear-wheel", 6},
-            {"processing-unit", 2}
+            {"bronze-plate", 8},
+            {"bronze-gear", 3},
+            {"advanced-circuit", 2}
         },
         result = "fish-packer"
     },
@@ -178,9 +178,9 @@ data:extend({
         enabled = true,
         energy_required = 15,
         ingredients = {
-            {"steel-plate", 15},
-            {"iron-gear-wheel", 8},
-            {"processing-unit", 2}
+            {"bronze-plate", 15},
+            {"bronze-gear", 8},
+            {"advanced-circuit", 2}
         },
         result = "fish-smoker"
     },
@@ -294,9 +294,9 @@ data:extend({
         enabled = true,
         energy_required = 20,
         ingredients = {
-            {"processing-unit", 5},
+            {"advanced-circuit", 5},
             {"lab", 1},
-            {"steel-plate", 20}
+            {"iron-plate", 20}
         },
         result = "enhanced-ore-polisher"
     },    
@@ -656,13 +656,13 @@ data:extend({
         icon_size = 128,
         category = "fish-extraction",
         subgroup = "fish-breeding",
-        energy_required = 5,
+        energy_required = 10,
         enabled = false,
         ingredients = {
             {type="item", name="glowfin-trenchers-egg", amount=20}
         },
         results = {
-            {type="fluid", name="glowfin-oil", amount=10}
+            {type="fluid", name="glowfin-oil", amount=50}
         }
     },
     --Glowfin Oil Encapsulation
@@ -821,7 +821,7 @@ data:extend({
             {type="item", name="mukmoux-package", amount=1}
         },
         results = {
-            {type="item", name = "mukmoux-hide", amount = 2},
+            {type="item", name = "mukmoux-hide", amount = 2, probability=0.05},
             {type = "item", name = "mukmoux-fat", amount = 5},
         }
     },
@@ -956,14 +956,14 @@ data:extend({
         icon_size = 128,
         category = "fish-advanced-extraction",
         subgroup = "fish-breeding",
-        energy_required = 5,
+        energy_required = 10,
         enabled = false,
         ingredients = {
             {type="item", name="mukmoux-fat", amount=2},
             {type="fluid", name="mukmoux-mucous", amount=10}
         },
         results = {
-            {type="fluid", name="mukmoux-sealant", amount=20}
+            {type="fluid", name="mukmoux-sealant", amount=50}
         }
     },
     --Mukmoux Bones
@@ -1059,13 +1059,14 @@ data:extend({
         icon_size = 128,
         category = "fish-advanced-extraction",
         subgroup = "fish-breeding",
-        energy_required = 5,
+        energy_required = 10,
         enabled = false,
         ingredients = {
-            {type="item", name="silverscale-glider-fillet", amount=5}
+            {type="item", name="silverscale-glider-fillet", amount=10},
+            {type="item", name="silverscale-glider-egg", amount=10}
         },
         results = {
-            {type="fluid", name="silverscale-oil", amount=10}
+            {type="fluid", name="silverscale-oil", amount=50}
         }
     },
     {
@@ -1202,15 +1203,15 @@ data:extend({
         icon_size = 64, icon_mipmaps = 4,
         category = "biology-research",
         subgroup = "fish-breeding",
-        energy_required = 20,
+        energy_required = 35,
         enabled = false,
         ingredients = {
-            {type="fluid", name="glowfin-oil", amount=50},
-            {type="fluid", name="mukmoux-sealant", amount=50},
-            {type="fluid", name="silverscale-oil", amount=50}
+            {type="fluid", name="glowfin-oil", amount=10},
+            {type="fluid", name="mukmoux-sealant", amount=10},
+            {type="fluid", name="silverscale-oil", amount=10}
         },
         results = {
-            {type="item", name="fish-fluid-science-pack", amount=1}
+            {type="item", name="fish-fluid-science-pack", amount=2}
         }
     },
     --Fish Science Pack 2
@@ -1230,6 +1231,44 @@ data:extend({
         },
         results = {
             {type="item", name="advanced-biology-pack", amount=2}
+        }
+    },
+    --Efficient Breeding Processor
+    {
+        type = "recipe",
+        name = "efficient-breeding-processor",
+        icon = "__base__/graphics/icons/speed-module.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "advanced-crafting",
+        subgroup = "fish-breeding",
+        energy_required = 20,
+        enabled = false,
+        ingredients = {
+            {type="item",name="fiberboard-circuitry", amount=20},
+            {type="item",name="advanced-circuit", amount = 5},
+            {type="fluid",name="wood-alcohol", amount=50}
+        },
+        results = {
+            {type="item", name="efficient-breeding-processor", amount=1}
+        }
+    },
+    --Efficient Egg Processor
+    {
+        type = "recipe",
+        name = "efficient-egg-gathering-processor",
+        icon = "__base__/graphics/icons/productivity-module.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "advanced-crafting",
+        subgroup = "fish-breeding",
+        energy_required = 20,
+        enabled = false,
+        ingredients = {
+            {type="item",name="fiberboard-circuitry", amount=20},
+            {type="item",name="advanced-circuit", amount = 5},
+            {type="fluid",name="wood-alcohol", amount=50}
+        },
+        results = {
+            {type="item", name="efficient-egg-gathering-processor", amount=1}
         }
     },
     --Combined Fish Recipes
@@ -1310,10 +1349,10 @@ for _, fishType in ipairs(fishTypes) do
         subgroup = "fish-breeding",
         energy_required = 180,
         ingredients = {
-            {type="item", name= fishType, amount=20},
+            {type="item", name= fishType, amount=20, catalyst_amount = 20},
         },
         results = {
-            {type="item", name=fishType, amount_min = 5, amount_max = 15},
+            {type="item", name=fishType, amount_min = 5, amount_max = 15, catalyst_amount = 20},
             {type="item", name=fishType.."-egg", amount_min = minEggAmount, amount_max = maxEggAmount}
         }
     })

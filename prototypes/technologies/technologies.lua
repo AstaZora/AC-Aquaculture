@@ -109,6 +109,46 @@ data:extend({
         },
         order = "c-a"
     },
+    --Efficient Breeding Processor
+    {
+        type = "technology",
+        name = "ac-efficient-breeding-processor",
+        icon = "__base__/graphics/technology/automation-1.png",
+        icon_size = 256, icon_mipmaps = 4,
+        prerequisites = {"ac-fish-breeding", "ac-advanced-circuitry"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "efficient-breeding-processor",
+            },
+        },
+        unit = {
+            count = 1500,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}, {"fish-biomass-pack", 1}},
+            time = 90,
+        },
+        order = "c-a"
+    },
+    --Efficient Egg Collection
+    {
+        type = "technology",
+        name = "ac-efficient-egg-collection",
+        icon = "__base__/graphics/technology/automation-1.png",
+        icon_size = 256, icon_mipmaps = 4,
+        prerequisites = {"ac-fish-breeding", "ac-advanced-circuitry"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "efficient-egg-gathering-processor",
+            },
+        },
+        unit = {
+            count = 1500,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}, {"fish-biomass-pack", 1}},
+            time = 90,
+        },
+        order = "c-a"
+    },
     --Glowfin Tech Tree
     {
         type = "technology",
