@@ -138,7 +138,7 @@ data:extend({
         name = "ac-glowfin-package-sorting",
         icon = "__AC-Aquaculture__/graphics/icons/fish/glowfin-trenchers-package.png",
         icon_size = 64, icon_mipmaps = 1,
-        prerequisites = {"ac-glowfin-trenchers-processing"},
+        prerequisites = {"ac-glowfin-trenchers-processing", "ac-marine-research-lab"},
         effects = {
             {
                 type = "unlock-recipe",
@@ -274,7 +274,7 @@ data:extend({
         name = "ac-mukmoux-package-sorting",
         icon = "__base__/graphics/icons/wooden-chest.png",
         icon_size = 64, icon_mipmaps = 4,
-        prerequisites = {"ac-mukmoux-filleting"},
+        prerequisites = {"ac-mukmoux-filleting", "ac-marine-research-lab"},
         effects = {
             {
                 type = "unlock-recipe",
@@ -417,7 +417,7 @@ data:extend({
         name = "ac-silverscale-package-sorting",
         icon = "__base__/graphics/icons/wooden-chest.png",
         icon_size = 64, icon_mipmaps = 4,
-        prerequisites = {"ac-silverscale-glider-processing"},
+        prerequisites = {"ac-silverscale-glider-processing", "ac-marine-research-lab"},
         effects = {
             {
                 type = "unlock-recipe",
@@ -480,13 +480,41 @@ data:extend({
             time = 30,
         },
     },
+    --Fish Breeding and Hatching
+    {
+        type = "technology",
+        name = "ac-fish-farming",
+        icon = "__base__/graphics/technology/automation-1.png",
+        icon_size = 256, icon_mipmaps = 4,
+        prerequisites = {"ac-glowfin-trenchers-processing", "ac-mukmoux-filleting", "ac-silverscale-glider-processing"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "fish-hatchery",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "fish-feeder",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "fish-drill",
+            }
+        },
+        unit = {
+            count = 1000,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 60,
+        },
+        order = "c-a"
+    },
     --Marine Research Lab and Sciences
     {
         type = "technology",
         name = "ac-marine-research-lab",
         icon = "__base__/graphics/icons/chemical-science-pack.png",
         icon_size = 64, icon_mipmaps = 4,
-        prerequisites = {"ac-glowfin-trenchers-processing", "ac-mukmoux-filleting", "ac-silverscale-glider-processing"},
+        prerequisites = {"ac-fish-farming"},
         effects = {
             {
                 type = "unlock-recipe",
@@ -499,6 +527,46 @@ data:extend({
         },
         unit = {
             count = 1000,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 60,
+        },
+        order = "c-a"
+    },
+    --Inserter Stacking Bonus
+    {
+        type = "technology",
+        name = "ac-inserter-capacity-bonus",
+        icon = "__base__/graphics/technology/inserter-capacity.png",
+        icon_size = 256, icon_mipmaps = 4,
+        prerequisites = {"ac-advanced-circuitry-conditions"},
+        effects = {
+            {
+                type = "inserter-stack-size-bonus",
+                modifier = 1
+            }
+        },
+        unit = {
+            count = 600,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 60,
+        },
+        order = "c-a"
+    },
+    --Inserter Stack Bonus 2
+    {
+        type = "technology",
+        name = "ac-inserter-capacity-bonus-2",
+        icon = "__base__/graphics/technology/inserter-capacity.png",
+        icon_size = 256, icon_mipmaps = 4,
+        prerequisites = {"ac-inserter-capacity-bonus"},
+        effects = {
+            {
+                type = "inserter-stack-size-bonus",
+                modifier = 1
+            }
+        },
+        unit = {
+            count = 800,
             ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
             time = 60,
         },

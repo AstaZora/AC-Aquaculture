@@ -37,6 +37,10 @@ table.insert(data.raw["lab"]["lab"].inputs, "fish-biomass-pack")
 table.insert(data.raw["lab"]["lab"].inputs, "fish-fluid-science-pack")
 table.insert(data.raw["lab"]["lab"].inputs, "advanced-biology-pack")
 
+if data.raw.recipe["landfill"] then
+    data.raw.recipe["landfill"].enabled = true
+end
+
 local woodTypes = {"pine", "birch", "oak", "maple", "willow", "poplar", "cedar", "spruce", "ash", "hickory", "walnut", "mahogany", "teak", "ebony", "rose", "bamboo", "balsa", "cherry", "acacia", "olive"}
 
 local saplingReturns = {}

@@ -7,6 +7,7 @@ require("prototypes.entity.fish")
 require("prototypes.technologies.technologies")
 require("prototypes.categories.fuel-category")
 require("prototypes.modules")
+require("prototypes.recipe.vanillarecipes")
 
 
 data.raw["recipe"]["iron-plate"].enabled = false

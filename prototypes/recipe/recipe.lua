@@ -9,7 +9,7 @@ data:extend({
         enabled = true,
         energy_required = 5,
         ingredients = {
-            {"pump", 4},
+            {"bronze-pump", 4},
             {"advanced-circuit", 5},
             {"pipe", 10}
         },
@@ -19,12 +19,12 @@ data:extend({
     {
         type = "recipe",
         name = "fish-hatchery",
-        enabled = true,
+        enabled = false,
         energy_required = 10,
         ingredients = {
-            {"iron-plate", 10},
+            {"bronze-plate", 10},
             {"copper-cable", 5},
-            {"electronic-circuit", 2}
+            {"fiberboard-circuitry", 2}
         },
         result = "fish-hatchery"
     },
@@ -45,14 +45,27 @@ data:extend({
     {
         type = "recipe",
         name = "fish-feeder",
-        enabled = true,
+        enabled = false,
         energy_required = 8,
         ingredients = {
-            {"iron-plate", 8},
+            {"bronze-plate", 8},
             {"copper-cable", 4},
-            {"electronic-circuit", 2}
+            {"fiberboard-circuitry", 2}
         },
         result = "fish-feeder"
+    },
+    --Fish Drill
+    {
+        type = "recipe",
+        name = "fish-drill",
+        enabled = false,
+        energy_required = 10,
+        ingredients = {
+            {"bronze-plate", 10},
+            {"bronze-gear", 5},
+            {"fiberboard-circuitry", 3}
+        },
+        result = "fish-drill"
     },
     -- Machine 4: Fish Sorter
     {
@@ -74,8 +87,8 @@ data:extend({
         enabled = false,
         energy_required = 15,
         ingredients = {
-            {"steel-plate", 15},
-            {"iron-gear-wheel", 8},
+            {"bronze-plate", 15},
+            {"bronze-gear", 8},
             {"advanced-circuit", 4}
         },
         result = "fish-fillet-machine"
@@ -294,7 +307,7 @@ data:extend({
         icon = "__base__/graphics/icons/landfill.png",
         icon_size = 64,
         category = "water-production",
-        energy_required = 1,
+        energy_required = 10,
         ingredients = {{type="fluid", name="water", amount=100}},
         results = {
             {type = "item", name="pond-water", amount=1}
@@ -773,7 +786,7 @@ data:extend({
             {type="item", name="mukmoux", amount=1}
         },
         results = {
-            {type="item", name="mukmoux-fillet", amount=20},
+            {type="item", name="mukmoux-fillet", amount=10},
             {type = "item", name = "mukmoux-egg", amount=1, probability=0.1}
         }
     },
@@ -1003,7 +1016,7 @@ data:extend({
         },
         results = {
             {type="item", name="silverscale-glider-fillet", amount=4},
-            {type="fluid", name="silverscale-oil", amount=5}
+            {type="item", name="silverscale-glider-egg", amount=1, probability=0.1}
         }
     },
     {
@@ -1129,7 +1142,7 @@ data:extend({
         name = "fish-egg-fuel",
         icon = "__base__/graphics/icons/fish.png",
         icon_size = 64, icon_mipmaps = 4,
-        category = "fish-advanced-extraction",
+        category = "fish-feeding",
         subgroup = "fish-breeding",
         energy_required = 5,
         enabled = true,
@@ -1139,7 +1152,26 @@ data:extend({
             {type="item", name="silverscale-glider-gel", amount=5}
         },
         results = {
-            {type="item", name="fish-egg-fuel", amount=5}
+            {type="item", name="fish-egg-fuel", amount=20}
+        }
+    },
+    --Basic Fish Fuel
+    {
+        type = "recipe",
+        name = "basic-fish-fuel",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-feeding",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = true,
+        ingredients = {
+            {type="item", name="glowfin-trenchers-fillet", amount=5},
+            {type="item", name="mukmoux-fillet", amount=5},
+            {type="item", name="silverscale-glider-fillet", amount=5}
+        },
+        results = {
+            {type="item", name="fish-egg-fuel", amount=1}
         }
     },
     --Sciences
@@ -1151,15 +1183,15 @@ data:extend({
         icon_size = 64, icon_mipmaps = 4,
         category = "biology-research",
         subgroup = "fish-breeding",
-        energy_required = 5,
+        energy_required = 20,
         enabled = false,
         ingredients = {
-            {type="item", name="glowfin-trenchers-fillet", amount=50},
-            {type="item", name="mukmoux-fillet", amount=50},
-            {type="item", name="silverscale-glider-fillet", amount=50}
+            {type="item", name="glowfin-trenchers-fillet", amount=10},
+            {type="item", name="mukmoux-fillet", amount=10},
+            {type="item", name="silverscale-glider-fillet", amount=10}
         },
         results = {
-            {type="item", name="fish-biomass-pack", amount=1}
+            {type="item", name="fish-biomass-pack", amount=2}
         }
     },
     --Fish Fluid Pack

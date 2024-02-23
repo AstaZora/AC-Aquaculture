@@ -274,20 +274,22 @@ data:extend({
         type = "container",
         name = "fish-net",
         icon = "__AC-Aquaculture__/graphics/entity/fish-net.png",
-        flags = {"placeable-neutral", "player-creation"},
+        flags = {"placeable-neutral", "placeable-player", "player-creation"},
         collision_mask = {"ground-tile"},
         icon_size = 128,
         minable = {mining_time = 1, result = "fish-net"},
         max_health = 100,
-        inventory_size = 1,  -- Assuming it holds a stack of fish
+        inventory_size = 1,  -- minimum inventory size?
         picture = {
             filename = "__AC-Aquaculture__/graphics/entity/fish-net.png",
             priority = "extra-high",
             width = 128,
             height = 128,
             shift = {0.0, -0.0},
-            scale = 0.75,  -- Adjust based on your sprite size to fit the tile size
+            scale = 0.75,  --Adjusted because original file is 128x
         },
+        collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
+        selection_box = {{-1.4, -1.4}, {1.4, 1.4}},
     },
     {
         type = "assembling-machine",
