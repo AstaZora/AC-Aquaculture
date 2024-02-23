@@ -656,7 +656,7 @@ data:extend({
         icon_size = 128,
         category = "fish-extraction",
         subgroup = "fish-breeding",
-        energy_required = 10,
+        energy_required = 4,
         enabled = false,
         ingredients = {
             {type="item", name="glowfin-trenchers-egg", amount=20}
@@ -956,11 +956,11 @@ data:extend({
         icon_size = 128,
         category = "fish-advanced-extraction",
         subgroup = "fish-breeding",
-        energy_required = 10,
+        energy_required = 4,
         enabled = false,
         ingredients = {
             {type="item", name="mukmoux-fat", amount=2},
-            {type="fluid", name="mukmoux-mucous", amount=10}
+            {type="fluid", name="mukmoux-mucous", amount=5}
         },
         results = {
             {type="fluid", name="mukmoux-sealant", amount=50}
@@ -1059,7 +1059,7 @@ data:extend({
         icon_size = 128,
         category = "fish-advanced-extraction",
         subgroup = "fish-breeding",
-        energy_required = 10,
+        energy_required = 4,
         enabled = false,
         ingredients = {
             {type="item", name="silverscale-glider-fillet", amount=10},
@@ -1206,9 +1206,9 @@ data:extend({
         energy_required = 35,
         enabled = false,
         ingredients = {
-            {type="fluid", name="glowfin-oil", amount=10},
-            {type="fluid", name="mukmoux-sealant", amount=10},
-            {type="fluid", name="silverscale-oil", amount=10}
+            {type="fluid", name="glowfin-oil", amount=30},
+            {type="fluid", name="mukmoux-sealant", amount=30},
+            {type="fluid", name="silverscale-oil", amount=30}
         },
         results = {
             {type="item", name="fish-fluid-science-pack", amount=2}
