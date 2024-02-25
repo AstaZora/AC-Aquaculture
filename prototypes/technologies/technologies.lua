@@ -650,10 +650,10 @@ data:extend({
         },
         order = "c-a"
     },
-    --Fast Transport Belts
+    --leather Transport Belts
     {
         type = "technology",
-        name = "ac-fast-transport-belts",
+        name = "ac-leather-transport-belts",
         icon = "__base__/graphics/technology/logistics-2.png",
         icon_size = 256, icon_mipmaps = 4,
         prerequisites = {"ac-mukmoux-processing-2", "ac-advanced-circuitry", "ac-marine-science-pack-2"},
@@ -684,7 +684,7 @@ data:extend({
         name = "ac-bronze-inserters",
         icon = "__base__/graphics/technology/fast-inserter.png",
         icon_size = 256, icon_mipmaps = 4,
-        prerequisites = {"ac-fast-transport-belts", "ac-advanced-circuitry"},
+        prerequisites = {"ac-leather-transport-belts", "ac-advanced-circuitry"},
         effects = {
             {
                 type = "unlock-recipe",
