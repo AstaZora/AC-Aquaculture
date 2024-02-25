@@ -426,6 +426,43 @@ data:extend({
         place_result = "bronze-storage-tank",
         stack_size = 50
     },
+    --Leather Transports
+    --Leather Belt
+    {
+        type = "item",
+        name = "leather-transport-belt",
+        icon = "__base__/graphics/icons/transport-belt.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "belt",
+        order = "a[leather-belt]",
+        place_result = "leather-transport-belt",
+        stack_size = 100
+    },
+    --leather splitter
+    {
+        type = "item",
+        name = "leather-splitter",
+        icon = "__base__/graphics/icons/splitter.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "belt",
+        order = "b[leather-splitter]",
+        place_result = "leather-splitter",
+        stack_size = 50
+    },
+    --leather underground belt
+    {
+        type = "item",
+        name = "leather-underground-belt",
+        icon = "__base__/graphics/icons/underground-belt.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "belt",
+        order = "c[leather-underground-belt]",
+        place_result = "leather-underground-belt",
+        stack_size = 50
+    },
     {
         type = "item",
         name = "advanced-circuit",
