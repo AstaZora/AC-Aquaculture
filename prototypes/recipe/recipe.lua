@@ -1,3 +1,4 @@
+
 require "prototypes.categories.fluid-recipes"
 require "prototypes.categories.recipe-category"
 
@@ -348,9 +349,10 @@ data:extend({
         ingredients = {
             {type="item", name="mukmoux-hard-leather", amount=2},
             {type="item", name="bronze-gear", amount=4},
-            {type="fluid", name="lubricant", amount=5}
+            {type="fluid", name="lubricant", amount=5},
+            {type="item", name="wooden-transport-belt", amount=1}
         },
-        result = "fast-transport-belt"
+        result = "leather-transport-belt"
     },
     {
         type = "recipe",
@@ -359,11 +361,11 @@ data:extend({
         enabled = false,
         energy_required = 2,
         ingredients = {
-            {type="item", name="fast-transport-belt", amount=4},
+            {type="item", name="leather-transport-belt", amount=4},
             {type="item", name="bronze-gear", amount=5},
             {type="item", name="iron-plate", amount=5}
         },
-        result = "fast-underground-belt"
+        result = "leather-underground-belt"
     },
     {
         type = "recipe",
@@ -374,9 +376,9 @@ data:extend({
         ingredients = {
             {type="item", name="advanced-circuit", amount=2},
             {type="item", name="bronze-gear", amount=5},
-            {type="item", name="fast-transport-belt", amount=10}
+            {type="item", name="leather-transport-belt", amount=10}
         },
-        result = "fast-splitter"
+        result = "leather-splitter"
     },
 
     -- recipes
@@ -656,7 +658,7 @@ data:extend({
         icon_size = 128,
         category = "fish-extraction",
         subgroup = "fish-breeding",
-        energy_required = 10,
+        energy_required = 4,
         enabled = false,
         ingredients = {
             {type="item", name="glowfin-trenchers-egg", amount=20}
@@ -956,11 +958,11 @@ data:extend({
         icon_size = 128,
         category = "fish-advanced-extraction",
         subgroup = "fish-breeding",
-        energy_required = 10,
+        energy_required = 4,
         enabled = false,
         ingredients = {
             {type="item", name="mukmoux-fat", amount=2},
-            {type="fluid", name="mukmoux-mucous", amount=10}
+            {type="fluid", name="mukmoux-mucous", amount=5}
         },
         results = {
             {type="fluid", name="mukmoux-sealant", amount=50}
@@ -1059,7 +1061,7 @@ data:extend({
         icon_size = 128,
         category = "fish-advanced-extraction",
         subgroup = "fish-breeding",
-        energy_required = 10,
+        energy_required = 4,
         enabled = false,
         ingredients = {
             {type="item", name="silverscale-glider-fillet", amount=10},
@@ -1206,9 +1208,9 @@ data:extend({
         energy_required = 35,
         enabled = false,
         ingredients = {
-            {type="fluid", name="glowfin-oil", amount=10},
-            {type="fluid", name="mukmoux-sealant", amount=10},
-            {type="fluid", name="silverscale-oil", amount=10}
+            {type="fluid", name="glowfin-oil", amount=30},
+            {type="fluid", name="mukmoux-sealant", amount=30},
+            {type="fluid", name="silverscale-oil", amount=30}
         },
         results = {
             {type="item", name="fish-fluid-science-pack", amount=2}
