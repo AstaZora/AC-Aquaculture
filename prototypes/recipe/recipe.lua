@@ -1,3 +1,4 @@
+
 require "prototypes.categories.fluid-recipes"
 require "prototypes.categories.recipe-category"
 
