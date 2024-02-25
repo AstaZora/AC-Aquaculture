@@ -42,8 +42,3 @@ sanitize_recipe(recipes["decider-combinator"]).ingredients =
     {"copper-cable", 5},
     {"fiberboard-circuitry", 5}
 }
-sanitize_recipe(recipes["transport-belt"]).ingredients =
-{
-    {"bronze-gear", 5},
-    {"leather-transport-belt", 1}
-}

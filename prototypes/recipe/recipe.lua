@@ -348,10 +348,9 @@ data:extend({
         ingredients = {
             {type="item", name="mukmoux-hard-leather", amount=2},
             {type="item", name="bronze-gear", amount=4},
-            {type="fluid", name="lubricant", amount=5},
-            {type="item", name="wooden-transport-belt", amount=1}
+            {type="fluid", name="lubricant", amount=5}
         },
-        result = "leather-transport-belt"
+        result = "fast-transport-belt"
     },
     {
         type = "recipe",
@@ -360,11 +359,11 @@ data:extend({
         enabled = false,
         energy_required = 2,
         ingredients = {
-            {type="item", name="leather-transport-belt", amount=4},
+            {type="item", name="fast-transport-belt", amount=4},
             {type="item", name="bronze-gear", amount=5},
             {type="item", name="iron-plate", amount=5}
         },
-        result = "leather-underground-belt"
+        result = "fast-underground-belt"
     },
     {
         type = "recipe",
@@ -375,9 +374,9 @@ data:extend({
         ingredients = {
             {type="item", name="advanced-circuit", amount=2},
             {type="item", name="bronze-gear", amount=5},
-            {type="item", name="leather-transport-belt", amount=10}
+            {type="item", name="fast-transport-belt", amount=10}
         },
-        result = "leather-splitter"
+        result = "fast-splitter"
     },
 
     -- recipes

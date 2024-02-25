@@ -3,5 +3,7 @@
         "script",
         "defines",
         "global",
+        "give_player_rewards",
+        "createFish"
     ]
 }

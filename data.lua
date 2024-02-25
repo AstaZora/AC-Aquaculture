@@ -3,6 +3,7 @@ require("prototypes.item.item")
 require("prototypes.recipe.recipe")
 require("prototypes.categories.fluid-recipes")
 require("prototypes.categories.recipe-category")
+require("prototypes.entity.fish")
 require("prototypes.technologies.technologies")
 require("prototypes.categories.fuel-category")
 require("prototypes.modules")
@@ -82,31 +83,6 @@ data:extend({
   }
 })
 
-local leatherBelt = table.deepcopy(data.raw["transport-belt"]["transport-belt"])
-local belt_speed = 10 / 480
-
-wood_belt_animation_set = 
-{
-	animation_set =
-	{
-		filename = "__AC-Aquaculture__/graphics/entity/leather-transports/leather-transport-belt.png",
-		priority = "extra-high",
-		width = 64,
-		height = 64,
-		frame_count = 16,
-		direction_count = 20,
-		hr_version =
-		{
-		filename = "__AC-Aquaculture__/graphics/entity/leather-transports/hr-leather-transport-belt.png",
-		priority = "extra-high",
-		width = 128,
-		height = 128,
-		scale = 0.5,
-		frame_count = 16,
-		direction_count = 20
-		}
-	},
-}
 leatherBelt.name = "leather-transport-belt"
 leatherBelt.type = "transport-belt"
 leatherBelt.speed = belt_speed
@@ -159,3 +135,4 @@ leatherUnderground.structure.direction_out_side_loading.sheet.filename = "__AC-A
 leatherUnderground.structure.direction_out_side_loading.sheet.hr_version.filename = "__AC-Aquaculture__/graphics/entity/leather-transports/hr-leather-underground-belt-structure.png"
 leatherUnderground.minable = {mining_time = 0.1, result = "leather-underground-belt"}
 data:extend({leatherUnderground})
+
