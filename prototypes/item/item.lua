@@ -1,8 +1,8 @@
 data:extend({
     {
         type = "item",
-        name = "gypsum",
-        icon = "__base__/graphics/icons/stone.png",
+        name = "water-separator",
+        icon = "__base__/graphics/icons/chemical-plant.png",
         icon_size = 64,
         icon_mipmaps = 1,
         subgroup = "production-machine",
@@ -426,68 +426,950 @@ data:extend({
         place_result = "bronze-storage-tank",
         stack_size = 50
     },
-    --Leather Transports
-    --Leather Belt
     {
         type = "item",
-        name = "leather-transport-belt",
-        icon = "__base__/graphics/icons/transport-belt.png",
+        name = "advanced-circuit",
+        icon = "__base__/graphics/icons/advanced-circuit.png",
         icon_size = 64,
-        icon_mipmaps = 1,
-        subgroup = "belt",
-        order = "a[leather-belt]",
-        place_result = "leather-transport-belt",
+        subgroup = "raw-resource",
+        order = "c[wood]-ab[wood-pulp]",
         stack_size = 100
     },
-    --leather splitter
+    --Sciences
     {
-        type = "item",
-        name = "leather-splitter",
-        icon = "__base__/graphics/icons/splitter.png",
+        type = "tool",
+        name = "fish-biomass-pack",
+        icon = "__base__/graphics/icons/chemical-science-pack.png",
         icon_size = 64,
         icon_mipmaps = 1,
-        subgroup = "belt",
-        order = "b[leather-splitter]",
-        place_result = "leather-splitter",
-        stack_size = 50
+        subgroup = "science-pack",
+        order = "a[science-pack-1]",
+        stack_size = 200,
+        durability = 1,
+        durability_description_key = "description.science-pack-remaining-amount-key",
+        durability_description_value = "description.science-pack-remaining-amount-value"
     },
-    --leather underground belt
     {
-        type = "item",
-        name = "leather-underground-belt",
-        icon = "__base__/graphics/icons/underground-belt.png",
+        type = "tool",
+        name = "advanced-biology-pack",
+        icon = "__base__/graphics/icons/chemical-science-pack.png",
         icon_size = 64,
         icon_mipmaps = 1,
-        subgroup = "belt",
-        order = "c[leather-underground-belt]",
-        place_result = "leather-underground-belt",
-        stack_size = 50
+        subgroup = "science-pack",
+        order = "b[science-pack-2]",
+        stack_size = 200,
+        durability = 1,
+        durability_description_key = "description.science-pack-remaining-amount-key",
+        durability_description_value = "description.science-pack-remaining-amount-value"
+    },
+    {
+        type = "tool",
+        name = "fish-fluid-science-pack",
+        icon = "__base__/graphics/icons/chemical-science-pack.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "science-pack",
+        order = "c[science-pack-3]",
+        stack_size = 200,
+        durability = 1,
+        durability_description_key = "description.science-pack-remaining-amount-key",
+        durability_description_value = "description.science-pack-remaining-amount-value"
     },
     {
         type = "item",
-        name = "limestone",
-        icon = "__base__/graphics/icons/stone.png",
+        name = "fish-fillet",
+        icon = "__base__/graphics/icons/fish.png",
         icon_size = 64,
+        icon_mipmaps = 1,
         subgroup = "raw-resource",
-        order = "g[limestone]",
-        stack_size = 50
+        order = "a[fish-fillets]",
+        stack_size = 100
+    },
+    --Just Fish
+    --Seriously it's Just Fish
+    {
+        type = "item",
+        name = "glowfin-trenchers",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/glowfin-trenchers.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "b[glowfin-trenchers]",
+        stack_size = 100
     },
     {
         type = "item",
-        name = "clay",
-        icon = "__base__/graphics/icons/stone.png",
+        name = "crystal-carapacer",
+        icon = "__base__/graphics/icons/fish.png",
         icon_size = 64,
+        icon_mipmaps = 1,
         subgroup = "raw-resource",
-        order = "g[clay]",
-        stack_size = 50
+        order = "c[crystal-carapacer]",
+        stack_size = 100
     },
     {
         type = "item",
-        name = "sand",
-        icon = "__base__/graphics/icons/stone.png",
+        name = "electro-eels",
+        icon = "__base__/graphics/icons/fish.png",
         icon_size = 64,
+        icon_mipmaps = 1,
         subgroup = "raw-resource",
-        order = "g[sand]",
-        stack_size = 50
-    }
+        order = "d[electro-eels]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "mukmoux",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "e[mukmoux]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "lava-lamprey",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "e[lava-lamprey]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "magma-moray",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "f[magma-moray]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "thermal-pike",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "g[thermal-pike]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "radiant-ray",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "h[radiant-ray]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "solar-starfish",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "i[solar-starfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "stellar-sturgeon",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "j[stellar-sturgeon]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "void-viper",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "k[void-viper]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "xeno-xiphias",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "l[xeno-xiphias]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "starfin-darters",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "m[starfin-darters]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "neon-nocturne",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "n[neon-nocturne]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "helix-drifter",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "o[helix-drifter]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "luminous-lanternfish",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "p[luminous-lanternfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "phosphor-fish",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "q[phosphor-fish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "silverscale-glider",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/silverscale-glider.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "r[silverscale-glider]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "twilight-tetra",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "s[twilight-tetra]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "crescent-jellyfish",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "t[crescent-jellyfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "nightshade-nudibranch",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "u[nightshade-nudibranch]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "shallows-squid",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "v[shallows-squid]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "bolt-barracuda",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "w[bolt-barracuda]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "aurora-angler",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "x[aurora-angler]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "glacial-grouper",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "y[glacial-grouper]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "frostfin-tuna",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "z[frostfin-tuna]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "iceberg-icarus",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "aa[iceberg-icarus]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "polar-pike",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "ab[polar-pike]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "snowsquall-salmon",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "ac[snowsquall-salmon]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "arctic-alewife",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "ad[arctic-alewife]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "frozen-fish",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "ae[frozen-fish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "mist-manta",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "af[mist-manta]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "plasma-puffer",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "ag[plasma-puffer]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "vapor-vanguard",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "ah[vapor-vanguard]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "whispering-whale",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "ai[whispering-whale]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "mistral-mollusk",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "aj[mistral-mollusk]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "cloaked-cuttlefish",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "ak[cloaked-cuttlefish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "lunar-lantern",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "al[lunar-lantern]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "ribbon-reef",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "am[ribbon-reef]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "shell-hunter",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "an[shell-hunter]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "tidepool-tetra",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "ao[tidepool-tetra]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "echo-ray",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "ap[echo-ray]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "fogfin-fish",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "aq[fogfin-fish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "spiral-shellfish",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "ar[spiral-shellfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "silent-drifter",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "as[silent-drifter]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "shadow-skulker",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "at[shadow-skulker]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "mud-nautilus",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "au[mud-nautilus]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "tide-tumbler",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "av[tide-tumbler]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "stream-sifter",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "aw[stream-sifter]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "shalen",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "ax[shalen]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "glowfin-trenchers-egg",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/glowfin-trenchers-egg.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "ao[tidepool-tetra]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "mukmoux-egg",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-egg.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "ap[echo-ray]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "neon-nocturne-egg",
+        icon = "__base__/graphics/icons/sulfur.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "aq[fogfin-fish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "silverscale-glider-egg",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/silverscale-glider-egg.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "ar[spiral-shellfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "spiral-shellfish-egg",
+        icon = "__base__/graphics/icons/sulfur.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "as[silent-drifter]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "silent-drifter-egg",
+        icon = "__base__/graphics/icons/sulfur.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "at[shadow-skulker]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "twilight-tetra-egg",
+        icon = "__base__/graphics/icons/sulfur.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "au[mud-nautilus]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "starfin-darters-egg",
+        icon = "__base__/graphics/icons/sulfur.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "av[tide-tumbler]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "stream-sifter-egg",
+        icon = "__base__/graphics/icons/sulfur.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "aw[stream-sifter]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "fish-egg-fuel",
+        icon = "__base__/graphics/icons/solid-fuel.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        category = "fish-breeding",
+        fuel_category = "fish-eggs",
+        fuel_value = "12MJ",
+        order = "ax[shalen]",
+        stack_size = 100
+    },
+    --Glowfin Components
+    {
+        type = "item",
+        name = "glowfin-trenchers-fillet",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/fillet.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "a[glowfin-trenchers-fillet]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "glowfin-trenchers-package",
+        icon = "__base__/graphics/icons/wooden-chest.png",
+        icon_size = 64,
+        icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "b[glowfin-trenchers-package]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "pressure-scales",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/pressure-scales.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "intermediate-product",
+        order = "a[pressure-scales]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "egg-casings",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/egg-casings.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "intermediate-product",
+        order = "b[egg-casings]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "glowfin-oil-capsule",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/glowfin-oil-capsule.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "intermediate-product",
+        order = "c[glowfin-oil-capsule]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "glowfin-luminescence-capsule",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/glowfin-luminescence-capsule.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "intermediate-product",
+        order = "d[glowfin-luminescence-capsule]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "glowfin-luminescence-gel",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/glowfin-luminescence-gel.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "intermediate-product",
+        order = "e[glowfin-luminescence-gel]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "glowfin-trencher-eyes",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/glowfin-trencher-eyes.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "intermediate-product",
+        order = "f[glowfin-trencher-eyes]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "glowfin-enhancer",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/glowfin-enhancer.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "intermediate-product",
+        order = "g[glowfin-enhancer]",
+        stack_size = 100
+    },
+    --MukMoux Components
+    {
+        type = "item",
+        name = "mukmoux-hide",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-hide.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "e[mukmoux-hide]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "mukmoux-fat",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-fat.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "f[mukmoux-fat]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "mukmoux-fillet",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/fillet.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "g[mukmoux-fillet]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "mukmoux-package",
+        icon = "__base__/graphics/icons/wooden-chest.png",
+        icon_size = 64,
+        icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "h[mukmoux-package]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "mukmoux-stones",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-stones.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "i[mukmoux-stones]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "mukmoux-polishing-stone",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-polishing-stone.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "j[mukmoux-polishing-stone]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "mukmoux-ground-polishing-stone",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-ground-polishing-stone.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "k[mukmoux-ground-polishing-stone]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "mukmoux-ceramic-powder",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-ceramic-powder.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "l[mukmoux-ceramic-powder]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "mukmoux-leather",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-leather.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "n[mukmoux-leather]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "mukmoux-hard-leather",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-hard-leather.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "o[mukmoux-hard-leather]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "mukmoux-bones",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-bones.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "q[mukmoux-bones]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "mukmoux-calcium",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-calcium.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "r[mukmoux-calcium]",
+        stack_size = 100
+    },
+    --Silverscale Glider
+    {
+        type = "item",
+        name = "silverscale-glider-fillet",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/fillet.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "a[silverscale-glider-fillet]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "silverscale-glider-package",
+        icon = "__base__/graphics/icons/wooden-chest.png",
+        icon_size = 64,
+        icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "b[silverscale-glider-package]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "silverscale-glider-scales",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/silverscale-glider-scales.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "c[silverscale-glider-scales]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "refined-silverscale",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/refined-silverscale.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "d[refined-silverscale]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "silverscale-glider-gel",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/silverscale-glider-gel.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "e[silverscale-glider-gel]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "silverscale-glider-muscle",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/silverscale-muscle.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "f[silverscale-glider-muscle]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "twined-muscle-fiber",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/entwined-muscles.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "g[twined-muscle-fiber]",
+        stack_size = 100
+    },
 })
