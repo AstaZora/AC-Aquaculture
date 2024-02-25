@@ -82,6 +82,31 @@ data:extend({
     vehicle_friction_modifier = 0.8
   }
 })
+local leatherBelt = table.deepcopy(data.raw["transport-belt"]["transport-belt"])
+local belt_speed = 10 / 480
+
+wood_belt_animation_set = 
+{
+	animation_set =
+	{
+		filename = "__AB-Breathe-Easy-Arboretum__/graphics/entity/wood-transports/wood-transport-belt.png",
+		priority = "extra-high",
+		width = 64,
+		height = 64,
+		frame_count = 16,
+		direction_count = 20,
+		hr_version =
+		{
+		filename = "__AB-Breathe-Easy-Arboretum__/graphics/entity/wood-transports/hr-wood-transport-belt.png",
+		priority = "extra-high",
+		width = 128,
+		height = 128,
+		scale = 0.5,
+		frame_count = 16,
+		direction_count = 20
+		}
+	},
+}
 
 leatherBelt.name = "leather-transport-belt"
 leatherBelt.type = "transport-belt"
