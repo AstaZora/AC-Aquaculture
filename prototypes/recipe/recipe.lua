@@ -1377,5 +1377,45 @@ for _, fishType in ipairs(fishTypes) do
     })
 end
 
+for _, fishType in ipairs(fishTypes) do
+    local eggSize = fishEggSizes[fishType]
+    local processEggAmount = 100  -- Default value for egg processing
+    local fishYieldMin, fishYieldMax  -- Declare variables for min and max fish yield
+
+    -- Adjust these values based on the fish size
+    if eggSize == "large" then
+        processEggAmount = 20  -- Requires fewer eggs due to larger fish size
+        fishYieldMin = 60
+        fishYieldMax = 120
+    elseif eggSize == "medium" then
+        processEggAmount = 30  -- Base value for medium
+        fishYieldMin = 90
+        fishYieldMax = 160
+    elseif eggSize == "small" then
+        processEggAmount = 40  -- Requires more eggs, smaller fish
+        fishYieldMin = 120
+        fishYieldMax = 200
+    end
+
+    -- Insert the adjusted recipe into the fishBreedingRecipes table
+    table.insert(fishBreedingRecipes, {
+        type = "recipe",
+        name = "ac-process-"..fishType.."-eggs-for-fish",
+        icon = "__base__/graphics/icons/fish.png",  -- Consider a distinct icon
+        icon_size = 64,
+        enabled = true,
+        category = "fish-hatchery",  -- Or "fish-hatchery"
+        subgroup = "fish-breeding",
+        energy_required = 600,  -- Adjust as necessary
+        ingredients = {
+            {type="item", name=fishType.."-egg", amount=processEggAmount},
+        },
+        results = {
+            {type="item", name=fishType, amount_min=fishYieldMin, amount_max=fishYieldMax},
+        }
+    })
+end
+
+
 data:extend(fishBreedingRecipes)
 

@@ -127,16 +127,29 @@ script.on_event(defines.events.on_entity_died, onEntityRemoved)
 script.on_event(defines.events.on_robot_mined_entity, onEntityRemoved)
 script.on_event(defines.events.on_player_mined_entity, onEntityRemoved)
 
--- Function to extract fish name from the recipe
 function extract_fish_name(recipe_name)
-    local match = string.match(recipe_name, "^ac%-breed%-(.-)%-egg$") or string.match(recipe_name, "^ac%-breed%-(.-)$")
+    -- Check for breeding egg recipes
+    local match = string.match(recipe_name, "^ac%-breed%-(.-)%-egg$")
+    
+    -- If not found, check for breeding fish recipes
+    if not match then
+        match = string.match(recipe_name, "^ac%-breed%-(.-)$")
+    end
+
+    -- If still not found, check for the process eggs for fish recipes
+    if not match then
+        match = string.match(recipe_name, "^ac%-process%-(.-)%-eggs%-for%-fish$")
+    end
+
     if match then
         -- game.print("Fish name extracted: " .. match)
     else
         -- game.print("Failed to extract fish name from recipe: " .. recipe_name)
     end
+
     return match
 end
+
 
 local fishTypes = {
     "mukmoux",
