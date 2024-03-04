@@ -647,8 +647,8 @@ data:extend({
     {
         type = "item",
         name = "starfin-darters",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/starfin-darters.png",
+        icon_size = 128,
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "m[starfin-darters]",
@@ -657,8 +657,8 @@ data:extend({
     {
         type = "item",
         name = "neon-nocturne",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/neon-nocturne.png",
+        icon_size = 128,
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "n[neon-nocturne]",
@@ -707,8 +707,8 @@ data:extend({
     {
         type = "item",
         name = "twilight-tetra",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/twilight-tetra.png",
+        icon_size = 128,
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "s[twilight-tetra]",
@@ -957,8 +957,8 @@ data:extend({
     {
         type = "item",
         name = "spiral-shellfish",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/spiral-shellfish.png",
+        icon_size = 128,
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "ar[spiral-shellfish]",
@@ -967,8 +967,8 @@ data:extend({
     {
         type = "item",
         name = "silent-drifter",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/silent-drifter.png",
+        icon_size = 128,
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "as[silent-drifter]",
@@ -1007,8 +1007,8 @@ data:extend({
     {
         type = "item",
         name = "stream-sifter",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/stream-sifter.png",
+        icon_size = 128,
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "aw[stream-sifter]",
@@ -1022,6 +1022,26 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "ax[shalen]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "scrondrix",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "ay[scrondrix]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "cridren",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "az[cridren]",
         stack_size = 100
     },
     {
@@ -1047,8 +1067,8 @@ data:extend({
     {
         type = "item",
         name = "neon-nocturne-egg",
-        icon = "__base__/graphics/icons/sulfur.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/neon-nocturne-egg.png",
+        icon_size = 128,
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "aq[fogfin-fish]",
@@ -1067,8 +1087,8 @@ data:extend({
     {
         type = "item",
         name = "spiral-shellfish-egg",
-        icon = "__base__/graphics/icons/sulfur.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/spiral-shellfish-egg.png",
+        icon_size = 128,
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "as[silent-drifter]",
@@ -1077,8 +1097,8 @@ data:extend({
     {
         type = "item",
         name = "silent-drifter-egg",
-        icon = "__base__/graphics/icons/sulfur.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/silent-drifter-egg.png",
+        icon_size = 128,
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "at[shadow-skulker]",
@@ -1087,8 +1107,8 @@ data:extend({
     {
         type = "item",
         name = "twilight-tetra-egg",
-        icon = "__base__/graphics/icons/sulfur.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/twilight-tetra-egg.png",
+        icon_size = 128,
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "au[mud-nautilus]",
@@ -1097,8 +1117,8 @@ data:extend({
     {
         type = "item",
         name = "starfin-darters-egg",
-        icon = "__base__/graphics/icons/sulfur.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/starfin-darters-egg.png",
+        icon_size = 128,
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "av[tide-tumbler]",
@@ -1107,8 +1127,8 @@ data:extend({
     {
         type = "item",
         name = "stream-sifter-egg",
-        icon = "__base__/graphics/icons/sulfur.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/stream-sifter-egg.png",
+        icon_size = 128,
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "aw[stream-sifter]",

@@ -154,7 +154,13 @@ end
 local fishTypes = {
     "mukmoux",
     "glowfin-trenchers",
-    "silverscale-glider"
+    "silverscale-glider",
+    "neon-nocturne",
+    "silent-drifter",
+    "spiral-shellfish",
+    "starfin-darters",
+    "stream-sifter",
+    "twilight-tetra",
     -- Add all your fish types here
 }
 

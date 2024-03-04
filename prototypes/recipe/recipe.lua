@@ -1344,8 +1344,8 @@ for _, fishType in ipairs(fishTypes) do
     table.insert(fishBreedingRecipes, {
         type = "recipe",
         name = "ac-breed-"..fishType,
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/"..fishType.."-egg.png",
+        icon_size = 128,
         enabled = true,
         category = "fish-hatchery",
         subgroup = "fish-breeding",
@@ -1362,8 +1362,8 @@ for _, fishType in ipairs(fishTypes) do
     table.insert(fishBreedingRecipes, {
         type = "recipe",
         name = "ac-breed-"..fishType.."-egg",
-        icon = "__base__/graphics/icons/fish.png",
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/"..fishType..".png",
+        icon_size = 128,
         enabled = true,
         category = "fish-breeding",
         subgroup = "fish-breeding",
@@ -1401,8 +1401,8 @@ for _, fishType in ipairs(fishTypes) do
     table.insert(fishBreedingRecipes, {
         type = "recipe",
         name = "ac-process-"..fishType.."-eggs-for-fish",
-        icon = "__base__/graphics/icons/fish.png",  -- Consider a distinct icon
-        icon_size = 64,
+        icon = "__AC-Aquaculture__/graphics/icons/fish/"..fishType..".png",
+        icon_size = 128,
         enabled = true,
         category = "fish-hatchery",  -- Or "fish-hatchery"
         subgroup = "fish-breeding",

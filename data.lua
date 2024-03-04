@@ -85,11 +85,11 @@ data:extend({
 local leatherBelt = table.deepcopy(data.raw["transport-belt"]["transport-belt"])
 local belt_speed = 10 / 480
 
-wood_belt_animation_set = 
+leather_belt_animation_set = 
 {
 	animation_set =
 	{
-		filename = "__AB-Breathe-Easy-Arboretum__/graphics/entity/wood-transports/wood-transport-belt.png",
+		filename = "__AC-Aquaculture__/graphics/entity/leather-transports/leather-transport-belt.png",
 		priority = "extra-high",
 		width = 64,
 		height = 64,
@@ -97,7 +97,7 @@ wood_belt_animation_set =
 		direction_count = 20,
 		hr_version =
 		{
-		filename = "__AB-Breathe-Easy-Arboretum__/graphics/entity/wood-transports/hr-wood-transport-belt.png",
+		filename = "__AC-Aquaculture__/graphics/entity/leather-transports/hr-leather-transport-belt.png",
 		priority = "extra-high",
 		width = 128,
 		height = 128,
@@ -124,7 +124,7 @@ leatherSplitter.name = "leather-splitter"
 leatherBelt.type = "transport-belt"
 leatherSplitter.speed = belt_speed
 leatherSplitter.health = 100
-leatherSplitter.belt_animation_set = wood_belt_animation_set
+leatherSplitter.belt_animation_set = leather_belt_animation_set
 leatherSplitter.structure_animation_speed_coefficient = 1/3
 -- Assuming you have a specific structure for the splitter graphics, adjust these paths as necessary
 leatherSplitter.structure.north.filename = "__AC-Aquaculture__/graphics/entity/leather-transports/leather-splitter-north.png"
@@ -147,7 +147,7 @@ leatherUnderground.name = "leather-underground-belt"
 leatherBelt.type = "transport-belt"
 leatherUnderground.speed = belt_speed
 leatherUnderground.health = 100
-leatherUnderground.belt_animation_set = wood_belt_animation_set
+leatherUnderground.belt_animation_set = leather_belt_animation_set
 leatherUnderground.structure_animation_speed_coefficient = 1/3
 -- Adjust the path for the underground belt graphics
 leatherUnderground.structure.direction_in.sheet.filename = "__AC-Aquaculture__/graphics/entity/leather-transports/leather-underground-belt-structure.png"
