@@ -2,7 +2,7 @@ data:extend({
     -- Growth-Stimulating Gel
     {
         type = "fluid",
-        name = "growth-stimulating-gel",
+        name = "growth-stimulating-gel", --Let them tubers grow.. I mean what else was this going to do?
         icon = "__base__/graphics/icons/fluid/water.png",
         icon_size = 32,
         default_temperature = 25,
@@ -16,7 +16,7 @@ data:extend({
     -- Rooting Gel
     {
         type = "fluid",
-        name = "rooting-gel",
+        name = "rooting-gel", --For when plants don't want to behave, you can sticky tack their roots down for them!
         icon = "__base__/graphics/icons/fluid/water.png",
         icon_size = 32,
         default_temperature = 25,
@@ -30,7 +30,7 @@ data:extend({
     -- Pest-Repellent Gel
     {
         type = "fluid",
-        name = "pest-repellent-gel",
+        name = "pest-repellent-gel", -- I don't know what this is for, but it sounds useful
         icon = "__base__/graphics/icons/fluid/water.png",
         icon_size = 32,
         default_temperature = 25,
@@ -44,7 +44,7 @@ data:extend({
     -- Water-Clarifying Agent
     {
         type = "fluid",
-        name = "water-clarifying-agent",
+        name = "water-clarifying-agent", -- You know, maybe I should move this stuff to farming huh?
         icon = "__base__/graphics/icons/fluid/water.png",
         icon_size = 32,
         default_temperature = 25,
@@ -72,7 +72,7 @@ data:extend({
     -- Aquatic Polymers
     {
         type = "fluid",
-        name = "aquatic-polymers",
+        name = "aquatic-polymers", -- Use for fish plastics from many fish oils and Spiral Shellfish Biopolymer Filament
         icon = "__base__/graphics/icons/fluid/water.png",
         icon_size = 32,
         default_temperature = 25,
@@ -86,7 +86,7 @@ data:extend({
     -- Bioluminescent Marking Gel
     {
         type = "fluid",
-        name = "bioluminescent-marking-gel",
+        name = "bioluminescent-marking-gel", -- Probably useless
         icon = "__base__/graphics/icons/fluid/water.png",
         icon_size = 32,
         default_temperature = 25,
@@ -100,7 +100,7 @@ data:extend({
     -- Disease Treatment Agent
     {
         type = "fluid",
-        name = "disease-treatment-agent",
+        name = "disease-treatment-agent", -- I hate farming, so I don't know what this is good for?
         icon = "__base__/graphics/icons/fluid/water.png",
         icon_size = 32,
         default_temperature = 25,
@@ -114,7 +114,7 @@ data:extend({
     -- Nutrient Absorption Enhancer
     {
         type = "fluid",
-        name = "nutrient-absorption-enhancer",
+        name = "nutrient-absorption-enhancer", -- tf is this? No clue, ask someone else
         icon = "__base__/graphics/icons/fluid/water.png",
         icon_size = 32,
         default_temperature = 25,
@@ -128,7 +128,7 @@ data:extend({
     -- Sediment Binding Gel
     {
         type = "fluid",
-        name = "sediment-binding-gel",
+        name = "sediment-binding-gel", -- This makes sense because clay isn't good enough, right?
         icon = "__base__/graphics/icons/fluid/water.png",
         icon_size = 32,
         default_temperature = 25,
@@ -186,6 +186,18 @@ data:extend({
         default_temperature = 25,
         base_color = {r = 0.7, g = 0.7, b = 0.7},
         flow_color = {r = 0.8, g = 0.8, b = 0.8},
+        max_temperature = 100,
+        pressure_to_speed_ratio = 0.4,
+        flow_to_energy_ratio = 0.59,
+    },
+    {
+        type = "fluid",
+        name = "biological-ionic-fluid",
+        icon = "__base__/graphics/icons/fluid/water.png",
+        icon_size = 64,
+        default_temperature = 25,
+        base_color = {r = 0.5, g = 0.5, b = 0.5},
+        flow_color = {r = 0.5, g = 0.5, b = 0.5},
         max_temperature = 100,
         pressure_to_speed_ratio = 0.4,
         flow_to_energy_ratio = 0.59,

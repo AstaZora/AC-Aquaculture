@@ -706,6 +706,331 @@ data:extend({
         },
         order = "c-a"
     },
+    {
+        type = "technology",
+        name = "ac-spiral-shellfish-processing",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        prerequisites = {"ac-marine-science-pack-3", "ac-bronze-inserters"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "spiral-shellfish-filleting",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "spiral-shellfish-packing",
+            }
+        },
+        unit = {
+            count = 750,
+            ingredients = {{"fish-biomass-pack", 1}, {"fish-fluid-science-pack", 1}, {"advanced-biology-pack", 1}},
+            time = 30,
+        },
+    },
+    {
+        type = "technology",
+        name = "ac-spiral-shellfish-package-sorting",
+        icon = "__base__/graphics/icons/wooden-chest.png",
+        icon_size = 64, icon_mipmaps = 4,
+        prerequisites = {"ac-spiral-shellfish-processing"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "spiral-shellfish-package-sorting",
+            },
+        },
+        unit = {
+            count = 250,
+            ingredients = {{"fish-biomass-pack", 1}, {"fish-fluid-science-pack", 1}, {"advanced-biology-pack", 1}},
+            time = 30,
+        },
+    },
+    {
+        type = "technology",
+        name = "ac-spiral-shellfish-processing-2",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        prerequisites = {"ac-spiral-shellfish-processing",},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "spiral-shell-fragment-processing",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "shell-calcium-refinement",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "biopolymer-filaments",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "spiral-gel",
+            }
+        },
+        unit = {
+            count = 600,
+            ingredients = {{"fish-biomass-pack", 1}, {"fish-fluid-science-pack", 1}, {"advanced-biology-pack", 1}},
+            time = 30,
+        },
+    },
+    {
+        type = "technology",
+        name = "ac-spiral-shellfish-processing-3",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        prerequisites = {"ac-spiral-shellfish-processing-2",},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "preservation-salts",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "spiral-filtration-unit",
+            },
+        },
+        unit = {
+            count = 800,
+            ingredients = {{"fish-biomass-pack", 1}, {"fish-fluid-science-pack", 1}, {"advanced-biology-pack", 1}},
+            time = 30,
+        },
+    },
+    --Silent Drifter Tech
+    {
+        type = "technology",
+        name = "ac-silent-drifter-processing",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        prerequisites = {"ac-marine-science-pack-3", "ac-bronze-inserters"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "silent-drifter-filleting",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "silent-drifter-packing",
+            }
+        },
+        unit = {
+            count = 750,
+            ingredients = {{"fish-biomass-pack", 1}, {"fish-fluid-science-pack", 1}, {"advanced-biology-pack", 1}},
+            time = 30,
+        },
+    },
+    {
+        type = "technology",
+        name = "ac-silent-drifter-package-sorting",
+        icon = "__base__/graphics/icons/wooden-chest.png",
+        icon_size = 64, icon_mipmaps = 4,
+        prerequisites = {"ac-silent-drifter-processing"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "silent-drifter-package-sorting",
+            },
+        },
+        unit = {
+            count = 250,
+            ingredients = {{"fish-biomass-pack", 1}, {"fish-fluid-science-pack", 1}, {"advanced-biology-pack", 1}},
+            time = 30,
+        },
+    },
+    {
+        type = "technology",
+        name = "ac-silent-drifter-processing-2",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        prerequisites = {"ac-silent-drifter-processing",},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "silent-drifter-gel",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "refined-silent-drifter-gel",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "silent-drifter-membrane",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "float-bladder",
+            }
+        },
+        unit = {
+            count = 600,
+            ingredients = {{"fish-biomass-pack", 1}, {"fish-fluid-science-pack", 1}, {"advanced-biology-pack", 1}},
+            time = 30,
+        },
+    },
+    --Starfin Darters
+    {
+        type = "technology",
+        name = "ac-starfin-darters-processing",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        prerequisites = {"ac-marine-science-pack-3", "ac-bronze-inserters"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "starfin-darters-filleting",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "starfin-darters-packing",
+            }
+        },
+        unit = {
+            count = 750,
+            ingredients = {{"fish-biomass-pack", 1}, {"fish-fluid-science-pack", 1}, {"advanced-biology-pack", 1}},
+            time = 30,
+        },
+    },
+    {
+        type = "technology",
+        name = "ac-starfin-darters-package-sorting",
+        icon = "__base__/graphics/icons/wooden-chest.png",
+        icon_size = 64, icon_mipmaps = 4,
+        prerequisites = {"ac-starfin-darters-processing"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "starfin-darters-package-sorting",
+            },
+        },
+        unit = {
+            count = 250,
+            ingredients = {{"fish-biomass-pack", 1}, {"fish-fluid-science-pack", 1}, {"advanced-biology-pack", 1}},
+            time = 30,
+        },
+    },
+    {
+        type = "technology",
+        name = "ac-starfin-darters-processing-2",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        prerequisites = {"ac-starfin-darters-processing",},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "starfin-darters-membrane",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "starfin-darters-scales",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "starfin-darters-egg-processing",
+            },
+        },
+        unit = {
+            count = 600,
+            ingredients = {{"fish-biomass-pack", 1}, {"fish-fluid-science-pack", 1}, {"advanced-biology-pack", 1}},
+            time = 30,
+        },
+    },
+    --Robotics T1
+    {
+        type = "technology",
+        name = "ac-electrical-discoveries",
+        icon = "__base__/graphics/technology/automation-1.png",
+        icon_size = 256, icon_mipmaps = 4,
+        prerequisites = {"ac-starfin-darters-processing-2"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "bioelectric-capacitor",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "bioelectric-battery",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "electrolytic-gel",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "flexible-sealant-tape",
+            },
+        },
+        unit = {
+            count = 1000,
+            ingredients = {{"fish-biomass-pack", 1}, {"fish-fluid-science-pack", 1}, {"advanced-biology-pack", 1}},
+            time = 60,
+        },
+    },
+    {
+        type = "technology",
+        name = "ac-robotics-brains",
+        icon = "__base__/graphics/technology/automation-1.png",
+        icon_size = 256, icon_mipmaps = 4,
+        prerequisites = {"ac-electrical-discoveries"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "silent-drifter-brain-extraction",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "preserved-silent-drifter-brain",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "spiral-shellfish-brain-extraction",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "preserved-spiral-shellfish-brain",
+            },
+        },
+        unit = {
+            count = 1500,
+            ingredients = {{"fish-biomass-pack", 1}, {"fish-fluid-science-pack", 1}, {"advanced-biology-pack", 1}},
+            time = 60,
+        },
+    },
+    {
+        type = "technology",
+        name = "ac-robotics-2",
+        icon = "__base__/graphics/technology/automation-1.png",
+        icon_size = 256, icon_mipmaps = 4,
+        prerequisites = {"ac-robotics-brains"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "construction-robot-brain",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "logistic-robot-brain",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "biological-construction-robot",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "biological-logistic-robot",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "simple-roboport",
+            },
+        },
+        unit = {
+            count = 2500,
+            ingredients = {{"fish-biomass-pack", 1}, {"fish-fluid-science-pack", 1}, {"advanced-biology-pack", 1}},
+            time = 60,
+        },
+    },
     --Advanced Ore Refining
     {
         type = "technology",

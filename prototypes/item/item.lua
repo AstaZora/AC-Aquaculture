@@ -1429,4 +1429,375 @@ data:extend({
         order = "g[twined-muscle-fiber]",
         stack_size = 100
     },
+    --Spiral Shellfish Components
+    {
+        type = "item",
+        name = "spiral-shellfish-fillet",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/fillet.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "spiral-shellfish-package",
+        icon = "__base__/graphics/icons/wooden-chest.png",
+        icon_size = 64,
+        icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "spiral-shell-fragments",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "crushed-shells",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "shell-calcium",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "preservation-salts",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "biopolymer-filaments",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "spiral-filtration-unit",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "spiral-gel",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "spiral-shellfish-brain",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 20
+    },
+    {
+        type = "item",
+        name = "preserved-spiral-shellfish-brain",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 20
+    },
+    {
+        type = "item",
+        name = "construction-robot-brain",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 20
+    },
+    {
+        type = "item",
+        name = "logistic-robot-brain",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 20
+    },
+    --Murm Float AKA silent Drifter
+    {
+        type = "item",
+        name = "silent-drifter-fillet",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/fillet.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "silent-drifter-package",
+        icon = "__base__/graphics/icons/wooden-chest.png",
+        icon_size = 64,
+        icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "silent-drifter-scales",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "silent-drifter-gel",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "refined-silent-drifter-gel",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "silent-drifter-membrane",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "float-bladders",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "silent-drifter-brain",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 20
+    },
+    {
+        type = "item",
+        name = "preserved-silent-drifter-brain",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 20
+    },
+    --Starfin-Darters
+    {
+        type = "item",
+        name = "starfin-darters-fillet",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/fillet.png",
+        icon_size = 128,
+        icon_mipmaps = 1,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "starfin-darters-package",
+        icon = "__base__/graphics/icons/wooden-chest.png",
+        icon_size = 64,
+        icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "electrolytic-gel",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "starfin-darters-scales", --locale to conductive-scales
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "starfin-darters-membrane",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "starfin-darters-fins",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "bioelectric-capacitor",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "bioelectric-battery",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "flexible-sealant-tape",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 100
+    },
+    --Simple Roboport
+    {
+        type = "item",
+        name = "simple-roboport",
+        icon = "__base__/graphics/icons/roboport.png",
+        icon_size = 64,
+        subgroup = "logistic-network",
+        order = "c[wood]-ab[wood-pulp]",
+        stack_size = 5,
+        place_result = "simple-roboport"
+    },
+    --Fish Robots
+    {
+        type = "item",
+        name = "biological-construction-robot",
+        icon = "__base__/graphics/icons/construction-robot.png",
+        icon_size = 64,
+        subgroup = "logistic-network",
+        order = "c[wood]-ab[wood-pulp]",
+        stack_size = 20,
+        place_result = "biological-construction-robot"
+    },
+    {
+        type = "item",
+        name = "biological-logistic-robot",
+        icon = "__base__/graphics/icons/logistic-robot.png",
+        icon_size = 64,
+        subgroup = "logistic-network",
+        order = "c[wood]-ab[wood-pulp]",
+        stack_size = 20,
+        place_result = "biological-logistic-robot"
+    },
+    --Ceramic Logistics
+    {
+        type = "item",
+        name = "ceramic-logistic-chest-passive-provider",
+        icon = "__base__/graphics/icons/logistic-chest-passive-provider.png",
+        icon_size = 64,
+        subgroup = "logistic-network",
+        order = "c[wood]-ab[wood-pulp]",
+        stack_size = 10,
+        place_result = "ceramic-logistic-chest-passive-provider"
+    },
+    {
+        type = "item",
+        name = "ceramic-logistic-chest-active-provider",
+        icon = "__base__/graphics/icons/logistic-chest-active-provider.png",
+        icon_size = 64,
+        subgroup = "logistic-network",
+        order = "c[wood]-ab[wood-pulp]",
+        stack_size = 10,
+        place_result = "ceramic-logistic-chest-active-provider"
+    },
+    {
+        type = "item",
+        name = "ceramic-logistic-chest-storage",
+        icon = "__base__/graphics/icons/logistic-chest-storage.png",
+        icon_size = 64,
+        subgroup = "logistic-network",
+        order = "c[wood]-ab[wood-pulp]",
+        stack_size = 10,
+        place_result = "ceramic-logistic-chest-storage"
+    },
+    {
+        type = "item",
+        name = "ceramic-logistic-chest-buffer",
+        icon = "__base__/graphics/icons/logistic-chest-buffer.png",
+        icon_size = 64,
+        subgroup = "logistic-network",
+        order = "c[wood]-ab[wood-pulp]",
+        stack_size = 10,
+        place_result = "ceramic-logistic-chest-buffer"
+    },
+    {
+        type = "item",
+        name = "ceramic-logistic-chest-requester",
+        icon = "__base__/graphics/icons/logistic-chest-requester.png",
+        icon_size = 64,
+        subgroup = "logistic-network",
+        order = "c[wood]-ab[wood-pulp]",
+        stack_size = 10,
+        place_result = "ceramic-logistic-chest-requester"
+    }
 })

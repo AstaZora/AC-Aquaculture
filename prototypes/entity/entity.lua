@@ -358,3 +358,96 @@ data:extend({
         
     },      
 })
+
+
+-- List of logistic chest types
+local chest_types = {
+    "logistic-chest-storage",
+    "logistic-chest-requester",
+    "logistic-chest-passive-provider",
+    "logistic-chest-active-provider",
+    "logistic-chest-buffer"
+}
+
+-- Iterate over each chest type and create a modified version
+for _, chest_type in ipairs(chest_types) do
+    -- Deepcopy the existing chest
+    local custom_chest = table.deepcopy(data.raw["logistic-container"][chest_type])
+
+    -- Modify the chest properties
+    custom_chest.name = "ceramic-"..chest_type
+    custom_chest.icon = "__base__/graphics/icons/"..chest_type..".png"
+    custom_chest.icon_size = 64
+    custom_chest.icon_mipmaps = 4
+    custom_chest.inventory_size = 5
+    -- Adjust logistic_slots_count for chests that support it
+    if
+        chest_type == "logistic-chest-storage" or
+        chest_type == "logistic-chest-requester" or
+        chest_type == "logistic-chest-buffer" or
+        chest_type == "logistic-chest-passive-provider" or
+        chest_type == "logistic-chest-active-provider" then
+        custom_chest.logistic_slots_count = 5
+        -- Update requester and buffer chest request slots to 5
+        if chest_type == "logistic-chest-requester" or chest_type == "logistic-chest-buffer" then
+            custom_chest.request_slot_count = 5
+        end
+    end
+    -- Add the modified chest to the game
+    data:extend({custom_chest})
+end
+--Early Roboport
+local early_roboport = table.deepcopy(data.raw["roboport"]["roboport"])
+early_roboport.name = "simple-roboport"
+early_roboport.icon = "__base__/graphics/icons/roboport.png"
+early_roboport.icon_size = 64
+early_roboport.icon_mipmaps = 4
+early_roboport.minable.result = "simple-roboport"
+early_roboport.logistics_radius = 15
+early_roboport.construction_radius = 30
+early_roboport.energy_source = {
+    type = "electric",
+    usage_priority = "secondary-input",
+    input_flow_limit = "5MW",
+    buffer_capacity = "100MJ",
+    drain = "2MW"
+}
+early_roboport.energy_usage = "50kW"
+early_roboport.recharge_minimum = "1MJ"
+early_roboport.recharge_maximum = "5MJ"
+early_roboport.robot_slots_count = 3
+early_roboport.material_slots_count = 3
+
+data:extend({early_roboport})
+
+-- Fish-Brain Construction Robot
+local fish_brain_robot = table.deepcopy(data.raw["construction-robot"]["construction-robot"])
+fish_brain_robot.name = "biological-construction-robot"
+fish_brain_robot.icon = "__base__/graphics/icons/construction-robot.png"
+fish_brain_robot.icon_size = 64
+fish_brain_robot.icon_mipmaps = 4
+fish_brain_robot.minable.result = "biological-construction-robot"
+fish_brain_robot.max_payload_size = 1
+fish_brain_robot.speed = 0.02
+fish_brain_robot.energy_per_move = "7.5kJ"
+fish_brain_robot.energy_per_tick = "0.1kJ"
+fish_brain_robot.speed_multiplier_when_out_of_energy = 1
+fish_brain_robot.max_energy = "0.5MJ"
+
+data:extend({fish_brain_robot})
+
+--Fish-Brain Logistic Robot
+local fish_brain_logistic_robot = table.deepcopy(data.raw["logistic-robot"]["logistic-robot"])
+fish_brain_logistic_robot.name = "biological-logistic-robot"
+fish_brain_logistic_robot.icon = "__base__/graphics/icons/logistic-robot.png"
+fish_brain_logistic_robot.icon_size = 64
+fish_brain_logistic_robot.icon_mipmaps = 4
+fish_brain_logistic_robot.minable.result = "biological-logistic-robot"
+fish_brain_logistic_robot.max_payload_size = 1
+fish_brain_logistic_robot.speed = 0.02
+fish_brain_logistic_robot.energy_per_move = "7.5kJ"
+fish_brain_logistic_robot.energy_per_tick = "0.1kJ"
+fish_brain_logistic_robot.speed_multiplier_when_out_of_energy = 1
+fish_brain_logistic_robot.max_energy = "0.5MJ"
+
+data:extend({fish_brain_logistic_robot})

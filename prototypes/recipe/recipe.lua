@@ -1138,6 +1138,616 @@ data:extend({
             {type="item", name="twined-muscle-fiber", amount=1}
         }
     },
+    --Spiral Shellfish Recipes
+    {
+        type = "recipe",
+        name = "spiral-shellfish-filleting",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/fillet.png",
+        icon_size = 128,
+        category = "fish-processing",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="spiral-shellfish", amount=10}
+        },
+        results = {
+            {type="item", name="spiral-shellfish-fillet", amount=5},
+            {type="item", name="spiral-shellfish-egg", amount=1, probability=0.1}
+        }
+    },
+    {
+        type = "recipe",
+        name = "spiral-shellfish-packing",
+        icon = "__base__/graphics/icons/wooden-chest.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-packing",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="spiral-shellfish-fillet", amount=20}
+        },
+        results = {
+            {type="item", name="spiral-shellfish-package", amount=1}
+        }
+    },
+    {
+        type = "recipe",
+        name = "spiral-shellfish-package-sorting",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-sorting",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="spiral-shellfish-package", amount=1}
+        },
+        results = {
+            {type="item", name="spiral-shell-fragments", amount=5},
+        }
+    },
+    {
+        type = "recipe",
+        name = "spiral-shell-fragment-processing",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-processing",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="spiral-shell-fragments", amount=5}
+        },
+        results = {
+            {type="item", name="crushed-shells", amount=10}
+        }
+    },
+    {
+        type = "recipe",
+        name = "shell-calcium-refinement",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "ore-preparation",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="crushed-shells", amount=5}
+        },
+        results = {
+            {type="item", name="shell-calcium", amount=5}
+        }
+    },
+    {
+        type = "recipe",
+        name = "preservation-salts",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-drying-rack",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="shell-calcium", amount=5},
+            {type="item", name="mukmoux-calcium", amount=5}
+        },
+        results = {
+            {type="item", name="preservation-salts", amount=1}
+        }
+    },
+    {
+        type = "recipe",
+        name = "biopolymer-filaments",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-drying-rack",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="twined-muscle-fiber", amount=5},
+            {type="item", name="shell-calcium", amount=5},
+            {type="item", name="spiral-gel", amount=1},
+            {type="fluid", name="mukmoux-sealant", amount=10},
+        },
+        results = {
+            {type="item", name="biopolymer-filaments", amount=2}
+        }
+    },
+    {
+        type = "recipe",
+        name = "spiral-gel",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-extraction",
+        subgroup = "fish-breeding",
+        energy_required = 10,
+        enabled = false,
+        ingredients = {
+            {type = "item", name = "spiral-shellfish-egg", amount = 10}
+        },
+        results = {
+            {type="item", name="spiral-gel", amount=1}
+        }
+    },
+    {
+        type = "recipe",
+        name = "spiral-filtration-unit",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "advanced-crafting",
+        subgroup = "fish-breeding",
+        energy_required = 10,
+        enabled = false,
+        ingredients = {
+            {type = "item", name = "biopolymer-filaments", amount = 5},
+            {type = "item", name = "spiral-gel", amount = 5},
+            {type = "fluid", name = "mukmoux-sealant", amount = 10},
+            {type = "fluid", name = "glowfin-oil", amount = 10}
+        },
+        results = {
+            {type="item", name="spiral-filtration-unit", amount=1}
+        }
+    },
+
+    --Silent Drifter Processing
+    {
+        type = "recipe",
+        name = "silent-drifter-filleting",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/fillet.png",
+        icon_size = 128,
+        category = "fish-processing",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="silent-drifter", amount=1}
+        },
+        results = {
+            {type="item", name="silent-drifter-fillet", amount=5},
+            {type="item", name="silent-drifter-egg", amount=1, probability=0.1}
+        }
+    },
+    {
+        type = "recipe",
+        name = "silent-drifter-packing",
+        icon = "__base__/graphics/icons/wooden-chest.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-packing",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="silent-drifter-fillet", amount=20}
+        },
+        results = {
+            {type="item", name="silent-drifter-package", amount=1}
+        }
+    },
+    {
+        type = "recipe",
+        name = "silent-drifter-package-sorting",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-sorting",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="silent-drifter-package", amount=1}
+        },
+        results = {
+            {type="item", name="silent-drifter-scales", amount=5},
+        }
+    },
+    {
+        type = "recipe",
+        name = "silent-drifter-gel",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-advanced-extraction",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="silent-drifter-egg", amount=10}
+        },
+        results = {
+            {type="item", name="silent-drifter-gel", amount=1}
+        }
+    },
+    {
+        type = "recipe",
+        name = "refined-silent-drifter-gel",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-advanced-extraction",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="silent-drifter-gel", amount=5}
+        },
+        results = {
+            {type="item", name="refined-silent-drifter-gel", amount=1}
+        }
+    },
+    {
+        type = "recipe",
+        name = "silent-drifter-membrane",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-processing",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="silent-drifter-fillet", amount=5}
+        },
+        results = {
+            {type="item", name="silent-drifter-membrane", amount=1}
+        }
+    },
+    {
+        type = "recipe",
+        name = "float-bladder",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-processing",
+        subgroup = "fish-breeding",
+        energy_required = 20,
+        enabled = false,
+        ingredients = {
+            {type="item", name="silent-drifter-membrane", amount=5},
+            {type="item", name="refined-silent-drifter-gel", amount=5}
+        },
+        results = {
+            {type="item", name="float-bladders", amount=1}
+        }
+    },
+    --Starfin Darters Processing
+    {
+        type = "recipe",
+        name = "starfin-darters-filleting",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/fillet.png",
+        icon_size = 128,
+        category = "fish-processing",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="starfin-darters", amount=20}
+        },
+        results = {
+            {type="item", name="starfin-darters-fillet", amount=5},
+            {type="item", name="starfin-darters-egg", amount=1, probability=0.1}
+        }
+    },
+    {
+        type = "recipe",
+        name = "starfin-darters-packing",
+        icon = "__base__/graphics/icons/wooden-chest.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-packing",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="starfin-darters-fillet", amount=20}
+        },
+        results = {
+            {type="item", name="starfin-darters-package", amount=1}
+        }
+    },
+    {
+        type = "recipe",
+        name = "starfin-darters-package-sorting",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-sorting",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="starfin-darters-package", amount=1}
+        },
+        results = {
+            {type="item", name="starfin-darters-fins", amount=5},
+        }
+    },
+    {
+        type = "recipe",
+        name = "starfin-darters-membrane",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-processing",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="starfin-darters-fillet", amount=5}
+        },
+        results = {
+            {type="item", name="starfin-darters-membrane", amount=1}
+        }
+    },
+    {
+        type = "recipe",
+        name = "starfin-darters-scales",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-processing",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="starfin-darters-fillet", amount=5},
+            {type="item", name="starfin-darters-membrane", amount=1}
+        },
+        results = {
+            {type="item", name="starfin-darters-scales", amount=20}
+        }
+    },
+    {
+        type = "recipe",
+        name = "starfin-darters-egg-processing",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-extraction",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="starfin-darters-egg", amount=10}
+        },
+        results = {
+            {type="fluid", name="biological-ionic-fluid", amount=20}
+        }
+    },
+    {
+        type = "recipe",
+        name = "electrolytic-gel",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-advanced-extraction",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="fluid", name="biological-ionic-fluid", amount=10},
+            {type="fluid", name="steam", amount=40}
+        },
+        results = {
+            {type="item", name="electrolytic-gel", amount=5}
+        }
+    },
+    {
+        type = "recipe",
+        name = "bioelectric-capacitor",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "advanced-crafting",
+        subgroup = "fish-breeding",
+        energy_required = 10,
+        enabled = false,
+        ingredients = {
+            {type="fluid", name="biological-ionic-fluid", amount=50},
+            {type="item", name="biopolymer-filaments", amount=5},
+            {type="item", name = "starfin-darters-scales", amount=10},
+            {type="item", name = "copper-plate", amount=5},
+        },
+        results = {
+            {type="item", name="bioelectric-capacitor", amount=1}
+        }
+    },
+    {
+        type = "recipe",
+        name = "bioelectric-battery",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "advanced-crafting",
+        subgroup = "fish-breeding",
+        energy_required = 10,
+        enabled = false,
+        ingredients = {
+            {type="item", name="bioelectric-capacitor", amount=5},
+            {type="item", name="electrolytic-gel", amount=5},
+            {type="item", name="biopolymer-filaments", amount=5},
+            {type="item", name="advanced-circuit", amount=5},
+        },
+        results = {
+            {type="item", name="bioelectric-battery", amount=1}
+        }
+    },
+    {
+        type = "recipe",
+        name = "flexible-sealant-tape",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "advanced-crafting",
+        subgroup = "fish-breeding",
+        energy_required = 10,
+        enabled = false,
+        ingredients = {
+            {type="fluid", name="mukmoux-sealant", amount=10},
+            {type="item", name="biopolymer-filaments", amount=5},
+        },
+        results = {
+            {type="item", name="flexible-sealant-tape", amount=1}
+        }
+    },
+    --Silent Drifter Brain
+    {
+        type = "recipe",
+        name = "silent-drifter-brain-extraction",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-chemicals",
+        subgroup = "fish-breeding",
+        energy_required = 60,
+        enabled = false,
+        ingredients = {
+            {type="item", name="silent-drifter", amount=100},
+            {type="item", name="spiral-shell-fragments", amount=50},
+            {type="item", name="spiral-gel", amount=10}
+        },
+        results = {
+            {type="item", name="silent-drifter-brain", amount_min = 30, amount_max = 50, probability = 0.5}
+        }
+    },
+    {
+        type = "recipe",
+        name = "preserved-silent-drifter-brain",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-drying-rack",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="silent-drifter-brain", amount=1},
+            {type="item", name="preservation-salts", amount=1}
+        },
+        results = {
+            {type="item", name="preserved-silent-drifter-brain", amount=1, probability_min = 0.7, probability_max = 0.8}
+        }
+    },
+    --Spiral Shellfish Brain
+    {
+        type = "recipe",
+        name = "spiral-shellfish-brain-extraction",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-chemicals",
+        subgroup = "fish-breeding",
+        energy_required = 60,
+        enabled = false,
+        ingredients = {
+            {type="item", name="spiral-shellfish", amount=100},
+            {type="item", name="spiral-shell-fragments", amount=50},
+            {type="item", name="spiral-gel", amount=10}
+        },
+        results = {
+            {type="item", name="spiral-shellfish-brain", amount_min = 30, amount_max = 50, probability = 0.5}
+        }
+    },
+    {
+        type = "recipe",
+        name = "preserved-spiral-shellfish-brain",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-drying-rack",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="spiral-shellfish-brain", amount=1},
+            {type="item", name="preservation-salts", amount=1}
+        },
+        results = {
+            {type="item", name="preserved-spiral-shellfish-brain", amount=1, probability_min = 0.7, probability_max = 0.8}
+        }
+    },
+    --Biological Construction Robot Brain
+    {
+        type = "recipe",
+        name = "construction-robot-brain",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-chemicals",
+        subgroup = "fish-breeding",
+        energy_required = 60,
+        enabled = false,
+        ingredients = {
+            {type="item", name = "preserved-spiral-shellfish-brain", amount=1},
+            {type="item", name = "advanced-circuit", amount=5},
+            {type="item", name = "biopolymer-filaments", amount=5},
+            {type="item", name = "starfin-darters-fins", amount=5}
+        },
+        results = {
+            {type="item", name="construction-robot-brain", amount=1, probability = 0.2}
+        }
+    },
+    --Biological Logistic Robot Brain
+    {
+        type = "recipe",
+        name = "logistic-robot-brain",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-chemicals",
+        subgroup = "fish-breeding",
+        energy_required = 60,
+        enabled = false,
+        ingredients = {
+            {type="item", name = "preserved-silent-drifter-brain", amount=1},
+            {type="item", name = "advanced-circuit", amount=5},
+            {type="item", name = "biopolymer-filaments", amount=5},
+            {type="item", name = "starfin-darters-fins", amount=5}
+        },
+        results = {
+            {type="item", name="logistic-robot-brain", amount=1, probability = 0.2}
+        }
+    },
+    --Biological Robots
+    {
+        type = "recipe",
+        name = "biological-construction-robot",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "advanced-crafting",
+        subgroup = "fish-breeding",
+        energy_required = 60,
+        enabled = false,
+        ingredients = {
+            {type="item", name = "construction-robot-brain", amount=1},
+            {type="item", name = "bioelectric-battery", amount=5},
+            {type="item", name = "bronze-plate", amount=5},
+            {type="item", name = "flexible-sealant-tape", amount=5}
+        },
+        results = {
+            {type="item", name="biological-construction-robot", amount=1}
+        }
+    },
+    {
+        type = "recipe",
+        name = "biological-logistic-robot",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "advanced-crafting",
+        subgroup = "fish-breeding",
+        energy_required = 60,
+        enabled = false,
+        ingredients = {
+            {type="item", name = "logistic-robot-brain", amount=1},
+            {type="item", name = "bioelectric-battery", amount=5},
+            {type="item", name = "bronze-plate", amount=5},
+            {type="item", name = "flexible-sealant-tape", amount=5}
+        },
+        results = {
+            {type="item", name="biological-logistic-robot", amount=1}
+        }
+    },
+    --Simple Roboport
+    {
+        type = "recipe",
+        name = "simple-roboport",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "advanced-crafting",
+        subgroup = "fish-breeding",
+        energy_required = 10,
+        enabled = false,
+        ingredients = {
+            {type="item", name="bioelectric-capacitor", amount=20},
+            {type="item", name="bronze-plate", amount=20},
+            {type="item", name="iron-plate", amount=20},
+        },
+        results = {
+            {type="item", name="simple-roboport", amount=1}
+        }
+    },
     --Incomeplete Fish Egg Fuel Recipe
     --Fish Egg Fuel
     {
@@ -1147,7 +1757,7 @@ data:extend({
         icon_size = 64, icon_mipmaps = 4,
         category = "fish-feeding",
         subgroup = "fish-breeding",
-        energy_required = 5,
+        energy_required = 20,
         enabled = true,
         ingredients = {
             {type="item", name="mukmoux-calcium", amount=20},
@@ -1415,7 +2025,32 @@ for _, fishType in ipairs(fishTypes) do
         }
     })
 end
-
-
 data:extend(fishBreedingRecipes)
 
+local chestTypes = {
+    "logistic-chest-storage",
+    "logistic-chest-requester",
+    "logistic-chest-passive-provider",
+    "logistic-chest-active-provider",
+    "logistic-chest-buffer"
+}
+
+local chestRecipes = {}
+
+for _, chestType in ipairs(chestTypes) do
+    table.insert(chestRecipes, {
+        type = "recipe",
+        name = "ceramic-"..chestType,
+        enabled = true,
+        ingredients = {
+            {type="item", name="mukmoux-ceramic-powder", amount=1},
+            {type="item", name="wooden-chest", amount=1},
+            -- Add other materials here
+        },
+        results = {
+            {type="item", name="ceramic-"..chestType, amount=1},
+        }
+    })
+end
+
+data:extend(chestRecipes)
