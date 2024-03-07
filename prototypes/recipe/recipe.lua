@@ -165,9 +165,9 @@ data:extend({
         enabled = true,
         energy_required = 20,
         ingredients = {
-            {"steel-plate", 20},
-            {"iron-gear-wheel", 10},
-            {"processing-unit", 3}
+            {"bronze-plate", 8},
+            {"bronze-gear", 3},
+            {"advanced-circuit", 2}
         },
         result = "fish-aquarium"
     },
@@ -1839,10 +1839,10 @@ data:extend({
         ingredients = {
             {type="item", name="glowfin-enhancer", amount=5},
             {type="item", name="mukmoux-polishing-stone", amount=10},
-            {type="item", name="twined-muscle-fiber", amount=10}
+            {type="item", name="twined-muscle-fiber", amount=4}
         },
         results = {
-            {type="item", name="advanced-biology-pack", amount=2}
+            {type="item", name="advanced-biology-pack", amount=4}
         }
     },
     --Efficient Breeding Processor
@@ -1881,6 +1881,27 @@ data:extend({
         },
         results = {
             {type="item", name="efficient-egg-gathering-processor", amount=1}
+        }
+    },
+    --Stream Sifter Module
+    {
+        type = "recipe",
+        name = "stream-sifter-module",
+        icon = "__base__/graphics/icons/speed-module.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "advanced-crafting",
+        subgroup = "fish-breeding",
+        energy_required = 20,
+        enabled = false,
+        ingredients = {
+            {type="item",name="fiberboard-circuitry", amount=20},
+            {type="item",name="advanced-circuit", amount = 5},
+            {type="item",name="refined-silent-drifter-gel", amount=5},
+            {type="item",name="silent-drifter-membrane", amount=5},
+            {type="item",name="spiral-filtration-unit", amount=5}
+        },
+        results = {
+            {type="item", name="sifter-module-1", amount=1}
         }
     },
     --Combined Fish Recipes
@@ -2054,3 +2075,37 @@ for _, chestType in ipairs(chestTypes) do
 end
 
 data:extend(chestRecipes)
+
+
+local beltRecipes = {}
+
+-- Recipe for underground belt
+table.insert(beltRecipes, {
+    type = "recipe",
+    name = "underground-belt-highway",
+    enabled = true,
+    ingredients = {
+        {type="item", name="transport-belt", amount=10},
+        -- Add other materials here
+    },
+    results = {
+        {type="item", name="underground-belt-highway", amount=1},
+    }
+})
+
+-- Recipe for splitter
+table.insert(beltRecipes, {
+    type = "recipe",
+    name = "splitter-highway",
+    enabled = true,
+    ingredients = {
+        {type="item", name="transport-belt", amount=10},
+        {type="item", name="splitter", amount=1},
+        -- Add other materials here
+    },
+    results = {
+        {type="item", name="splitter-highway", amount=1},
+    }
+})
+
+data:extend(beltRecipes)

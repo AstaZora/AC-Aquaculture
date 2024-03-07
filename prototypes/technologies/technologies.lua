@@ -1083,6 +1083,26 @@ data:extend({
         },
         order = "c-a"
     },
+    --Sifter Module
+    {
+        type = "technology",
+        name = "ac-stream-sifter-module",
+        icon = "__base__/graphics/technology/module.png",
+        icon_size = 256, icon_mipmaps = 4,
+        prerequisites = {"ac-advanced-ore-crushing"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "stream-sifter-module",
+            }
+        },
+        unit = {
+            count = 2500,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 60,
+        },
+        order = "c-a"
+    },
     --Bronze Fluid Handling
     {
         type = "technology",

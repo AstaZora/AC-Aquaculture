@@ -1799,5 +1799,27 @@ data:extend({
         order = "c[wood]-ab[wood-pulp]",
         stack_size = 10,
         place_result = "ceramic-logistic-chest-requester"
-    }
+    },
+    --splitter Highway
+    {
+        type = "item",
+        name = "splitter-highway",
+        icon = "__base__/graphics/icons/splitter.png",
+        icon_size = 64,
+        subgroup = "belt",
+        order = "c[wood]-ab[wood-pulp]",
+        stack_size = 50,
+        place_result = "splitter-highway"
+    },
+    --Underground Highway
+    {
+        type = "item",
+        name = "underground-belt-highway",
+        icon = "__base__/graphics/icons/underground-belt.png",
+        icon_size = 64,
+        subgroup = "belt",
+        order = "c[wood]-ab[wood-pulp]",
+        stack_size = 50,
+        place_result = "underground-belt-highway"
+    },
 })
