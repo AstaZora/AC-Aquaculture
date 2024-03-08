@@ -452,17 +452,15 @@ fish_brain_logistic_robot.max_energy = "0.5MJ"
 
 data:extend({fish_brain_logistic_robot})
 
--- Deepcopy vanilla splitter
 local splitterHighway = table.deepcopy(data.raw["splitter"]["splitter"])
 splitterHighway.name = "splitter-highway"
-splitterHighway.speed = 150 / 480 -- Set speed to 150/480
+splitterHighway.speed = 150 / 480 
 splitterHighway.minable = {mining_time = 1, result = "splitter-highway"}
 data:extend({splitterHighway})
 
--- Deepcopy vanilla underground belt
 local undergroundBeltHighway = table.deepcopy(data.raw["underground-belt"]["underground-belt"])
 undergroundBeltHighway.name = "underground-belt-highway"
-undergroundBeltHighway.max_distance = 50 -- Upgrade the distance to 50
-undergroundBeltHighway.speed = 150 / 480 -- Set speed to 150/480
+undergroundBeltHighway.max_distance = 50 
+undergroundBeltHighway.speed = 150 / 480 
 undergroundBeltHighway.minable = {mining_time = 1, result = "underground-belt-highway"}
 data:extend({undergroundBeltHighway})

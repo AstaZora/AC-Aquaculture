@@ -590,7 +590,7 @@ data:extend({
         energy_required = 5,
         enabled = false,
         ingredients = {
-            {type="item", name="glowfin-trenchers", amount=1}
+            {type="item", name="glowfin-trenchers", amount=10}
         },
         results = {
             {type="item", name="glowfin-trenchers-fillet", amount=5},
@@ -785,7 +785,7 @@ data:extend({
         energy_required = 5,
         enabled = false,
         ingredients = {
-            {type="item", name="mukmoux", amount=1}
+            {type="item", name="mukmoux", amount=2}
         },
         results = {
             {type="item", name="mukmoux-fillet", amount=10},
@@ -1014,7 +1014,7 @@ data:extend({
         energy_required = 5,
         enabled = false,
         ingredients = {
-            {type="item", name="silverscale-glider", amount=1}
+            {type="item", name="silverscale-glider", amount=5}
         },
         results = {
             {type="item", name="silverscale-glider-fillet", amount=4},
@@ -1253,7 +1253,7 @@ data:extend({
             {type="fluid", name="mukmoux-sealant", amount=10},
         },
         results = {
-            {type="item", name="biopolymer-filaments", amount=2}
+            {type="item", name="biopolymer-filaments", amount=10}
         }
     },
     {
@@ -1303,7 +1303,7 @@ data:extend({
         energy_required = 5,
         enabled = false,
         ingredients = {
-            {type="item", name="silent-drifter", amount=1}
+            {type="item", name="silent-drifter", amount=2}
         },
         results = {
             {type="item", name="silent-drifter-fillet", amount=5},
@@ -1611,7 +1611,7 @@ data:extend({
             {type="item", name="preservation-salts", amount=1}
         },
         results = {
-            {type="item", name="preserved-silent-drifter-brain", amount=1, probability_min = 0.7, probability_max = 0.8}
+            {type="item", name="preserved-silent-drifter-brain", amount=1, probability = math.random(70, 80) / 100}
         }
     },
     --Spiral Shellfish Brain
@@ -1647,7 +1647,7 @@ data:extend({
             {type="item", name="preservation-salts", amount=1}
         },
         results = {
-            {type="item", name="preserved-spiral-shellfish-brain", amount=1, probability_min = 0.7, probability_max = 0.8}
+            {type="item", name="preserved-spiral-shellfish-brain", amount=1, probability = math.random(70, 80) / 100}
         }
     },
     --Biological Construction Robot Brain
@@ -1667,7 +1667,8 @@ data:extend({
             {type="item", name = "starfin-darters-fins", amount=5}
         },
         results = {
-            {type="item", name="construction-robot-brain", amount=1, probability = 0.2}
+            {type="item", name="construction-robot-brain", amount=1, probability = 0.2},
+            {type="item", name="advanced-circuit", amount = 5, probability = 0.8}
         }
     },
     --Biological Logistic Robot Brain
@@ -1687,7 +1688,8 @@ data:extend({
             {type="item", name = "starfin-darters-fins", amount=5}
         },
         results = {
-            {type="item", name="logistic-robot-brain", amount=1, probability = 0.2}
+            {type="item", name="logistic-robot-brain", amount=1, probability = 0.2},
+            {type="item", name="advanced-circuit", amount = 5, probability = 0.8}
         }
     },
     --Biological Robots
