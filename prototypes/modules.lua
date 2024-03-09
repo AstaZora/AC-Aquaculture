@@ -32,7 +32,7 @@ data:extend({
         name = "efficient-breeding-processor",
         icon = "__base__/graphics/icons/speed-module.png",
         icon_size = 64,
-        category = "speed",
+        category = "productivity",
         tier = 1,
         effect = { speed = {bonus = 0.25}},
         limitation = {
@@ -62,7 +62,8 @@ data:extend({
             "ac-process-stream-sifter-eggs-for-fish",
             "ac-breed-twilight-tetra",
             "ac-breed-twilight-tetra-egg",
-            "ac-process-twilight-tetra-eggs-for-fish"
+            "ac-process-twilight-tetra-eggs-for-fish",
+            "consume-fertilizer",
         },
         limitation_message_key = "This is not a compatible breeding recipe",
         subgroup = "module",
@@ -105,7 +106,8 @@ data:extend({
             "ac-process-stream-sifter-eggs-for-fish",
             "ac-breed-twilight-tetra",
             "ac-breed-twilight-tetra-egg",
-            "ac-process-twilight-tetra-eggs-for-fish"
+            "ac-process-twilight-tetra-eggs-for-fish",
+            "consume-fertilizer",
         },
         limitation_message_key = "This is not a compatible breeding recipe",
         subgroup = "module",

@@ -1277,7 +1277,7 @@ data:extend({
         name = "spiral-filtration-unit",
         icon = "__base__/graphics/icons/fish.png",
         icon_size = 64, icon_mipmaps = 4,
-        category = "advanced-crafting",
+        category = "chemistry",
         subgroup = "fish-breeding",
         energy_required = 10,
         enabled = false,

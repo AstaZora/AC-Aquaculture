@@ -1135,5 +1135,25 @@ data:extend({
         },
         order = "c-a"
     },
+-- Infinite Research
+    {
+        type = "technology",
+        name = "ac-infinite-research",
+        icon = "__AC-Aquaculture__/graphics/icons/infinity-dna.png",
+        icon_size = 256, icon_mipmaps = 4,
+        prerequisites = {"ac-bronze-fluid-handling"}, -- Add your prerequisites here
+        effects = {},
+        infinite = true,
+        research_unit_energy = 4,
+        level = 1,
+        max_level = 100000,
+        unit = {
+            count = 1000,
+            count_formuala = "L*1",
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}, {"fish-biomass-pack", 1}, {"fish-fluid-science-pack", 1}, {"advanced-biology-pack", 1}},
+            time = 60, 
+        },
+        order = "c-a"
+    },
 })
   
