@@ -1767,7 +1767,7 @@ data:extend({
             {type="item", name="silverscale-glider-gel", amount=5}
         },
         results = {
-            {type="item", name="fish-egg-fuel", amount=20}
+            {type="item", name="fish-egg-fuel", amount=50}
         }
     },
     --Basic Fish Fuel
@@ -1786,7 +1786,7 @@ data:extend({
             {type="item", name="silverscale-glider-fillet", amount=5}
         },
         results = {
-            {type="item", name="fish-egg-fuel", amount=1}
+            {type="item", name="fish-egg-fuel", amount=5}
         }
     },
     --Sciences

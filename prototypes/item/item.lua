@@ -532,7 +532,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "b[glowfin-trenchers]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -542,7 +542,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "c[crystal-carapacer]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -552,7 +552,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "d[electro-eels]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -562,7 +562,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "e[mukmoux]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -572,7 +572,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "e[lava-lamprey]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -582,7 +582,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "f[magma-moray]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -592,7 +592,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "g[thermal-pike]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -602,7 +602,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "h[radiant-ray]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -612,7 +612,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "i[solar-starfish]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -622,7 +622,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "j[stellar-sturgeon]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -632,7 +632,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "k[void-viper]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -642,7 +642,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "l[xeno-xiphias]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -652,7 +652,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "m[starfin-darters]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -662,7 +662,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "n[neon-nocturne]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -672,7 +672,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "o[helix-drifter]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -682,7 +682,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "p[luminous-lanternfish]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -692,7 +692,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "q[phosphor-fish]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -702,7 +702,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "r[silverscale-glider]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -712,7 +712,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "s[twilight-tetra]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -722,7 +722,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "t[crescent-jellyfish]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -732,7 +732,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "u[nightshade-nudibranch]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -742,7 +742,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "v[shallows-squid]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -752,7 +752,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "w[bolt-barracuda]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -762,7 +762,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "x[aurora-angler]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -772,7 +772,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "y[glacial-grouper]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -782,7 +782,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "z[frostfin-tuna]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -792,7 +792,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "aa[iceberg-icarus]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -802,7 +802,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "ab[polar-pike]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -812,7 +812,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "ac[snowsquall-salmon]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -822,7 +822,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "ad[arctic-alewife]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -832,7 +832,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "ae[frozen-fish]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -842,7 +842,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "af[mist-manta]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -852,7 +852,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "ag[plasma-puffer]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -862,7 +862,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "ah[vapor-vanguard]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -872,7 +872,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "ai[whispering-whale]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -882,7 +882,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "aj[mistral-mollusk]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -892,7 +892,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "ak[cloaked-cuttlefish]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -902,7 +902,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "al[lunar-lantern]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -912,7 +912,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "am[ribbon-reef]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -922,7 +922,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "an[shell-hunter]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -932,7 +932,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "ao[tidepool-tetra]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -942,7 +942,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "ap[echo-ray]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -952,7 +952,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "aq[fogfin-fish]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -962,7 +962,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "ar[spiral-shellfish]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -972,7 +972,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "as[silent-drifter]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -982,7 +982,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "at[shadow-skulker]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -992,7 +992,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "au[mud-nautilus]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -1002,7 +1002,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "av[tide-tumbler]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -1012,7 +1012,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "aw[stream-sifter]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -1022,7 +1022,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "ax[shalen]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -1032,7 +1032,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "ay[scrondrix]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",
@@ -1042,7 +1042,7 @@ data:extend({
         icon_mipmaps = 1,
         subgroup = "raw-resource",
         order = "az[cridren]",
-        stack_size = 100
+        stack_size = 200
     },
     {
         type = "item",

@@ -92,5 +92,7 @@ data:extend({
     createFish("tide-tumbler", {influence = 0.02, max_probability = 0.02}),
     createFish("stream-sifter", {influence = 0.02, max_probability = 0.02}),
     createFish("shalen", {influence = 0.02, max_probability = 0.02}),
+    createFish("cridren", {influence = 0.02, max_probability = 0.02}),
+    createFish("scrondrix", {influence = 0.02, max_probability = 0.02}),")
     ]]
   
