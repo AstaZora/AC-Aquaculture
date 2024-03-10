@@ -1017,7 +1017,7 @@ data:extend({
             {type="item", name="silverscale-glider", amount=5}
         },
         results = {
-            {type="item", name="silverscale-glider-fillet", amount=4},
+            {type="item", name="silverscale-glider-fillet", amount=10},
             {type="item", name="silverscale-glider-egg", amount=1, probability=0.1}
         }
     },

@@ -429,10 +429,10 @@ fish_brain_robot.icon_mipmaps = 4
 fish_brain_robot.minable.result = "biological-construction-robot"
 fish_brain_robot.max_payload_size = 1
 fish_brain_robot.speed = 0.02
-fish_brain_robot.energy_per_move = "7.5kJ"
+fish_brain_robot.energy_per_move = "5kJ"
 fish_brain_robot.energy_per_tick = "0.1kJ"
 fish_brain_robot.speed_multiplier_when_out_of_energy = 1
-fish_brain_robot.max_energy = "0.5MJ"
+fish_brain_robot.max_energy = "0.8MJ"
 
 data:extend({fish_brain_robot})
 
@@ -445,10 +445,10 @@ fish_brain_logistic_robot.icon_mipmaps = 4
 fish_brain_logistic_robot.minable.result = "biological-logistic-robot"
 fish_brain_logistic_robot.max_payload_size = 1
 fish_brain_logistic_robot.speed = 0.02
-fish_brain_logistic_robot.energy_per_move = "7.5kJ"
+fish_brain_logistic_robot.energy_per_move = "5kJ"
 fish_brain_logistic_robot.energy_per_tick = "0.1kJ"
 fish_brain_logistic_robot.speed_multiplier_when_out_of_energy = 1
-fish_brain_logistic_robot.max_energy = "0.5MJ"
+fish_brain_logistic_robot.max_energy = "0.8MJ"
 
 data:extend({fish_brain_logistic_robot})
 
