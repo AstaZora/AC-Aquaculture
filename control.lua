@@ -299,48 +299,48 @@ function checkFishNets()
         global.fish_nets = {}
     end
 
-    local processed = 0
-    local max_to_process = 3
-    while processed < max_to_process and global.net_index <= #global.fish_nets do
+    local max_to_process = 5  -- Limit on number of nets to process, not fish caught
+    local netsProcessed = 0
+
+    while netsProcessed < max_to_process and global.net_index <= #global.fish_nets do
         local fishNet = global.fish_nets[global.net_index]
         if fishNet and fishNet.valid then
             local inventory = fishNet.get_inventory(defines.inventory.chest)
             local maxFishCountPerNet = 200
+            local anyFishCaught = false
 
             local search_area = {{fishNet.position.x - 2, fishNet.position.y - 2}, {fishNet.position.x + 2, fishNet.position.y + 2}}
             for _, fishType in ipairs(fishTypes) do
                 local liveFish = fishNet.surface.find_entities_filtered({name = fishType, area = search_area})
-                for _, fish in pairs(liveFish) do
+                for _, fish in ipairs(liveFish) do
                     local currentFishCount = inventory.get_item_count(fishType)
-                    if currentFishCount + 5 <= maxFishCountPerNet then
-                        local inserted = inventory.insert({name = fishType, count = 5})
+                    if currentFishCount < maxFishCountPerNet then
+                        local spaceAvailable = maxFishCountPerNet - currentFishCount
+                        local fishToCatch = math.min(spaceAvailable, #liveFish)
+                        local inserted = inventory.insert({name = fishType, count = fishToCatch})
                         if inserted > 0 then
-                            fish.destroy()
-                            --game.print("Net at [" .. fishNet.position.x .. ", " .. fishNet.position.y .. "] caught 5 " .. fishType .. ". Total now: " .. (currentFishCount + inserted))
-                            processed = processed + 1
-                            if processed >= max_to_process then
-                                break
-                            end
+                            fish.destroy()  -- Assume each call catches one fish for simplification
+                            anyFishCaught = true
+                            game.print("Net at [" .. fishNet.position.x .. ", " .. fishNet.position.y .. "] caught " .. inserted .. " " .. fishType .. ". Total now: " .. (currentFishCount + inserted))
+                            break  -- Move to the next fish type after catching
                         end
-                    else
-                        --game.print("Net at [" .. fishNet.position.x .. ", " .. fishNet.position.y .. "] is full. Not enough space to catch more " .. fishType .. ".")
                     end
                 end
-                if processed >= max_to_process then
-                    break
-                end
             end
-        else
-            --game.print("Net at [" .. fishNet.position.x .. ", " .. fishNet.position.y .. "] is not valid (maybe destroyed).")
+
+            if anyFishCaught then
+                netsProcessed = netsProcessed + 1
+            end
         end
         global.net_index = global.net_index + 1
         if global.net_index > #global.fish_nets then
-            global.net_index = 1 -- Loop back to start
-        break
+            global.net_index = 1  -- Loop back to start if the end is reached
         end
-    --game.print("Processed " .. processed .. " fish nets.")
     end
+
+    game.print("Processed " .. netsProcessed .. " fish nets this tick.")
 end
+
 
 
 function calculateSpawnPosition(entity)
