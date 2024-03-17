@@ -281,23 +281,46 @@ function checkFishDrills()
     log("Processed " .. processed .. " fish drills.")
 end
 end
--- Main function to check fish nets
 function checkFishNets()
     log("Checking fish nets for live fish...")
-    local processedNets = 0
-    local maxNetsToProcess = 5  -- Process up to 5 nets per cycle
 
-    while processedNets < maxNetsToProcess and global.net_index <= #global.fish_nets do
-        local fishNet = global.fish_nets[global.net_index]
-        if fishNet and fishNet.valid then
-            -- Process each fish net
-            processFishNet(fishNet)
-            processedNets = processedNets + 1
-        end
-        -- Move to the next fish net, loop back if at the end
-        global.net_index = (global.net_index % #global.fish_nets) + 1
+    -- Skip processing if there are no fish nets
+    if #global.fish_nets == 0 then
+        log("No fish nets to process.")
+        return
     end
-    log("Cycle completed for " .. processedNets .. " fish nets.")
+
+    if not global.net_index or type(global.net_index) ~= "number" then
+        global.net_index = 1
+    end
+
+    local netsProcessed = 0  -- Initialize netsProcessed counter
+    local max_to_process = 5
+
+    -- Process up to max_to_process fish nets that are valid
+    while netsProcessed < max_to_process and global.net_index <= #global.fish_nets do
+        local fishNet = global.fish_nets[global.net_index]
+
+        -- Check if the current fish net is valid before processing
+        if fishNet and fishNet.valid then
+            log("Processing fish net at [" .. fishNet.position.x .. ", " .. fishNet.position.y .. "]")
+            processFishNet(fishNet)
+            netsProcessed = netsProcessed + 1
+        else
+            -- Remove the invalid fish net from the list
+            table.remove(global.fish_nets, global.net_index)
+            -- Adjust the index to account for the removed element
+            global.net_index = global.net_index - 1
+        end
+        
+        -- Move to the next fish net, or reset to the start if at the end of the list
+        global.net_index = global.net_index + 1
+        if global.net_index > #global.fish_nets then
+            global.net_index = 1  -- Reset to start for the next cycle
+        end
+    end
+
+    log("Cycle completed. Processed " .. netsProcessed .. " fish nets.")
 end
 
 -- Process individual fish net
@@ -335,8 +358,6 @@ function processLiveFish(fishNet, inventory, fishType, liveFish, maxFishCountPer
         log("Net at [" .. fishNet.position.x .. ", " .. fishNet.position.y .. "] is full or no fish available to catch.")
     end
 end
-
-
 
 function calculateSpawnPosition(entity)
     local directionVectors = {
