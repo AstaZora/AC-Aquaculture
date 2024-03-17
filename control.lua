@@ -48,8 +48,7 @@ script.on_init(function()
     global.process_queue = global.process_queue or {}  -- Queue for newly placed entities
     global.lastProcessedIndex = nil
     global.resetProcessing = false
-    global.process_index = 1  -- This is new and needs to be incorporated based on how you plan to use it
-    -- game.print("Script initialized.")
+    log("Script initialized.")
 end)
 
 
@@ -69,20 +68,13 @@ script.on_configuration_changed(function()
     global.process_queue = global.process_queue or {}
     global.lastProcessedIndex = global.lastProcessedIndex or nil
     global.resetProcessing = global.resetProcessing or false
-    global.process_index = global.process_index or 1  -- If this variable is intended for new logic
-
     -- Optionally, include any other necessary checks or initializations for variables introduced in your script
     -- This ensures your mod remains robust to configuration changes and updates.
 end)
-
-
 -- Function to add entities to the processing queue if they match the criteria
 local function addToProcessQueueIfRelevant(entity)
 if entitiesToTrack[entity.name] then
     table.insert(global.process_queue, entity)
-    --game.print("Relevant entity added to process queue: " .. entity.name)
-else
-    --game.print("Ignored entity: " .. entity.name)  -- Optional, for debugging
 end
 end
 
@@ -104,7 +96,7 @@ end)
 local function processQueue()
     local process_per_tick = 5  -- Number of entities to process each tick
     local processed = 0
-    --game.print("Processing queue. Queue length: " .. #global.process_queue)
+    log("Processing queue. Queue length: " .. #global.process_queue)
 
     -- Process entities from the queue
     while processed < process_per_tick and #global.process_queue > 0 do
@@ -114,15 +106,14 @@ local function processQueue()
             -- Depending on the entity type, process and add to the corresponding list
             if entity.name == "fish-hatchery" then
                 table.insert(global.fish_breeders, entity)
-                -- Additional processing logic for fish hatchery can go here
+                log("Processed and added to fish_breeders list: " .. entity.name .. " at (" .. entity.position.x .. ", " .. entity.position.y .. ")")
             elseif entity.name == "fish-net" then
                 table.insert(global.fish_nets, entity)
-                -- Additional processing logic for fish net can go here
+                log("Processed and added to fish_nets list: " .. entity.name .. " at (" .. entity.position.x .. ", " .. entity.position.y .. ")")
             elseif entity.name == "fish-drill" then
                 table.insert(global.fish_drills, entity)
-                -- Additional processing logic for fish drill can go here
+                log("Processed and added to fish_drills list: " .. entity.name .. " at (" .. entity.position.x .. ", " .. entity.position.y .. ")")
             end
-            --game.print("Processed and added to list: " .. entity.name .. " at (" .. entity.position.x .. ", " .. entity.position.y .. ")")
             processed = processed + 1
         end
     end
@@ -133,7 +124,7 @@ local function removeFromList(entity, list)
 for i, listedEntity in ipairs(list) do
     if listedEntity == entity then
         table.remove(list, i)
-        -- game.print("Entity removed from list: " .. entity.name)
+        log("Entity removed from list: " .. entity.name)
         return true
     end
 end
@@ -148,7 +139,7 @@ if entity and entity.valid then
     if not removedFromQueue then
         removeFromList(entity, global.fish_breeders)
     end
-    -- game.print("Entity removal handled: " .. entity.name)
+    log("Entity removal handled: " .. entity.name)
 end
 end
 
@@ -172,9 +163,9 @@ if not match then
 end
 
 if match then
-    -- game.print("Fish name extracted: " .. match)
+    log("Fish name extracted: " .. match)
 else
-    -- game.print("Failed to extract fish name from recipe: " .. recipe_name)
+    log("Failed to extract fish name from recipe: " .. recipe_name)
 end
 
 return match
@@ -198,10 +189,10 @@ local fishTypes = {
 
 -- Periodic event handler to trigger the queue processing and entity checks
 script.on_event(defines.events.on_tick, function(event)
-    if event.tick % 60 == 0 then
+    if event.tick % 300 == 0 then
         processQueue()  -- Call the processing function each tick or at certain intervals
     end
-    if event.tick % 60 == 0 then  -- Every 300 ticks, perform checks on breeders, nets, and drills
+    if event.tick % 300 == 0 then  -- Every 300 ticks, perform checks on breeders, nets, and drills
         checkFishBreeders()
         checkFishNets()
         checkFishDrills()
@@ -248,7 +239,7 @@ function checkFishBreeders()
         end
     end
 
-    --game.print("Processed " .. processed .. " fish breeders this tick.")
+    log("Processed " .. processed .. " fish breeders this tick.")
 end
 
 function checkFishDrills()
@@ -273,7 +264,7 @@ function checkFishDrills()
                         local spawnPosition = calculateDrillSpawnPosition(drill)
                         spawnFish(drill, spawnPosition, fishType, spawnCount)
                         inventory.remove({name = fishType, count = spawnCount * 5})
-                        --game.print("Drill at [" .. drill.position.x .. ", " .. drill.position.y .. "] spawned " .. spawnCount .. " " .. fishType)
+                        log("Drill at [" .. drill.position.x .. ", " .. drill.position.y .. "] spawned " .. spawnCount .. " " .. fishType)
                         processed = processed + 1
                         if processed >= max_to_process then
                             break
@@ -287,58 +278,62 @@ function checkFishDrills()
             global.drill_index = 1 -- Loop back to start
         break
     end
-    --game.print("Processed " .. processed .. " fish drills.")
+    log("Processed " .. processed .. " fish drills.")
 end
 end
---game.print("Checking fish nets for live fish...")
+-- Main function to check fish nets
 function checkFishNets()
-    if type(global.net_index) ~= "number" then
-        global.net_index = 1
-    end
-    if not global.fish_nets then
-        global.fish_nets = {}
-    end
+    log("Checking fish nets for live fish...")
+    local processedNets = 0
+    local maxNetsToProcess = 5  -- Process up to 5 nets per cycle
 
-    local max_to_process = 5  -- Limit on number of nets to process, not fish caught
-    local netsProcessed = 0
-
-    while netsProcessed < max_to_process and global.net_index <= #global.fish_nets do
+    while processedNets < maxNetsToProcess and global.net_index <= #global.fish_nets do
         local fishNet = global.fish_nets[global.net_index]
         if fishNet and fishNet.valid then
-            local inventory = fishNet.get_inventory(defines.inventory.chest)
-            local maxFishCountPerNet = 200
-            local anyFishCaught = false
-
-            local search_area = {{fishNet.position.x - 2, fishNet.position.y - 2}, {fishNet.position.x + 2, fishNet.position.y + 2}}
-            for _, fishType in ipairs(fishTypes) do
-                local liveFish = fishNet.surface.find_entities_filtered({name = fishType, area = search_area})
-                for _, fish in ipairs(liveFish) do
-                    local currentFishCount = inventory.get_item_count(fishType)
-                    if currentFishCount < maxFishCountPerNet then
-                        local spaceAvailable = maxFishCountPerNet - currentFishCount
-                        local fishToCatch = math.min(spaceAvailable, #liveFish)
-                        local inserted = inventory.insert({name = fishType, count = fishToCatch})
-                        if inserted > 0 then
-                            fish.destroy()  -- Assume each call catches one fish for simplification
-                            anyFishCaught = true
-                            game.print("Net at [" .. fishNet.position.x .. ", " .. fishNet.position.y .. "] caught " .. inserted .. " " .. fishType .. ". Total now: " .. (currentFishCount + inserted))
-                            break  -- Move to the next fish type after catching
-                        end
-                    end
-                end
-            end
-
-            if anyFishCaught then
-                netsProcessed = netsProcessed + 1
-            end
+            -- Process each fish net
+            processFishNet(fishNet)
+            processedNets = processedNets + 1
         end
-        global.net_index = global.net_index + 1
-        if global.net_index > #global.fish_nets then
-            global.net_index = 1  -- Loop back to start if the end is reached
+        -- Move to the next fish net, loop back if at the end
+        global.net_index = (global.net_index % #global.fish_nets) + 1
+    end
+    log("Cycle completed for " .. processedNets .. " fish nets.")
+end
+
+-- Process individual fish net
+function processFishNet(fishNet)
+    log("Processing fish net at [" .. fishNet.position.x .. ", " .. fishNet.position.y .. "]")
+    local inventory = fishNet.get_inventory(defines.inventory.chest)
+    local maxFishCountPerNet = 200  -- Max number of fish items the inventory can hold
+
+    local searchArea = {{fishNet.position.x - 2, fishNet.position.y - 2}, {fishNet.position.x + 2, fishNet.position.y + 2}}
+    for _, fishType in ipairs(fishTypes) do
+        local liveFish = fishNet.surface.find_entities_filtered({name = fishType, area = searchArea})
+        if #liveFish > 0 then
+            processLiveFish(fishNet, inventory, fishType, liveFish, maxFishCountPerNet)
         end
     end
+end
 
-    game.print("Processed " .. netsProcessed .. " fish nets this tick.")
+-- Process live fish near the fish net
+function processLiveFish(fishNet, inventory, fishType, liveFish, maxFishCountPerNet)
+    local currentFishCount = inventory.get_item_count(fishType)
+    local spaceAvailable = maxFishCountPerNet - currentFishCount
+    
+    -- Calculate how many fish can be caught based on space available
+    local fishToCatch = math.min(#liveFish, math.floor(spaceAvailable / 5))
+    if fishToCatch > 0 then
+        local inserted = inventory.insert({name = fishType, count = fishToCatch * 5})
+        if inserted > 0 then
+            -- Destroy fish entities corresponding to the fish caught
+            for i = 1, fishToCatch do
+                if liveFish[i] then liveFish[i].destroy() end
+            end
+            log("Net at [" .. fishNet.position.x .. ", " .. fishNet.position.y .. "] caught " .. inserted .. " " .. fishType .. ". Total now: " .. (currentFishCount + inserted))
+        end
+    else
+        log("Net at [" .. fishNet.position.x .. ", " .. fishNet.position.y .. "] is full or no fish available to catch.")
+    end
 end
 
 
@@ -367,37 +362,5 @@ function spawnFish(entity, position, fishType, count)
         })
     end
     -- Optionally, print a message with details about the spawned fish
-    -- game.print("Spawned " .. count .. " of " .. fishType .. " at position: " .. position.x .. ", " .. position.y)
+    log("Spawned " .. count .. " of " .. fishType .. " at position: " .. position.x .. ", " .. position.y)
 end
-
-
---[[ This function sets all evolution factors to zero.
-local function disable_evolution()
-game.map_settings.enemy_evolution.time_factor = 0
-game.map_settings.enemy_evolution.destroy_factor = 0
-game.map_settings.enemy_evolution.pollution_factor = 0
-end
-
--- This event handler runs once when the game/mod is initialized.
-script.on_init(function()
-disable_evolution()
-end)
-
--- This event handler runs every time the game/mod configuration changes, e.g., when mods are added or updated.
-script.on_configuration_changed(function()
-disable_evolution()
-end)
-
--- Optionally, create a periodic function to ensure evolution stays at zero, addressing any potential external modifications.
-script.on_event(defines.events.on_tick, function(event)
--- For performance reasons, you might not want to check this every tick.
--- Here, as an example, we check every 10 minutes (36000 ticks = 10 minutes at 60 ticks per second).
-if event.tick % 36000 == 0 then
-    if game.forces["enemy"].evolution_factor ~= 0 then
-        game.forces["enemy"].evolution_factor = 0
-        -- Logging for debugging purposes; remove or comment out for production.
-        game.print("Evolution factor reset to 0.")
-    end
-end
-end)
-]]
