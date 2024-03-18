@@ -295,6 +295,145 @@ data:extend({
         },
         collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
         selection_box = {{-1.4, -1.4}, {1.4, 1.4}},
+        circuit_wire_connection_points = {
+            {
+                shadow = {
+                    red = {0.7, -0.3},
+                    green = {0.7, -0.3},
+                },
+                wire = {
+                    red = {0.3, -0.8},
+                    green = {0.3, -0.8},
+                }
+            },
+            {
+                shadow = {
+                    red = {0.7, -0.3},
+                    green = {0.7, -0.3},
+                },
+                wire = {
+                    red = {0.3, -0.8},
+                    green = {0.3, -0.8},
+                }
+            },
+            {
+                shadow = {
+                    red = {0.7, -0.3},
+                    green = {0.7, -0.3},
+                },
+                wire = {
+                    red = {0.3, -0.8},
+                    green = {0.3, -0.8},
+                }
+            },
+            {
+                shadow = {
+                    red = {0.7, -0.3},
+                    green = {0.7, -0.3},
+                },
+                wire = {
+                    red = {0.3, -0.8},
+                    green = {0.3, -0.8},
+                }
+            },
+        },
+        circuit_wire_max_distance = 9,
+        default_output_signal = {type = "virtual", name = "signal-everything"},
+        circuit_connector_sprites = {
+            wire_connections = {
+                {
+                    shadow = {
+                        red = {-1.4, -1.4},
+                        green = {-1.4, -1.4},
+                    },
+                    wire = {
+                        red = {-1.4, -1.4},
+                        green = {-1.4, -1.4},
+                    }
+                },
+                {
+                    shadow = {
+                        red = {1.4, -1.4},
+                        green = {1.4, -1.4},
+                    },
+                    wire = {
+                        red = {1.4, -1.4},
+                        green = {1.4, -1.4},
+                    }
+                },
+                {
+                    shadow = {
+                        red = {1.4, -1.4},
+                        green = {1.4, -1.4},
+                    },
+                    wire = {
+                        red = {1.4, -1.4},
+                        green = {1.4, -1.4},
+                    }
+                },
+                {
+                    shadow = {
+                        red = {1.4, -1.4},
+                        green = {1.4, -1.4},
+                    },
+                    wire = {
+                        red = {1.4, -1.4},
+                        green = {1.4, -1.4},
+                    }
+                },
+            },
+            led_light = {intensity = 0.8, size = 0.9, position = {0.0, -1.0}},
+            connector_main = {
+                filename = "__base__/graphics/entity/circuit-connector/hr-ccm-universal-04a-base-sequence.png",
+                priority = "low",
+                led_light = {intensity = 0.8, size = 0.9},
+                width = 52,
+                height = 50,
+                x = 52,
+                scale = 0.5,
+                shift = {-1.4, -1.4},  -- Adjusted to the top-left corner of the entity
+            },
+            wire_pins = {
+                filename = "__base__/graphics/entity/circuit-connector/hr-ccm-universal-04c-wire-sequence.png",
+                priority = "low",
+                led_light = {intensity = 0.8, size = 0.9},
+                width = 52,
+                height = 50,
+                x = 52,
+                scale = 0.5,
+                shift = {-1.4, -1.6},  -- Adjusted to the top-left corner of the entity
+            },
+            led_blue = {
+                filename = "__base__/graphics/entity/circuit-connector/hr-ccm-universal-04e-blue-LED-on-sequence.png",
+                priority = "low",
+                led_light = {intensity = 0.8, size = 0.9},
+                width = 52,
+                height = 50,
+                x = 52,
+                scale = 0.5,
+                shift = {-1.4, -1.4},  -- Adjusted to the top-left corner of the entity
+            },
+            led_red = {
+                filename = "__base__/graphics/entity/circuit-connector/hr-ccm-universal-04i-red-LED-sequence.png",
+                priority = "low",
+                led_light = {intensity = 0.8, size = 0.9},
+                width = 52,
+                height = 50,
+                x = 52,
+                scale = 0.5,
+                shift = {-1.4, -1.4},  -- Adjusted to the top-left corner of the entity
+            },
+            led_green = {
+                filename = "__base__/graphics/entity/circuit-connector/hr-ccm-universal-04h-green-LED-sequence.png",
+                priority = "low",
+                led_light = {intensity = 0.8, size = 0.9},
+                width = 52,
+                height = 50,
+                x = 52,
+                scale = 0.5,
+                shift = {-1.4, -1.4},  -- Adjusted to the top-left corner of the entity
+            },
+        },
     },
     {
         type = "assembling-machine",

@@ -205,42 +205,70 @@ function checkFishBreeders()
     if not global.fish_breeders then
         global.fish_breeders = {}
     end
+    if global.breeder_index > #global.fish_breeders then
+        global.breeder_index = 1 -- Reset index if it's out of bounds
+    end
+    
     local processed = 0
     local max_to_process = 3
-
+    --log("Checking fish breeders for fish...")
+    --log("Number of fish breeders to process: " .. #global.fish_breeders)
+    --log("Current breeder index: " .. global.breeder_index)
     while processed < max_to_process and global.breeder_index <= #global.fish_breeders do
+    --log("Number of fish breeders to process: " .. #global.fish_breeders)
+    --log("Current breeder index: " .. global.breeder_index)
+    --log("Attempting to start Processing Loop")
         local breeder = global.fish_breeders[global.breeder_index]
-        if breeder and breeder.valid then
-            local inventory_index = defines.inventory.chemical_plant_output or defines.inventory.furnace_result
+        local inventory_index = defines.inventory.assembling_machine_output or defines.inventory.chemical_plant_output
+        if breeder and breeder.valid and breeder.name == "fish-hatchery" then
+            log("Breeder is Valid")
             local inventory = breeder.get_inventory(inventory_index)
+            --log("Inventory: " .. serpent.block(inventory))
             if inventory and not inventory.is_empty() then
+                local contents = inventory.get_contents() -- Gets a table of item names and their counts
+                for itemName, itemCount in pairs(contents) do
+                    --log(itemName .. ": " .. itemCount) -- Log each item's name and count
+                end
                 local currentRecipe = breeder.get_recipe()
                 if currentRecipe then
                     local fishType = extract_fish_name(currentRecipe.name)
-                    if fishType then
+                    --log("Fish Type: " .. fishType)
+                    if fishType and inventory.get_item_count(fishType) >= 5 then
                         local fishCount = inventory.get_item_count(fishType)
-                        if fishCount >= 5 then
-                            local spawnCount = math.floor(fishCount / 5)
-                            local spawnPosition = calculateSpawnPosition(breeder)
-                            spawnFish(breeder, spawnPosition, fishType, spawnCount)
-                            inventory.remove({name = fishType, count = spawnCount * 5})
-                            processed = processed + 1
-                            break -- Exit the loop after processing a fish breeder
+                        local spawnCount = math.floor(fishCount / 5)
+                        local spawnPosition = calculateSpawnPosition(breeder)
+
+                        -- Check for water tiles before spawning
+                        local tile = breeder.surface.get_tile(spawnPosition.x, spawnPosition.y)
+                        if tile.valid and (tile.name == "water" or tile.name == "deepwater" or tile.name == "water-shallow" or tile.name == "pond-water") then
+                            for i = 1, spawnCount do
+                                breeder.surface.create_entity({name = fishType, position = spawnPosition, amount = 1})
+                            end
+                            local removed = inventory.remove({name = fishType, count = spawnCount * 5})
+                            --log("Removed " .. removed .. " of " .. fishType)
+                            if removed > 0 then
+                                processed = processed + 1
+                                if processed >= max_to_process then
+                                    --log("Reached processing limit of " .. max_to_process .. ". Exiting loop.")
+                                    break
+                                end
+                            else
+                                --log("Failed to remove fish from inventory. Inventory might be full or locked.")
+                            end
                         end
                     end
                 end
             end
         end
-
         global.breeder_index = global.breeder_index + 1
         if global.breeder_index > #global.fish_breeders then
-            global.breeder_index = 1  -- Loop back to start if the end is reached
-            break  -- Exit the loop to avoid unnecessary iterations
+            global.breeder_index = 1  -- Reset to start for the next cycle
+            break
         end
     end
-
-    log("Processed " .. processed .. " fish breeders this tick.")
 end
+
+
 
 function checkFishDrills()
     if type(global.drill_index) ~= "number" then
@@ -365,7 +393,7 @@ function calculateSpawnPosition(entity)
         [defines.direction.east] = {-2.5, 0},
         [defines.direction.south] = {0, -2.5},
         [defines.direction.west] ={2.5, 0}
-    }                                   
+    }
     local direction = entity.direction
     local vector = directionVectors[direction] or {0, -2.5} -- Default to north if undefined
     return {x = entity.position.x + vector[1], y = entity.position.y + vector[2]}
