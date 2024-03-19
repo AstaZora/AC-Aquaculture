@@ -323,6 +323,10 @@ data:extend({
             {
                 type = "unlock-recipe",
                 recipe = "mukmoux-fat-processing",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "mukmoux-fat-rendering",
             }
         },
         unit = {

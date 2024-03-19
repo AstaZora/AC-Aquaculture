@@ -823,11 +823,26 @@ data:extend({
             {type="item", name="mukmoux-package", amount=1}
         },
         results = {
-            {type="item", name = "mukmoux-hide", amount = 2, probability=0.05},
-            {type = "item", name = "mukmoux-fat", amount = 5},
+            {type="item", name = "mukmoux-hide", amount = 2},
         }
     },
     --Mukmoux Fat Processing
+    {
+        type = "recipe",
+        name = "mukmoux-fat-rendering",
+        icon = "__AC-Aquaculture__/graphics/icons/fish/mukmoux-fat.png",
+        icon_size = 128,
+        category = "fish-processing",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="mukmoux-hide", amount=5}
+        },
+        results = {
+            {type="item", name="mukmoux-fat", amount=20}
+        }
+    },
     {
         type = "recipe",
         name = "mukmoux-fat-processing",
