@@ -8,7 +8,7 @@ require("prototypes.technologies.technologies")
 require("prototypes.categories.fuel-category")
 require("prototypes.modules")
 require("prototypes.recipe.vanillarecipes")
-
+require("prototypes.circuit-connector-sprites")
 
 data.raw["recipe"]["iron-plate"].enabled = false
 data.raw["recipe"]["copper-plate"].enabled = false
@@ -160,4 +160,3 @@ leatherUnderground.structure.direction_out_side_loading.sheet.filename = "__AC-A
 leatherUnderground.structure.direction_out_side_loading.sheet.hr_version.filename = "__AC-Aquaculture__/graphics/entity/leather-transports/hr-leather-underground-belt-structure.png"
 leatherUnderground.minable = {mining_time = 0.1, result = "leather-underground-belt"}
 data:extend({leatherUnderground})
-

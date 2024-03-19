@@ -1135,6 +1135,59 @@ data:extend({
         },
         order = "c-a"
     },
+--Bioelectric Solar
+    {
+        type = "technology",
+        name = "ac-ac-electrical-discoveries",
+        icon = "__base__/graphics/technology/solar-energy.png",
+        icon_size = 256, icon_mipmaps = 4,
+        prerequisites = {"ac-robotics-2"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "silverscale-solar-cell",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "substation",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "medium-electric-pole",
+            }
+
+        },
+        unit = {
+            count = 1000,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 60,
+        },
+        order = "c-a"
+    },
+    --Bioelectric Accumulator
+    {
+        type = "technology",
+        name = "ac-bioelectric-accumulator",
+        icon = "__base__/graphics/technology/electric-energy-acumulators.png",
+        icon_size = 256, icon_mipmaps = 4,
+        prerequisites = {"ac-electrical-discoveries"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "biological-accumulator",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "biological-solar-panel",
+            }
+        },
+        unit = {
+            count = 1000,
+            ingredients = {{"fish-biomass-pack", 1}, {"fish-fluid-science-pack", 1}, {"advanced-biology-pack", 1}},
+            time = 60,
+        },
+        order = "c-a"
+    },
 -- Infinite Research
     {
         type = "technology",

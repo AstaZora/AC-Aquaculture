@@ -42,3 +42,22 @@ sanitize_recipe(recipes["decider-combinator"]).ingredients =
     {"copper-cable", 5},
     {"fiberboard-circuitry", 5}
 }
+sanitize_recipe(recipes["medium-electric-pole"]).ingredients =
+{
+    {"bronze-plate", 2},
+    {"iron-plate", 2},
+    {"copper-cable", 2},
+
+}
+sanitize_recipe(recipes["big-electric-pole"]).ingredients =
+{
+    {"bronze-plate", 4},
+    {"iron-plate", 8},
+    {"copper-cable", 4},
+}
+sanitize_recipe(recipes["substation"]).ingredients =
+{
+    {"bronze-plate", 10},
+    {"iron-plate", 20},
+    {"copper-cable", 10},
+}

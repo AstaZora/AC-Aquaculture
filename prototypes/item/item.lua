@@ -1429,6 +1429,48 @@ data:extend({
         order = "g[twined-muscle-fiber]",
         stack_size = 100
     },
+    {
+        type = "item",
+        name = "silverscale-solar-cell",
+        icon = "__base__/graphics/icons/solar-panel.png",
+        icon_size = 64,
+        icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "h[silverscale-solar-cell]",
+        stack_size = 50
+    },
+    {
+        type = "item",
+        name = "biological-solar-panel",
+        icon = "__base__/graphics/icons/solar-panel.png",
+        icon_size = 64,
+        icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "i[biological-solar-panel]",
+        stack_size = 50,
+        placed_result = "biological-solar-panel"
+    },
+    {
+        type = "item",
+        name = "biological-accumulator",
+        icon = "__base__/graphics/icons/accumulator.png",
+        icon_size = 64,
+        icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "j[biological-accumulator]",
+        stack_size = 50,
+        placed_result = "biological-accumulator"
+    },
+    {
+        type = "item",
+        name = "silverscale-glider-processor",
+        icon = "__base__/graphics/icons/processing-unit.png",
+        icon_size = 64,
+        icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "j[silverscale-glider-processor]",
+        stack_size = 50
+    },
     --Spiral Shellfish Components
     {
         type = "item",

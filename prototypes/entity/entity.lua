@@ -274,6 +274,35 @@ bronze_pipe.minable = {mining_time = 0.1, result = "bronze-pipe"}
 
 data:extend({bronze_pipe})
 
+local bioelectricAccumulator = table.deepcopy(data.raw["accumulator"]["accumulator"])
+bioelectricAccumulator.name = "biological-accumulator"
+bioelectricAccumulator.icon = "__base__/graphics/icons/accumulator.png"
+bioelectricAccumulator.icon_size = 64
+bioelectricAccumulator.icon_mipmaps = 4
+bioelectricAccumulator.minable = {mining_time = 0.1, result = "biological-accumulator"}
+bioelectricAccumulator.max_health = 150
+bioelectricAccumulator.energy_source = {
+    type = "electric",
+    buffer_capacity = "2.5MJ",
+    usage_priority = "tertiary",
+    input_flow_limit = "750kW",
+    output_flow_limit = "750kW"
+}
+data:extend({bioelectricAccumulator})
+
+local bioelectricSolarPanel = table.deepcopy(data.raw["solar-panel"]["solar-panel"])
+bioelectricSolarPanel.name = "biological-solar-panel"
+bioelectricSolarPanel.icon = "__base__/graphics/icons/solar-panel.png"
+bioelectricSolarPanel.icon_size = 64
+bioelectricSolarPanel.icon_mipmaps = 4
+bioelectricSolarPanel.minable = {mining_time = 0.1, result = "biological-solar-panel"}
+bioelectricSolarPanel.max_health = 150
+bioelectricSolarPanel.production = "30kW"
+
+data:extend({bioelectricSolarPanel})
+
+local fishNetConnection = require("prototypes.circuit-connector-sprites")
+
 data:extend({
     {
         type = "container",
@@ -295,145 +324,10 @@ data:extend({
         },
         collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
         selection_box = {{-1.4, -1.4}, {1.4, 1.4}},
-        circuit_wire_connection_points = {
-            {
-                shadow = {
-                    red = {0.7, -0.3},
-                    green = {0.7, -0.3},
-                },
-                wire = {
-                    red = {0.3, -0.8},
-                    green = {0.3, -0.8},
-                }
-            },
-            {
-                shadow = {
-                    red = {0.7, -0.3},
-                    green = {0.7, -0.3},
-                },
-                wire = {
-                    red = {0.3, -0.8},
-                    green = {0.3, -0.8},
-                }
-            },
-            {
-                shadow = {
-                    red = {0.7, -0.3},
-                    green = {0.7, -0.3},
-                },
-                wire = {
-                    red = {0.3, -0.8},
-                    green = {0.3, -0.8},
-                }
-            },
-            {
-                shadow = {
-                    red = {0.7, -0.3},
-                    green = {0.7, -0.3},
-                },
-                wire = {
-                    red = {0.3, -0.8},
-                    green = {0.3, -0.8},
-                }
-            },
-        },
         circuit_wire_max_distance = 9,
         default_output_signal = {type = "virtual", name = "signal-everything"},
-        circuit_connector_sprites = {
-            wire_connections = {
-                {
-                    shadow = {
-                        red = {-1.4, -1.4},
-                        green = {-1.4, -1.4},
-                    },
-                    wire = {
-                        red = {-1.4, -1.4},
-                        green = {-1.4, -1.4},
-                    }
-                },
-                {
-                    shadow = {
-                        red = {1.4, -1.4},
-                        green = {1.4, -1.4},
-                    },
-                    wire = {
-                        red = {1.4, -1.4},
-                        green = {1.4, -1.4},
-                    }
-                },
-                {
-                    shadow = {
-                        red = {1.4, -1.4},
-                        green = {1.4, -1.4},
-                    },
-                    wire = {
-                        red = {1.4, -1.4},
-                        green = {1.4, -1.4},
-                    }
-                },
-                {
-                    shadow = {
-                        red = {1.4, -1.4},
-                        green = {1.4, -1.4},
-                    },
-                    wire = {
-                        red = {1.4, -1.4},
-                        green = {1.4, -1.4},
-                    }
-                },
-            },
-            led_light = {intensity = 0.8, size = 0.9, position = {0.0, -1.0}},
-            connector_main = {
-                filename = "__base__/graphics/entity/circuit-connector/hr-ccm-universal-04a-base-sequence.png",
-                priority = "low",
-                led_light = {intensity = 0.8, size = 0.9},
-                width = 52,
-                height = 50,
-                x = 52,
-                scale = 0.5,
-                shift = {-1.4, -1.4},  -- Adjusted to the top-left corner of the entity
-            },
-            wire_pins = {
-                filename = "__base__/graphics/entity/circuit-connector/hr-ccm-universal-04c-wire-sequence.png",
-                priority = "low",
-                led_light = {intensity = 0.8, size = 0.9},
-                width = 52,
-                height = 50,
-                x = 52,
-                scale = 0.5,
-                shift = {-1.4, -1.6},  -- Adjusted to the top-left corner of the entity
-            },
-            led_blue = {
-                filename = "__base__/graphics/entity/circuit-connector/hr-ccm-universal-04e-blue-LED-on-sequence.png",
-                priority = "low",
-                led_light = {intensity = 0.8, size = 0.9},
-                width = 52,
-                height = 50,
-                x = 52,
-                scale = 0.5,
-                shift = {-1.4, -1.4},  -- Adjusted to the top-left corner of the entity
-            },
-            led_red = {
-                filename = "__base__/graphics/entity/circuit-connector/hr-ccm-universal-04i-red-LED-sequence.png",
-                priority = "low",
-                led_light = {intensity = 0.8, size = 0.9},
-                width = 52,
-                height = 50,
-                x = 52,
-                scale = 0.5,
-                shift = {-1.4, -1.4},  -- Adjusted to the top-left corner of the entity
-            },
-            led_green = {
-                filename = "__base__/graphics/entity/circuit-connector/hr-ccm-universal-04h-green-LED-sequence.png",
-                priority = "low",
-                led_light = {intensity = 0.8, size = 0.9},
-                width = 52,
-                height = 50,
-                x = 52,
-                scale = 0.5,
-                shift = {-1.4, -1.4},  -- Adjusted to the top-left corner of the entity
-            },
-        },
+        circuit_wire_connection_points = fishNetConnection.points,
+        circuit_connector_sprites = fishNetConnection.sprites,
     },
     {
         type = "assembling-machine",

@@ -1086,7 +1086,7 @@ data:extend({
         },
         results = {
             {type="item", name="silverscale-glider-gel", amount=5},
-            {type = "fluid", name = "steam", amount = 80}
+            {type = "fluid", name = "steam", amount = 80, temperature = 165}
         }
     },
     {
@@ -1136,6 +1136,63 @@ data:extend({
         },
         results = {
             {type="item", name="twined-muscle-fiber", amount=1}
+        }
+    },
+    {
+        type = "recipe",
+        name = "silverscale-solar-cell",
+        icon = "__base__/graphics/icons/solar-panel.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "advanced-crafting",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type="item", name="refined-silverscale", amount=10},
+            {type="item", name="twined-muscle-fiber", amount=5},
+            {type="item", name="silverscale-glider-gel", amount=1},
+            {type="fluid", name="mukmoux-sealant", amount=10}
+        },
+        results = {
+            {type="item", name="silverscale-solar-cell", amount=1}
+        }
+    },
+    {
+        type = "recipe",
+        name = "biological-solar-panel",
+        icon = "__base__/graphics/icons/solar-panel.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "advanced-crafting",
+        subgroup = "fish-breeding",
+        energy_required = 30,
+        enabled = false,
+        ingredients = {
+            {type="item", name="silverscale-solar-cell", amount=10},
+            {type="item", name="biopolymer-filaments", amount=5},
+            {type="item", name="advanced-circuit", amount=5},
+            {type="fluid", name="mukmoux-sealant", amount=10}
+        },
+        results = {
+            {type="item", name="biological-solar-panel", amount=1}
+        }
+    },
+    {
+        type = "recipe",
+        name = "biological-accumulator",
+        icon = "__base__/graphics/icons/accumulator.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "advanced-crafting",
+        subgroup = "fish-breeding",
+        energy_required = 30,
+        enabled = false,
+        ingredients = {
+            {type="item", name="iron-plate", amount=10},
+            {type="item", name="biopolymer-filaments", amount=5},
+            {type="item", name="bioelectric-capacitor", amount=10},
+            {type="item", name="bioelectric-battery", amount=5}
+        },
+        results = {
+            {type="item", name="biological-accumulator", amount=1}
         }
     },
     --Spiral Shellfish Recipes
@@ -1517,7 +1574,7 @@ data:extend({
         enabled = false,
         ingredients = {
             {type="fluid", name="biological-ionic-fluid", amount=10},
-            {type="fluid", name="steam", amount=40}
+            {type="fluid", name="steam", amount=40, temperature=165}
         },
         results = {
             {type="item", name="electrolytic-gel", amount=5}
