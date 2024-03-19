@@ -1448,7 +1448,7 @@ data:extend({
         subgroup = "raw-resource",
         order = "i[biological-solar-panel]",
         stack_size = 50,
-        placed_result = "biological-solar-panel"
+        place_result = "biological-solar-panel"
     },
     {
         type = "item",
@@ -1459,7 +1459,7 @@ data:extend({
         subgroup = "raw-resource",
         order = "j[biological-accumulator]",
         stack_size = 50,
-        placed_result = "biological-accumulator"
+        place_result = "biological-accumulator"
     },
     {
         type = "item",
