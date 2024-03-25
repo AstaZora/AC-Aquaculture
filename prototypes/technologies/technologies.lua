@@ -943,7 +943,7 @@ data:extend({
     --Robotics T1
     {
         type = "technology",
-        name = "ac-electrical-discoveries",
+        name = "ac-bioelectrical-discoveries",
         icon = "__base__/graphics/technology/automation-1.png",
         icon_size = 256, icon_mipmaps = 4,
         prerequisites = {"ac-starfin-darters-processing-2"},
@@ -976,7 +976,7 @@ data:extend({
         name = "ac-robotics-brains",
         icon = "__base__/graphics/technology/automation-1.png",
         icon_size = 256, icon_mipmaps = 4,
-        prerequisites = {"ac-electrical-discoveries"},
+        prerequisites = {"ac-bioelectrical-discoveries"},
         effects = {
             {
                 type = "unlock-recipe",
@@ -1142,7 +1142,7 @@ data:extend({
 --Bioelectric Solar
     {
         type = "technology",
-        name = "ac-ac-electrical-discoveries",
+        name = "ac-electrical-discoveries",
         icon = "__base__/graphics/technology/solar-energy.png",
         icon_size = 256, icon_mipmaps = 4,
         prerequisites = {"ac-robotics-2"},
@@ -1158,8 +1158,11 @@ data:extend({
             {
                 type = "unlock-recipe",
                 recipe = "medium-electric-pole",
-            }
-
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "big-electric-pole",
+            },
         },
         unit = {
             count = 1000,
@@ -1188,6 +1191,83 @@ data:extend({
         unit = {
             count = 1000,
             ingredients = {{"fish-biomass-pack", 1}, {"fish-fluid-science-pack", 1}, {"advanced-biology-pack", 1}},
+            time = 60,
+        },
+        order = "c-a"
+    },
+    --Bronze Age Growth
+    --Bronze infused steel
+    {
+        type = "technology",
+        name = "ac-bronze-infused-steel",
+        icon = "__base__/graphics/technology/steel-processing.png",
+        icon_size = 256, icon_mipmaps = 4,
+        prerequisites = {"ac-robotics-2"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "ac-bronze-infused-steel-ore",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "ac-bronze-steel-plate",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "engine-unit",
+            },
+        },
+        unit = {
+            count = 2000,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 60,
+        },
+        order = "c-a"
+    },
+    --Train Stuff
+    {
+        type = "technology",
+        name = "ac-train-automation",
+        icon = "__base__/graphics/technology/railway.png",
+        icon_size = 256, icon_mipmaps = 4,
+        prerequisites = {"ac-robotics-2"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "rail",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "locomotive",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "cargo-wagon",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "fluid-wagon",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "train-stop",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "rail-signal",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "rail-chain-signal",
+            },
+            --[[{
+                type = "unlock-recipe",
+                recipe = "biological-train-automated-depot",
+            },]]
+        },
+        unit = {
+            count = 2000,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
             time = 60,
         },
         order = "c-a"

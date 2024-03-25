@@ -1759,6 +1759,97 @@ data:extend({
         order = "g[spiral-shellfish]",
         stack_size = 100
     },
+    --New Ores and such
+    {
+        type = "item",
+        name = "phosphate-rock",
+        icon = "__base__/graphics/icons/stone.png",
+        icon_size = 64,
+        subgroup = "raw-resource",
+        order = "a[phosphate-rock]",
+        stack_size = 200
+    },
+    {
+        type = "item",
+        name = "phosphate-rock-crushed",
+        icon = "__base__/graphics/icons/stone.png",
+        icon_size = 64,
+        subgroup = "raw-resource",
+        order = "b[phosphate-rock-crushed]",
+        stack_size = 200
+    },
+    {
+        type = "item",
+        name = "phosphate-rock-powder",
+        icon = "__base__/graphics/icons/stone.png",
+        icon_size = 64,
+        subgroup = "raw-resource",
+        order = "c[phosphate-rock-powder]",
+        stack_size = 200
+    },
+    {
+        type = "item",
+        name = "phosphate-rock-slurry",
+        icon = "__base__/graphics/icons/stone.png",
+        icon_size = 64,
+        subgroup = "raw-resource",
+        order = "d[phosphate-rock-slurry]",
+        stack_size = 200
+    },
+    {
+        type = "item",
+        name = "phosphate-rock-concentrate",
+        icon = "__base__/graphics/icons/stone.png",
+        icon_size = 64,
+        subgroup = "raw-resource",
+        order = "e[phosphate-rock-concentrate]",
+        stack_size = 200
+    },
+    {
+        type = "item",
+        name = "phosphate-rock-pellets",
+        icon = "__base__/graphics/icons/stone.png",
+        icon_size = 64,
+        subgroup = "raw-resource",
+        order = "f[phosphate-rock-pellets]",
+        stack_size = 200
+    },
+    {
+        type = "item",
+        name = "phosphate-rock-sinter",
+        icon = "__base__/graphics/icons/stone.png",
+        icon_size = 64,
+        subgroup = "raw-resource",
+        order = "g[phosphate-rock-sinter]",
+        stack_size = 200
+    },
+    {
+        type = "item",
+        name = "phosphate-rock-sinter-plate",
+        icon = "__base__/graphics/icons/stone.png",
+        icon_size = 64,
+        subgroup = "raw-resource",
+        order = "h[phosphate-rock-sinter-plate]",
+        stack_size = 200
+    },
+    {
+        type = "item",
+        name = "bronze-steel-plate",
+        icon = "__base__/graphics/icons/steel-plate.png",
+        icon_size = 64,
+        subgroup = "raw-resource",
+        order = "i[bronze-steel-plate]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "bronze-steel-ore",
+        icon = "__base__/graphics/icons/stone.png",
+        icon_size = 64,
+        subgroup = "raw-resource",
+        order = "j[bronze-steel-ore]",
+        stack_size = 100
+    },
     --Simple Roboport
     {
         type = "item",

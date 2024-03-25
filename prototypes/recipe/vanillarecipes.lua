@@ -61,3 +61,54 @@ sanitize_recipe(recipes["substation"]).ingredients =
     {"iron-plate", 20},
     {"copper-cable", 10},
 }
+sanitize_recipe(recipes["locomotive"]).ingredients =
+{
+    {"bronze-plate", 20},
+    {"bronze-gear", 10},
+    {"engine-unit", 10},
+    {"advanced-circuit", 5},
+}
+sanitize_recipe(recipes["cargo-wagon"]).ingredients =
+{
+    {"bronze-plate", 20},
+    {"bronze-gear", 10},
+    {"copper-cable", 10},
+    {"advanced-circuit", 5},
+}
+sanitize_recipe(recipes["fluid-wagon"]).ingredients =
+{
+    {"bronze-plate", 20},
+    {"bronze-gear", 10},
+    {"copper-cable", 10},
+    {"advanced-circuit", 5},
+}
+sanitize_recipe(recipes["engine-unit"]).ingredients =
+{
+    {"bronze-gear", 10},
+    {"bronze-pipe", 5},
+    {"bronze-steel-plate", 5},
+}
+sanitize_recipe(recipes["train-stop"]).ingredients =
+{
+    {"bronze-plate", 5},
+    {"iron-plate", 5},
+    {"copper-cable", 5},
+}
+sanitize_recipe(recipes["rail-signal"]).ingredients =
+{
+    {"bronze-plate", 1},
+    {"iron-plate", 1},
+    {"copper-cable", 5},
+}
+sanitize_recipe(recipes["rail-chain-signal"]).ingredients =
+{
+    {"bronze-plate", 1},
+    {"iron-plate", 1},
+    {"copper-cable", 5},
+}
+sanitize_recipe(recipes["rail"]).ingredients =
+{
+    {"bronze-steel-plate", 1},
+    {"iron-stick", 1},
+    {"blended-stone", 4}
+}

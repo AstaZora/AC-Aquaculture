@@ -2012,6 +2012,28 @@ data:extend({
         result_count = 2,
         enabled = false
     },
+    --Bronze Infused Iron Plate?
+    {
+        type = "recipe",
+        name = "ac-bronze-infused-steel-ore",
+        category = "ab-ore-refining",
+        energy_required = 8,
+        ingredients = {{"iron-ore", 2}, {"tin-ore", 2}, {"copper-ore", 2}, {"limestone", 2}},
+        result = "bronze-steel-ore",
+        result_count = 2,
+        enabled = false
+    },
+    --Bronze Steel Plate
+    {
+        type = "recipe",
+        name = "ac-bronze-steel-plate",
+        category = "smelting",
+        energy_required = 30,
+        ingredients = {{"bronze-steel-ore", 5}},
+        result = "bronze-steel-plate",
+        result_count = 1,
+        enabled = false
+    },
 })
 
 local fishTypes = {"glowfin-trenchers", "mukmoux", "neon-nocturne", "silverscale-glider", "spiral-shellfish", "silent-drifter", "twilight-tetra", "starfin-darters", "stream-sifter"}

@@ -96,7 +96,7 @@ end)
 local function processQueue()
     local process_per_tick = 5  -- Number of entities to process each tick
     local processed = 0
-    log("Processing queue. Queue length: " .. #global.process_queue)
+   --log("Processing queue. Queue length: " .. #global.process_queue)
 
     -- Process entities from the queue
     while processed < process_per_tick and #global.process_queue > 0 do
@@ -106,13 +106,13 @@ local function processQueue()
             -- Depending on the entity type, process and add to the corresponding list
             if entity.name == "fish-hatchery" then
                 table.insert(global.fish_breeders, entity)
-                log("Processed and added to fish_breeders list: " .. entity.name .. " at (" .. entity.position.x .. ", " .. entity.position.y .. ")")
+               --log("Processed and added to fish_breeders list: " .. entity.name .. " at (" .. entity.position.x .. ", " .. entity.position.y .. ")")
             elseif entity.name == "fish-net" then
                 table.insert(global.fish_nets, entity)
-                log("Processed and added to fish_nets list: " .. entity.name .. " at (" .. entity.position.x .. ", " .. entity.position.y .. ")")
+               --log("Processed and added to fish_nets list: " .. entity.name .. " at (" .. entity.position.x .. ", " .. entity.position.y .. ")")
             elseif entity.name == "fish-drill" then
                 table.insert(global.fish_drills, entity)
-                log("Processed and added to fish_drills list: " .. entity.name .. " at (" .. entity.position.x .. ", " .. entity.position.y .. ")")
+               --log("Processed and added to fish_drills list: " .. entity.name .. " at (" .. entity.position.x .. ", " .. entity.position.y .. ")")
             end
             processed = processed + 1
         end
@@ -124,7 +124,7 @@ local function removeFromList(entity, list)
 for i, listedEntity in ipairs(list) do
     if listedEntity == entity then
         table.remove(list, i)
-        log("Entity removed from list: " .. entity.name)
+       --log("Entity removed from list: " .. entity.name)
         return true
     end
 end
@@ -139,7 +139,7 @@ if entity and entity.valid then
     if not removedFromQueue then
         removeFromList(entity, global.fish_breeders)
     end
-    log("Entity removal handled: " .. entity.name)
+   --log("Entity removal handled: " .. entity.name)
 end
 end
 
@@ -163,9 +163,9 @@ if not match then
 end
 
 if match then
-    log("Fish name extracted: " .. match)
+   --log("Fish name extracted: " .. match)
 else
-    log("Failed to extract fish name from recipe: " .. recipe_name)
+   --log("Failed to extract fish name from recipe: " .. recipe_name)
 end
 
 return match
@@ -221,7 +221,7 @@ function checkFishBreeders()
         local breeder = global.fish_breeders[global.breeder_index]
         local inventory_index = defines.inventory.assembling_machine_output or defines.inventory.chemical_plant_output
         if breeder and breeder.valid and breeder.name == "fish-hatchery" then
-            log("Breeder is Valid")
+           --log("Breeder is Valid")
             local inventory = breeder.get_inventory(inventory_index)
             --log("Inventory: " .. serpent.block(inventory))
             if inventory and not inventory.is_empty() then
@@ -277,22 +277,34 @@ function checkFishDrills()
     if not global.fish_drills then
         global.fish_drills = {}
     end
+    if global.drill_index > #global.fish_drills then
+        global.drill_index = 1 -- Reset index if it's out of bounds
+    end
+    --log("Checking fish drills for fish...")
+    --log("Number of fish drills to process: " .. #global.fish_drills)
+    --log("Current drill index: " .. global.drill_index)
 
     local processed = 0
     local max_to_process = 3
     while processed < max_to_process and global.drill_index <= #global.fish_drills do
+        --log("Number of fish drills to process: " .. #global.fish_drills)
         local drill = global.fish_drills[global.drill_index]
         if drill and drill.valid then
+            --log("Attempting to process fish drills")
             local inventory = drill.get_inventory(defines.inventory.furnace_result)
             if inventory and not inventory.is_empty() then
+                --log("Attempting to process fish drills with valid products")
                 for _, fishType in ipairs(fishTypes) do
                     local fishCount = inventory.get_item_count(fishType)
+                    --log("Fish count: " .. fishCount)
                     if fishCount >= 5 then
+                        --log("Fish count: " .. fishCount)
                         local spawnCount = math.floor(fishCount / 5)
                         local spawnPosition = calculateDrillSpawnPosition(drill)
                         spawnFish(drill, spawnPosition, fishType, spawnCount)
+                        --log("Spawned " .. spawnCount .. " " .. fishType)
                         inventory.remove({name = fishType, count = spawnCount * 5})
-                        log("Drill at [" .. drill.position.x .. ", " .. drill.position.y .. "] spawned " .. spawnCount .. " " .. fishType)
+                        --log("Drill at [" .. drill.position.x .. ", " .. drill.position.y .. "] spawned " .. spawnCount .. " " .. fishType)
                         processed = processed + 1
                         if processed >= max_to_process then
                             break
@@ -306,15 +318,15 @@ function checkFishDrills()
             global.drill_index = 1 -- Loop back to start
         break
     end
-    log("Processed " .. processed .. " fish drills.")
+    --log("Processed " .. processed .. " fish drills.")
 end
 end
 function checkFishNets()
-    log("Checking fish nets for live fish...")
+    --log("Checking fish nets for live fish...")
 
     -- Skip processing if there are no fish nets
     if #global.fish_nets == 0 then
-        log("No fish nets to process.")
+        --log("No fish nets to process.")
         return
     end
 
@@ -331,7 +343,7 @@ function checkFishNets()
 
         -- Check if the current fish net is valid before processing
         if fishNet and fishNet.valid then
-            log("Processing fish net at [" .. fishNet.position.x .. ", " .. fishNet.position.y .. "]")
+            --log("Processing fish net at [" .. fishNet.position.x .. ", " .. fishNet.position.y .. "]")
             processFishNet(fishNet)
             netsProcessed = netsProcessed + 1
         else
@@ -348,12 +360,12 @@ function checkFishNets()
         end
     end
 
-    log("Cycle completed. Processed " .. netsProcessed .. " fish nets.")
+    --log("Cycle completed. Processed " .. netsProcessed .. " fish nets.")
 end
 
 -- Process individual fish net
 function processFishNet(fishNet)
-    log("Processing fish net at [" .. fishNet.position.x .. ", " .. fishNet.position.y .. "]")
+    --log("Processing fish net at [" .. fishNet.position.x .. ", " .. fishNet.position.y .. "]")
     local inventory = fishNet.get_inventory(defines.inventory.chest)
     local maxFishCountPerNet = 200  -- Max number of fish items the inventory can hold
 
@@ -380,10 +392,10 @@ function processLiveFish(fishNet, inventory, fishType, liveFish, maxFishCountPer
             for i = 1, fishToCatch do
                 if liveFish[i] then liveFish[i].destroy() end
             end
-            log("Net at [" .. fishNet.position.x .. ", " .. fishNet.position.y .. "] caught " .. inserted .. " " .. fishType .. ". Total now: " .. (currentFishCount + inserted))
+            --log("Net at [" .. fishNet.position.x .. ", " .. fishNet.position.y .. "] caught " .. inserted .. " " .. fishType .. ". Total now: " .. (currentFishCount + inserted))
         end
     else
-        log("Net at [" .. fishNet.position.x .. ", " .. fishNet.position.y .. "] is full or no fish available to catch.")
+        --log("Net at [" .. fishNet.position.x .. ", " .. fishNet.position.y .. "] is full or no fish available to catch.")
     end
 end
 
@@ -411,5 +423,5 @@ function spawnFish(entity, position, fishType, count)
         })
     end
     -- Optionally, print a message with details about the spawned fish
-    log("Spawned " .. count .. " of " .. fishType .. " at position: " .. position.x .. ", " .. position.y)
+    --log("Spawned " .. count .. " of " .. fishType .. " at position: " .. position.x .. ", " .. position.y)
 end
