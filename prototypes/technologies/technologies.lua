@@ -1171,6 +1171,30 @@ data:extend({
         },
         order = "c-a"
     },
+    --Transportation splitter and underground
+    {
+        type = "technology",
+        name = "ac-transportation-splitter",
+        icon = "__base__/graphics/technology/logistics-1.png",
+        icon_size = 256, icon_mipmaps = 4,
+        prerequisites = {"ac-robotics-2"},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "splitter",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "underground-belt",
+            },
+        },
+        unit = {
+            count = 1000,
+            ingredients = {{"research-kit", 1}, {"biocomposite-research-kit", 1}},
+            time = 60,
+        },
+        order = "c-a"
+    },
     --Bioelectric Accumulator
     {
         type = "technology",

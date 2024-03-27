@@ -515,6 +515,7 @@ for _, chest_type in ipairs(chest_types) do
     custom_chest.icon_size = 64
     custom_chest.icon_mipmaps = 4
     custom_chest.inventory_size = 5
+    custom_chest.minable = {mining_time = 0.1, result = "ceramic-"..chest_type}
     -- Adjust logistic_slots_count for chests that support it
     if
         chest_type == "logistic-chest-storage" or
@@ -563,11 +564,6 @@ fish_brain_robot.icon_size = 64
 fish_brain_robot.icon_mipmaps = 4
 fish_brain_robot.minable.result = "biological-construction-robot"
 fish_brain_robot.max_payload_size = 1
-fish_brain_robot.speed = 0.02
-fish_brain_robot.energy_per_move = "5kJ"
-fish_brain_robot.energy_per_tick = "0.1kJ"
-fish_brain_robot.speed_multiplier_when_out_of_energy = 1
-fish_brain_robot.max_energy = "0.8MJ"
 
 data:extend({fish_brain_robot})
 
@@ -579,11 +575,6 @@ fish_brain_logistic_robot.icon_size = 64
 fish_brain_logistic_robot.icon_mipmaps = 4
 fish_brain_logistic_robot.minable.result = "biological-logistic-robot"
 fish_brain_logistic_robot.max_payload_size = 1
-fish_brain_logistic_robot.speed = 0.02
-fish_brain_logistic_robot.energy_per_move = "5kJ"
-fish_brain_logistic_robot.energy_per_tick = "0.1kJ"
-fish_brain_logistic_robot.speed_multiplier_when_out_of_energy = 1
-fish_brain_logistic_robot.max_energy = "0.8MJ"
 
 data:extend({fish_brain_logistic_robot})
 
