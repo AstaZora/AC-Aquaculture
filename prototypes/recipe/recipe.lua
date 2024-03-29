@@ -184,7 +184,7 @@ data:extend({
         },
         result = "fish-smoker"
     },
-    --Hydrponics
+    --Hydroponics
     {
         type = "recipe",
         name = "hydroponics",

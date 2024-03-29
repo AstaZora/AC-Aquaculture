@@ -159,6 +159,14 @@ data:extend({
 
     createCentrifuge("enhanced-ore-polisher", "ore-preparation"),
 
+    createOilRefinery("advanced-fish-oil-refinery", "fish-advanced-refining"),
+    createOilRefinery("combustion-plant", "combustion"),
+    createOilRefinery("fish-drill-refinery", "fish-refining"),
+    createOilRefinery("seaweed-refinery", "seaweed-refining"),
+    createOilRefinery("advaned-coral-refinery", "advanced-coral-refining"),
+    createOilRefinery("algae-refinery", "algae-refining"),
+    createOilRefinery("fish-chemical-refinery", "fish-oil-refining"),
+        
 })
 
 
@@ -545,12 +553,12 @@ early_roboport.energy_source = {
     type = "electric",
     usage_priority = "secondary-input",
     input_flow_limit = "5MW",
-    buffer_capacity = "100MJ",
-    drain = "2MW"
+    buffer_capacity = "25MJ",
+    drain = "1MW"
 }
-early_roboport.energy_usage = "50kW"
-early_roboport.recharge_minimum = "1MJ"
-early_roboport.recharge_maximum = "5MJ"
+early_roboport.energy_usage = "25kW"
+early_roboport.recharge_minimum = "250kJ"
+early_roboport.recharge_maximum = "1MJ"
 early_roboport.robot_slots_count = 3
 early_roboport.material_slots_count = 3
 

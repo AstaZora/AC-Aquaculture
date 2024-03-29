@@ -179,6 +179,90 @@ data:extend({
         place_result = "coral-refinery",
         stack_size = 50
     },
+    --Oil Refinery style machinery
+    {
+        type = "item",
+        name = "advanced-fish-oil-refinery",
+        icon = "__base__/graphics/icons/oil-refinery.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "production-machine",
+        order = "n[advanced-fish-oil-refinery]",
+        place_result = "advanced-fish-oil-refinery",
+        stack_size = 10
+    },
+    --Combustion Plant
+    {
+        type = "item",
+        name = "combustion-plant",
+        icon = "__base__/graphics/icons/oil-refinery.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "production-machine",
+        order = "o[combustion-plant]",
+        place_result = "combustion-plant",
+        stack_size = 10
+    },
+    --Fish Drill Refinery
+    {
+        type = "item",
+        name = "fish-drill-refinery",
+        icon = "__base__/graphics/icons/oil-refinery.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "production-machine",
+        order = "p[fish-drill-refinery]",
+        place_result = "fish-drill-refinery",
+        stack_size = 10
+    },
+    --Seaweed refinery
+    {
+        type = "item",
+        name = "seaweed-refinery",
+        icon = "__base__/graphics/icons/oil-refinery.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "production-machine",
+        order = "q[seaweed-refinery]",
+        place_result = "seaweed-refinery",
+        stack_size = 10
+    },
+    --Advanced Coral Refinery
+    {
+        type = "item",
+        name = "advanced-coral-refinery",
+        icon = "__base__/graphics/icons/oil-refinery.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "production-machine",
+        order = "r[advanced-coral-refinery]",
+        place_result = "advanced-coral-refinery",
+        stack_size = 10
+    },
+    --Algae Refinery
+    {
+        type = "item",
+        name = "algae-refinery",
+        icon = "__base__/graphics/icons/oil-refinery.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "production-machine",
+        order = "s[algae-refinery]",
+        place_result = "algae-refinery",
+        stack_size = 10
+    },
+    --Fish Chemical Refinery
+    {
+        type = "item",
+        name = "fish-chemical-refinery",
+        icon = "__base__/graphics/icons/oil-refinery.png",
+        icon_size = 64,
+        icon_mipmaps = 1,
+        subgroup = "production-machine",
+        order = "t[fish-chemical-refinery]",
+        place_result = "fish-chemical-refinery",
+        stack_size = 10
+    },
     --Hydroponics
     {
         type = "item",
