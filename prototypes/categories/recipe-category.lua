@@ -96,6 +96,34 @@ data:extend({
         name = "ore-preparation"
     },
     {
+        type = "recipe-category",
+        name = "fish-advanced-refining"
+    },
+    {
+        type = "recipe-category",
+        name = "combustion"
+    },
+    {
+        type = "recipe-category",
+        name = "fish-refining"
+    },
+    {
+        type = "recipe-category",
+        name = "seaweed-refining"
+    },
+    {
+        type = "recipe-category",
+        name = "advanced-coral-refining"
+    },
+    {
+        type = "recipe-category",
+        name = "algae-refining"
+    },
+    {
+        type = "recipe-category",
+        name = "fish-oil-refining"
+    },
+    {
         type = "item-group",
         name = "fish-hatchery",
         order = "z",

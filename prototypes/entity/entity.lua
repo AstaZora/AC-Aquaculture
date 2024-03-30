@@ -163,7 +163,7 @@ data:extend({
     createOilRefinery("combustion-plant", "combustion"),
     createOilRefinery("fish-drill-refinery", "fish-refining"),
     createOilRefinery("seaweed-refinery", "seaweed-refining"),
-    createOilRefinery("advaned-coral-refinery", "advanced-coral-refining"),
+    createOilRefinery("advanced-coral-refinery", "advanced-coral-refining"),
     createOilRefinery("algae-refinery", "algae-refining"),
     createOilRefinery("fish-chemical-refinery", "fish-oil-refining"),
         
