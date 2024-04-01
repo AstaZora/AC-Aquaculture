@@ -1641,6 +1641,33 @@ data:extend({
     },
     {
         type = "item",
+        name = "chitinous-mesh",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "nacreous-coating",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
+        name = "calcium-carbonate-plate",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        subgroup = "raw-resource",
+        order = "g[spiral-shellfish]",
+        stack_size = 100
+    },
+    {
+        type = "item",
         name = "spiral-shellfish-brain",
         icon = "__base__/graphics/icons/fish.png",
         icon_size = 64, icon_mipmaps = 4,

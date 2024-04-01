@@ -1344,6 +1344,60 @@ data:extend({
             {type="item", name="spiral-gel", amount=1}
         }
     },
+    --chitinous Mesh
+    {
+        type = "recipe",
+        name = "chitinous-mesh",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-processing",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type = "item", name = "spiral-shellfish-fillet", amount = 5},
+            {type = "item", name = "spiral-gel", amount = 5}
+        },
+        results = {
+            {type="item", name="chitinous-mesh", amount=1}
+        }
+    },
+    --Nacreous Coating
+    {
+        type = "recipe",
+        name = "nacreous-coating",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-processing",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type = "item", name = "spiral-shellfish", amount = 5},
+            {type = "item", name = "spiral-shell-fragments", amount = 5}
+        },
+        results = {
+            {type="item", name="nacreous-coating", amount=1}
+        }
+    },
+    --Spiracull Hydrolate
+    {
+        type = "recipe",
+        name = "spiracull-hydrolate",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        category = "fish-processing",
+        subgroup = "fish-breeding",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            {type = "item", name = "spiral-gel", amount = 5},
+            {type = "item", name = "spiral-shellfish-egg", amount = 5}
+        },
+        results = {
+            {type="fluid", name="spiracull-hydrolate", amount=50}
+        }
+    },
     {
         type = "recipe",
         name = "spiral-filtration-unit",
@@ -2111,17 +2165,17 @@ for _, fishType in ipairs(fishTypes) do
 
     -- Adjust these values based on the fish size
     if eggSize == "large" then
-        processEggAmount = 20  -- Requires fewer eggs due to larger fish size
-        fishYieldMin = 60
-        fishYieldMax = 120
+        processEggAmount = 10  -- Requires fewer eggs due to larger fish size
+        fishYieldMin = 30
+        fishYieldMax = 60
     elseif eggSize == "medium" then
-        processEggAmount = 30  -- Base value for medium
-        fishYieldMin = 90
-        fishYieldMax = 160
+        processEggAmount = 15  -- Base value for medium
+        fishYieldMin = 45
+        fishYieldMax = 80
     elseif eggSize == "small" then
         processEggAmount = 40  -- Requires more eggs, smaller fish
-        fishYieldMin = 120
-        fishYieldMax = 200
+        fishYieldMin = 60
+        fishYieldMax = 100
     end
 
     -- Insert the adjusted recipe into the fishBreedingRecipes table
@@ -2133,7 +2187,7 @@ for _, fishType in ipairs(fishTypes) do
         enabled = true,
         category = "fish-hatchery",  -- Or "fish-hatchery"
         subgroup = "fish-breeding",
-        energy_required = 600,  -- Adjust as necessary
+        energy_required = 300,  -- Adjust as necessary
         ingredients = {
             {type="item", name=fishType.."-egg", amount=processEggAmount},
         },

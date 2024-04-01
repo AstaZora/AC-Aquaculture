@@ -802,6 +802,32 @@ data:extend({
             time = 30,
         },
     },
+    {
+        type = "technology",
+        name = "ac-spiral-shellfish-processing-4",
+        icon = "__base__/graphics/icons/fish.png",
+        icon_size = 64, icon_mipmaps = 4,
+        prerequisites = {"ac-spiral-shellfish-processing-3",},
+        effects = {
+            {
+                type = "unlock-recipe",
+                recipe = "spiracull-hydrolate",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "nacreous-coating",
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "chitinous-mesh",
+            }
+        },
+        unit = {
+            count = 1000,
+            ingredients = {{"fish-biomass-pack", 1}, {"fish-fluid-science-pack", 1}, {"advanced-biology-pack", 1}},
+            time = 30,
+        },
+    },
     --Silent Drifter Tech
     {
         type = "technology",

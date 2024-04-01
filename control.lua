@@ -189,10 +189,8 @@ local fishTypes = {
 
 -- Periodic event handler to trigger the queue processing and entity checks
 script.on_event(defines.events.on_tick, function(event)
-    if event.tick % 300 == 0 then
-        processQueue()  -- Call the processing function each tick or at certain intervals
-    end
     if event.tick % 300 == 0 then  -- Every 300 ticks, perform checks on breeders, nets, and drills
+        processQueue()
         checkFishBreeders()
         checkFishNets()
         checkFishDrills()
