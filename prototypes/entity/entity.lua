@@ -322,7 +322,7 @@ data:extend({
         icon_size = 128,
         minable = {mining_time = 1, result = "fish-net"},
         max_health = 100,
-        inventory_size = 1,  -- minimum inventory size?
+        inventory_size = 5,  -- minimum inventory size?
         picture = {
             filename = "__AC-Aquaculture__/graphics/entity/fish-net.png",
             priority = "extra-high",

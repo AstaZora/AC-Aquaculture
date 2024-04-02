@@ -189,7 +189,7 @@ local fishTypes = {
 
 -- Periodic event handler to trigger the queue processing and entity checks
 script.on_event(defines.events.on_tick, function(event)
-    if event.tick % 300 == 0 then  -- Every 300 ticks, perform checks on breeders, nets, and drills
+    if event.tick % 180 == 0 then  -- Every 300 ticks, perform checks on breeders, nets, and drills
         processQueue()
         checkFishBreeders()
         checkFishNets()
@@ -208,7 +208,7 @@ function checkFishBreeders()
     end
     
     local processed = 0
-    local max_to_process = 3
+    local max_to_process = 5
     --log("Checking fish breeders for fish...")
     --log("Number of fish breeders to process: " .. #global.fish_breeders)
     --log("Current breeder index: " .. global.breeder_index)
@@ -283,7 +283,7 @@ function checkFishDrills()
     --log("Current drill index: " .. global.drill_index)
 
     local processed = 0
-    local max_to_process = 3
+    local max_to_process = 5
     while processed < max_to_process and global.drill_index <= #global.fish_drills do
         --log("Number of fish drills to process: " .. #global.fish_drills)
         local drill = global.fish_drills[global.drill_index]
@@ -365,7 +365,7 @@ end
 function processFishNet(fishNet)
     --log("Processing fish net at [" .. fishNet.position.x .. ", " .. fishNet.position.y .. "]")
     local inventory = fishNet.get_inventory(defines.inventory.chest)
-    local maxFishCountPerNet = 200  -- Max number of fish items the inventory can hold
+    local maxFishCountPerNet = 1000  -- Max number of fish items the inventory can hold
 
     local searchArea = {{fishNet.position.x - 2, fishNet.position.y - 2}, {fishNet.position.x + 2, fishNet.position.y + 2}}
     for _, fishType in ipairs(fishTypes) do

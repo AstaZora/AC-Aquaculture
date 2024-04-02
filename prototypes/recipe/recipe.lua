@@ -2185,9 +2185,9 @@ for _, fishType in ipairs(fishTypes) do
         icon = "__AC-Aquaculture__/graphics/icons/fish/"..fishType..".png",
         icon_size = 128,
         enabled = true,
-        category = "fish-hatchery",  -- Or "fish-hatchery"
+        category = "fish-hatchery", 
         subgroup = "fish-breeding",
-        energy_required = 300,  -- Adjust as necessary
+        energy_required = 300,  
         ingredients = {
             {type="item", name=fishType.."-egg", amount=processEggAmount},
         },
