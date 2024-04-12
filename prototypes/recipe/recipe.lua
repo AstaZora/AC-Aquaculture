@@ -857,7 +857,7 @@ data:extend({
             {type="item", name="mukmoux-egg", amount=20}
         },
         results = {
-            {type="fluid", name="mukmoux-mucous", amount=20}
+            {type="fluid", name="mukmoux-mucous", amount=50}
         }
     },
     --Mukmoux Stone Gathering
@@ -1059,7 +1059,7 @@ data:extend({
         icon_size = 64, icon_mipmaps = 4,
         category = "fish-sorting",
         subgroup = "fish-breeding",
-        energy_required = 5,
+        energy_required = 2,
         enabled = false,
         ingredients = {
             {type="item", name="silverscale-glider-package", amount=1}
@@ -1111,7 +1111,7 @@ data:extend({
         icon_size = 128,
         category = "fish-sorting",
         subgroup = "fish-breeding",
-        energy_required = 5,
+        energy_required = 2,
         enabled = false,
         ingredients = {
             {type="item", name="silverscale-glider-scales", amount=5},
@@ -1128,7 +1128,7 @@ data:extend({
         icon_size = 128,
         category = "fish-processing",
         subgroup = "fish-breeding",
-        energy_required = 5,
+        energy_required = 2,
         enabled = false,
         ingredients = {
             {type="item", name="silverscale-glider-fillet", amount=4}
@@ -1144,13 +1144,13 @@ data:extend({
         icon_size = 128,
         category = "fish-extraction",
         subgroup = "fish-breeding",
-        energy_required = 5,
+        energy_required = 2,
         enabled = false,
         ingredients = {
             {type="item", name="silverscale-glider-muscle", amount=5}
         },
         results = {
-            {type="item", name="twined-muscle-fiber", amount=1}
+            {type="item", name="twined-muscle-fiber", amount=2}
         }
     },
     {
@@ -1316,10 +1316,10 @@ data:extend({
         icon_size = 64, icon_mipmaps = 4,
         category = "fish-drying-rack",
         subgroup = "fish-breeding",
-        energy_required = 5,
+        energy_required = 20,
         enabled = false,
         ingredients = {
-            {type="item", name="twined-muscle-fiber", amount=5},
+            {type="item", name="twined-muscle-fiber", amount=1},
             {type="item", name="shell-calcium", amount=5},
             {type="item", name="spiral-gel", amount=1},
             {type="fluid", name="mukmoux-sealant", amount=10},
@@ -2130,7 +2130,7 @@ for _, fishType in ipairs(fishTypes) do
         enabled = true,
         category = "fish-hatchery",
         subgroup = "fish-breeding",
-        energy_required = 180,
+        energy_required = 60,
         ingredients = {
             {type="item", name= fishType, amount=20, catalyst_amount = 20},
         },
@@ -2148,7 +2148,7 @@ for _, fishType in ipairs(fishTypes) do
         enabled = true,
         category = "fish-breeding",
         subgroup = "fish-breeding",
-        energy_required = 60,
+        energy_required = 15,
         ingredients = {
             {type="item", name= fishType.."-egg", amount=1},
         },
@@ -2187,7 +2187,7 @@ for _, fishType in ipairs(fishTypes) do
         enabled = true,
         category = "fish-hatchery", 
         subgroup = "fish-breeding",
-        energy_required = 300,  
+        energy_required = 120,
         ingredients = {
             {type="item", name=fishType.."-egg", amount=processEggAmount},
         },

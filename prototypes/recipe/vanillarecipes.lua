@@ -112,3 +112,7 @@ sanitize_recipe(recipes["rail"]).ingredients =
     {"iron-stick", 1},
     {"blended-stone", 4}
 }
+sanitize_recipe(recipes["steel-chest"]).ingredients =
+{
+    {"bronze-steel-plate", 8}
+}

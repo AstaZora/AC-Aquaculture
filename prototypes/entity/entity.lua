@@ -291,7 +291,7 @@ bioelectricAccumulator.minable = {mining_time = 0.1, result = "biological-accumu
 bioelectricAccumulator.max_health = 150
 bioelectricAccumulator.energy_source = {
     type = "electric",
-    buffer_capacity = "2.5MJ",
+    buffer_capacity = "10MJ",
     usage_priority = "tertiary",
     input_flow_limit = "750kW",
     minimum_input_flow_limit = "10kW",
@@ -306,11 +306,9 @@ bioelectricSolarPanel.icon_size = 64
 bioelectricSolarPanel.icon_mipmaps = 4
 bioelectricSolarPanel.minable = {mining_time = 0.1, result = "biological-solar-panel"}
 bioelectricSolarPanel.max_health = 150
-bioelectricSolarPanel.production = "30kW"
+bioelectricSolarPanel.production = "120kW"
 
 data:extend({bioelectricSolarPanel})
-
-local connectorSprite = require("prototypes.circuit-connector-sprites")
 
 data:extend({
     {
@@ -552,9 +550,9 @@ early_roboport.construction_radius = 30
 early_roboport.energy_source = {
     type = "electric",
     usage_priority = "secondary-input",
-    input_flow_limit = "5MW",
+    input_flow_limit = "1MW",
     buffer_capacity = "25MJ",
-    drain = "1MW"
+    drain = "250KW"
 }
 early_roboport.energy_usage = "25kW"
 early_roboport.recharge_minimum = "250kJ"

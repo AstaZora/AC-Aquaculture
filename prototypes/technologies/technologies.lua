@@ -1213,6 +1213,10 @@ data:extend({
                 type = "unlock-recipe",
                 recipe = "underground-belt",
             },
+            {
+                type = "unlock-recipe",
+                recipe = "steel-chest",
+            }
         },
         unit = {
             count = 1000,
