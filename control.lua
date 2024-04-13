@@ -32,7 +32,7 @@ script.on_init(function()
     global.breeder_index = 1
     global.drill_index = 1
     global.net_index = 1
-    global.process_queue = {}
+    global.process_queue = global.process_queue or {}
     global.lastProcessedIndex = nil
     global.resetProcessing = false
     log("Fish Breeding Management Script initialized.")
@@ -40,8 +40,20 @@ end)
 
 -- Ensure global variables are correctly initialized or reset after configuration changes
 script.on_configuration_changed(function()
-    script.on_init()  -- Reuse the initialization function to reset the state
-    log("Fish Breeding Management configuration updated.")
+    global.fish_breeders = global.fish_breeders or {}
+    global.fish_drills = global.fish_drills or {}
+    global.fish_nets = global.fish_nets or {}
+    
+    -- Make sure the indices for each entity type exist and are set to a valid starting point
+    global.breeder_index = global.breeder_index or 1
+    global.drill_index = global.drill_index or 1
+    global.net_index = global.net_index or 1
+
+    -- Ensure the process queue and related variables are also correctly initialized
+    global.process_queue = global.process_queue or {}
+    global.lastProcessedIndex = global.lastProcessedIndex or nil
+    global.resetProcessing = global.resetProcessing or false
+    log("Fish Breeding Management configuration checked.")
 end)
 
 local entitiesToTrack = {
