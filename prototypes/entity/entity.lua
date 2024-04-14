@@ -550,7 +550,7 @@ early_roboport.construction_radius = 30
 early_roboport.energy_source = {
     type = "electric",
     usage_priority = "secondary-input",
-    input_flow_limit = "1MW",
+    input_flow_limit = "4.25MW",
     buffer_capacity = "25MJ",
     drain = "250KW"
 }
