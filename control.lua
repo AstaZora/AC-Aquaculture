@@ -184,6 +184,7 @@ local function checkFishBreeders()
     local breeder, inventory, currentRecipe, fishType, fishCount, spawnCount, spawnPosition, tile
 
     while processed < max_to_process and global.breeder_index <= #global.fish_breeders do
+        game.print("Processing fish breeder " .. global.breeder_index .. " of " .. #global.fish_breeders)
         breeder = global.fish_breeders[global.breeder_index]
         if not breeder or not breeder.valid or breeder.name ~= "fish-hatchery" then
             goto continue_loop
@@ -238,6 +239,7 @@ local function processFishNet(fishNet)
 
     local searchArea = {{fishNet.position.x - 2, fishNet.position.y - 2}, {fishNet.position.x + 2, fishNet.position.y + 2}}
     for _, fishType in ipairs(fishTypes) do
+        game.print("Processing fish net " .. global.net_index .. " of " .. #global.fish_nets)
         local liveFish = fishNet.surface.find_entities_filtered({name = fishType, area = searchArea})
         if #liveFish > 0 then
             local currentFishCount = inventory.get_item_count(fishType)
@@ -256,7 +258,6 @@ local function processFishNet(fishNet)
     end
     return fishSpawned
 end
-
 local function checkFishNets()
     -- Initialize or validate global variables
     global.fish_nets = global.fish_nets or {}
@@ -265,7 +266,8 @@ local function checkFishNets()
         global.net_index = 1  -- Reset index if it's out of bounds
     end
     local netsProcessed = 0
-    local max_to_process = 10
+    local min_to_process = 10
+    local max_to_process = 25
     while netsProcessed < max_to_process and global.net_index <= #global.fish_nets do
         local fishNet = global.fish_nets[global.net_index]
         if not fishNet or not fishNet.valid then
@@ -281,6 +283,10 @@ local function checkFishNets()
             global.net_index = 1
             break
         end
+    end
+
+    if netsProcessed < min_to_process then
+        
     end
 end
 local function checkFishDrills()
@@ -298,6 +304,7 @@ local function checkFishDrills()
 
     while processed < max_to_process and global.drill_index <= #global.fish_drills do
         drill = global.fish_drills[global.drill_index]
+        game.print("Processing fish drill " .. global.drill_index .. " of " .. #global.fish_drills)
         if not drill or not drill.valid then
             goto continue_drill_loop  -- Skip to next iteration if invalid
         end
@@ -337,6 +344,23 @@ local function checkFishDrills()
     end
 end
 
+local function cleanupAllEntityQueues()
+    -- Define a generic function for cleaning up lists
+    local function cleanupList(list)
+        for index = #list, 1, -1 do
+            local entity = list[index]
+            if not entity or not entity.valid then
+                table.remove(list, index)
+            end
+        end
+    end
+    
+    -- Clean up each of your global lists
+    cleanupList(global.process_queue)
+    cleanupList(global.fish_breeders)
+    cleanupList(global.fish_drills)
+    cleanupList(global.fish_nets)
+end
 
 script.on_event(defines.events.on_tick, function(event)
     if event.tick % 60 == 0 then
@@ -344,5 +368,6 @@ script.on_event(defines.events.on_tick, function(event)
         checkFishBreeders()
         checkFishNets()
         checkFishDrills()
+        cleanupAllEntityQueues()
     end
 end)
